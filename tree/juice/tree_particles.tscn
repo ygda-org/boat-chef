@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://blfwcc7chqy1h"]
+
+[ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="1_b0hu2"]
+
+[node name="TreeParticles" type="CPUParticles2D" unique_id=566981850]
+z_index = 12
+emitting = false
+texture = ExtResource("1_b0hu2")
+lifetime = 0.6900000000000001
+one_shot = true
+explosiveness = 1.0
+randomness = 0.53
+direction = Vector2(0, -10)
+spread = 12.17
+initial_velocity_min = 296.05
+initial_velocity_max = 325.46
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_min = 0.07
+scale_amount_max = 0.1
+color = Color(0, 1, 0.3647059, 1)
