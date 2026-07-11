@@ -33,7 +33,6 @@ func _physics_process(delta):
 	angle = rad_to_deg(dir.angle())
 	angle /= 45
 	angle = round(angle)
-	print(angle)
 	if angle == 0:
 		sprite_2d.rotation = deg_to_rad(90)
 	elif angle == 1:
