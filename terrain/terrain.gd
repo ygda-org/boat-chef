@@ -26,8 +26,8 @@ func clear_decor():
 		c.queue_free()
 
 func generate_terrain():
-	for x : int in range(-size.x/2, size.x/2):
-		for y : int in range(-size.y/2, size.y/2):
+	for y : int in range(-size.y/2, size.y/2):
+		for x : int in range(-size.x/2, size.x/2):
 			var noise := altitude.get_noise_2d(x, y)
 			noise = (noise + 1)/2.0 # maps noise to [0, 1]
 			# high = grass
@@ -39,9 +39,9 @@ func generate_terrain():
 			var atlas : Vector2i
 			if noise < 0.4: # deep water
 				atlas = DEEP_WATER
-			elif noise < 0.7: # shallow water
+			elif noise < 0.67: # shallow water
 				atlas = SHALLOW_WATER
-			elif noise < 0.75: # sand
+			elif noise < 0.72: # sand
 				atlas = SAND
 			else:
 				atlas = GRASS

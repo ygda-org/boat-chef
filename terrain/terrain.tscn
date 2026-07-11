@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/programmer_set.tres" id="2_l7s0s"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xwkvk"]
-frequency = 0.0278
+frequency = 0.0172
 
 [node name="Terrain" type="Node2D" unique_id=544464051]
 script = ExtResource("1_0rasl")
