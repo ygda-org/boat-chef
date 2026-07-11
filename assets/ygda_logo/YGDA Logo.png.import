@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h0xyy4m70sl0"
-path="res://.godot/imported/YGDA Logo.png-4f65c052d9e915bf7399fad5fdcbfc16.ctex"
+path="res://.godot/imported/YGDA Logo.png-2729a5d251f92b3069ca687377d51d62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/YGDA Logo.png"
-dest_files=["res://.godot/imported/YGDA Logo.png-4f65c052d9e915bf7399fad5fdcbfc16.ctex"]
+source_file="res://assets/ygda_logo/YGDA Logo.png"
+dest_files=["res://.godot/imported/YGDA Logo.png-2729a5d251f92b3069ca687377d51d62.ctex"]
 
 [params]
 
