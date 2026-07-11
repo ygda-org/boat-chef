@@ -32,6 +32,9 @@ func _process(delta):
 		
 	else:
 		apply_force(Vector2(0, 100))
+	if global_position.x < GameState.restaurant_ui.global_position.x or global_position.x > GameState.restaurant_ui.global_position.x + get_viewport_rect().size.x:
+		linear_velocity = Vector2.ZERO
+		global_position = get_global_mouse_position()
 
 func _on_mouse_entered():
 	mouse = true

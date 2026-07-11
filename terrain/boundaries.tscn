@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cmkkubb7gowuv"]
+
+[ext_resource type="Script" uid="uid://cik65vy4x84u" path="res://terrain/boundaries.gd" id="1_a42cj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0es7p"]
+normal = Vector2(1, 0)
+distance = 160.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o3lui"]
+normal = Vector2(-1, 0)
+distance = 160.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hh7nu"]
+normal = Vector2(0, 1)
+distance = 160.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2gio8"]
+distance = 160.0
+
+[node name="Boundaries" type="StaticBody2D" unique_id=241412120]
+script = ExtResource("1_a42cj")
+
+[node name="Left" type="CollisionShape2D" parent="." unique_id=1631273621]
+shape = SubResource("WorldBoundaryShape2D_0es7p")
+
+[node name="Right" type="CollisionShape2D" parent="." unique_id=390454695]
+shape = SubResource("WorldBoundaryShape2D_o3lui")
+
+[node name="Top" type="CollisionShape2D" parent="." unique_id=55845660]
+shape = SubResource("WorldBoundaryShape2D_hh7nu")
+
+[node name="Bottom" type="CollisionShape2D" parent="." unique_id=575221304]
+shape = SubResource("WorldBoundaryShape2D_2gio8")

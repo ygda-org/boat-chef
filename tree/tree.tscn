@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dp1fb2mp64i7x" path="res://assets/sfx/pick_up_fruit.mp3" id="4_rec30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwd6l"]
-radius = 39.051247
+radius = 69.065186
 
 [node name="Tree" type="Node2D" unique_id=1327538213]
 z_index = 1
@@ -38,7 +38,7 @@ texture = ExtResource("2_303ym")
 
 [node name="SfxPlayer" parent="." unique_id=1644282153 instance=ExtResource("3_303ym")]
 stream = ExtResource("4_rec30")
-pitch_scale = 1.0
+metadata/variate = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

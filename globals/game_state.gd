@@ -7,12 +7,14 @@ const ORDER_TICKET = preload("uid://5jxaioed8i86")
 var hud
 var boat
 var terrain
-var restaurant_ui
+var restaurant_ui : Node2D
 var in_restaurant = false
+var size = Vector2i(300,300)
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 10
 signal inventory_modified
+
 
 func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):

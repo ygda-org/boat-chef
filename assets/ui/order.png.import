@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h0xyy4m70sl0"
-path="res://.godot/imported/YGDA Logo.png-4f65c052d9e915bf7399fad5fdcbfc16.ctex"
+uid="uid://bv6l7e7bb6j6e"
+path="res://.godot/imported/order.png-999e8023d4dbcb957bde40acdf43abfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/YGDA Logo.png"
-dest_files=["res://.godot/imported/YGDA Logo.png-4f65c052d9e915bf7399fad5fdcbfc16.ctex"]
+source_file="res://assets/ui/order.png"
+dest_files=["res://.godot/imported/order.png-999e8023d4dbcb957bde40acdf43abfe.ctex"]
 
 [params]
 

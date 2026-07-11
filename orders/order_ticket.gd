@@ -1,25 +1,37 @@
 extends Control
 
-@onready var label_blue = $Panel/GridContainer/LabelBlue
-@onready var label_brown = $Panel/GridContainer/LabelBrown
-@onready var label_red = $Panel/GridContainer/LabelRed
-@onready var label_white = $Panel/GridContainer/LabelWhite
-@onready var label_yellow = $Panel/GridContainer/LabelYellow
-
 var order_resource
+
+const AQUABERRY = preload("uid://c4fgvek4ht1hi")
+const PURPLE_FRUIT = preload("uid://8wadg5f5bqtg")
+const RED_FRUIT = preload("uid://itr02jcbacy8")
+const WHITE_FRUIT = preload("uid://bpsq8em4s4yj4")
+const YELLOW_FRUIT = preload("uid://bdxfbunt02bfn")
+
+var fruits = [
+	AQUABERRY,
+	PURPLE_FRUIT,
+	RED_FRUIT,
+	WHITE_FRUIT,
+	YELLOW_FRUIT
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label_blue.text = str(order_resource.fruit_requirements[0])
-	label_brown.text = str(order_resource.fruit_requirements[1])
-	label_red.text = str(order_resource.fruit_requirements[2])
-	label_white.text = str(order_resource.fruit_requirements[3])
-	label_yellow.text = str(order_resource.fruit_requirements[4])
+	var child_idx = 0
+	var fruit_idx = 0
+	for req in order_resource.fruit_requirements:
+		for i in range(req):
+			$Fruits.get_child(child_idx).texture = fruits[fruit_idx]
+			$Fruits.get_child(child_idx).visible = true
+			child_idx += 1
+		fruit_idx += 1
 	$TimeBar.max_value = order_resource.order_dur
 	$TimeBar.value = $TimeBar.max_value
 
-func _process(delta):
-	$TimeBar.value = $TimeBar.value - delta
+func _process(delta : float) -> void:
+	print($TimeBar.value)
+	$TimeBar.value -= delta
 	if $TimeBar.value == 0:
 		GameState.order_failed()
 		queue_free()

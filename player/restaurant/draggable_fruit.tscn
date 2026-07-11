@@ -8,7 +8,7 @@ friction = 0.4
 bounce = 0.3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5kg8m"]
-radius = 48.0
+radius = 47.010635
 
 [node name="DraggableFruit" type="RigidBody2D" unique_id=139259506]
 collision_layer = 8
@@ -21,13 +21,16 @@ script = ExtResource("1_ox65a")
 
 [node name="Sprite2D" type="TextureRect" parent="." unique_id=880691461]
 custom_maximum_size = Vector2(192, 192)
-offset_left = -92.0
-offset_top = -84.0
-offset_right = 100.0
-offset_bottom = 108.0
+offset_left = -64.0
+offset_top = -68.0
+offset_right = 64.0
+offset_bottom = 275.338
 texture = ExtResource("2_ox65a")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1330815323]
+position = Vector2(-8, -9)
 shape = SubResource("CircleShape2D_5kg8m")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
