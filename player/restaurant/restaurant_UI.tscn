@@ -13,7 +13,7 @@ size = Vector2(70, 908.5)
 size = Vector2(384.05063, 55.50026)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_5kg8m"]
-points = PackedVector2Array(866, 800, 1045, 800, 1099, 467, 809, 468)
+points = PackedVector2Array(866, 800, 1045, 800, 1095, 464, 809, 464)
 
 [node name="RestaurantUi" type="Node2D" unique_id=1804860226]
 script = ExtResource("1_pksog")
