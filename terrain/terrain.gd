@@ -12,6 +12,7 @@ const GRASS = Vector2i(3,3)
 var size : Vector2i = Vector2i(300,300)
 
 @onready var tileID := $TileIDLayer
+@onready var corner_tile := $CornerTileLayer
 
 func _ready() -> void:
 	GameState.terrain = self
@@ -52,6 +53,7 @@ func set_terrain_id():
 			
 			tileID.set_cell(Vector2(x,y), 0, atlas)
 
+## Prevent Grass touching ocean and sand touching deep ocean
 func fix_terrain_id():
 	var neighbors : Array[Vector2i] = [
 		Vector2i.DOWN,
@@ -65,21 +67,46 @@ func fix_terrain_id():
 	]
 	for y : int in range(-size.y/2, size.y/2):
 		for x : int in range(-size.x/2, size.x/2):
-			var cur_tile_cord : Vector2i = Vector2i(x,y)
-			var atlas : Vector2i = tileID.get_cell_atlas_coords(cur_tile_cord)
+			var cur_cord : Vector2i = Vector2i(x,y)
+			var atlas : Vector2i = tileID.get_cell_atlas_coords(cur_cord)
 			if atlas == DEEP_WATER or atlas == SHALLOW_WATER:
 				continue
 			for n : Vector2i in neighbors:
-				var neighbor_atlas : Vector2i = tileID.get_cell_atlas_coords(cur_tile_cord + n)
+				var neighbor_atlas : Vector2i = tileID.get_cell_atlas_coords(cur_cord + n)
 				if atlas == SAND and neighbor_atlas == DEEP_WATER:
-					tileID.set_cell(cur_tile_cord + n, 0, SHALLOW_WATER)
+					tileID.set_cell(cur_cord + n, 0, SHALLOW_WATER)
 					break
 				if atlas == GRASS and neighbor_atlas == SHALLOW_WATER:
-					tileID.set_cell(cur_tile_cord + n, 0, SAND)
+					tileID.set_cell(cur_cord + n, 0, SAND)
 					break
+
+func set_corner_terrain():
+	for y : int in range(-size.y/2, size.y/2):
+		for x : int in range(-size.x/2, size.x/2):
+			var cur_cord : Vector2i = Vector2i(x,y)
+			#AB
+			#CD
+			var tile_a : Vector2i = tileID.get_cell_atlas_coords(cur_cord + Vector2i(0,0))
+			var tile_b : Vector2i = tileID.get_cell_atlas_coords(cur_cord + Vector2i(1,0))
+			var tile_c : Vector2i = tileID.get_cell_atlas_coords(cur_cord + Vector2i(0,1))
+			var tile_d : Vector2i = tileID.get_cell_atlas_coords(cur_cord + Vector2i(1,1))
+			
+			var base_atlas : Vector2i
+			var cover_atlas : Vector2i
+			if DEEP_WATER in [tile_a, tile_b, tile_c, tile_d]:
+				base_atlas = DEEP_WATER
+				cover_atlas = SHALLOW_WATER
+			elif SHALLOW_WATER in [tile_a, tile_b, tile_c, tile_d]:
+				base_atlas = SHALLOW_WATER
+				cover_atlas = SAND
+			else:
+				base_atlas = SAND
+				cover_atlas = GRASS
+
 func generate_terrain():
 	set_terrain_id()
 	fix_terrain_id()
+	set_corner_terrain()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

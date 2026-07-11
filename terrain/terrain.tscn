@@ -15,5 +15,6 @@ altitude = SubResource("FastNoiseLite_xwkvk")
 [node name="TileIDLayer" type="TileMapLayer" parent="." unique_id=1431218462]
 tile_set = ExtResource("2_l7s0s")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1212598827]
+[node name="CornerTileLayer" type="TileMapLayer" parent="." unique_id=1212598827]
+position = Vector2(8, 8)
 tile_set = ExtResource("2_l7s0s")
