@@ -2,9 +2,13 @@ extends Node2D
 
 @onready var terrain = $"../Terrain"
 
+const TARGET_DISTANCE_MARGIN = 100
+
 var target
 
-var speed = 100
+const ACCELERATION = 40
+const MAX_SPEED = 150
+var velocity = Vector2(0,0)
 
 var map_size
 var tile_size = 16
@@ -18,17 +22,15 @@ func _ready():
 		randf()*map_size.x,
 		randf()*map_size.y
 	)
-	target = Vector2(
-		randf()*map_size.x,
-		randf()*map_size.y
-	)
+	target = get_new_target()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	if abs(position.x - target.x) < 10 and abs(position.y - target.y) < 10:
-		target = Vector2(randf()*map_size.x,randf()*map_size.y)
-	else:
-		position.x = move_toward(position.x, target.x, speed * delta)
-		position.y = move_toward(position.y, target.y, speed * delta)
+	if global_position.distance_to(target) < TARGET_DISTANCE_MARGIN:
+		target = get_new_target()
+	velocity = velocity.move_toward(target-global_position, delta*ACCELERATION)
+	velocity.limit_length(MAX_SPEED)
+	position += velocity * delta
+
+func get_new_target():
+	return Vector2(randf()*map_size.x,randf()*map_size.y)
