@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://de8qg8j7lpgiu" path="res://pick_up_fruit/pick_up_fruit.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://dvk8alcqvh2tp" path="res://UI/HUD.tscn" id="4_c651c"]
 [ext_resource type="PackedScene" uid="uid://0p7aa2wfkyk5" path="res://player/home.tscn" id="5_3wy1v"]
-[ext_resource type="PackedScene" uid="uid://ggmoxc4vmxoo" path="res://storm/storm.tscn" id="6_kfbq2"]
-[ext_resource type="PackedScene" uid="uid://bb58feyabqp8m" path="res://enemies/shark.tscn" id="7_4dugh"]
+[ext_resource type="PackedScene" uid="uid://ggmoxc4vmxoo" path="res://enemies/storm/storm.tscn" id="6_kfbq2"]
+[ext_resource type="PackedScene" uid="uid://bb58feyabqp8m" path="res://enemies/shark/shark.tscn" id="7_4dugh"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 
