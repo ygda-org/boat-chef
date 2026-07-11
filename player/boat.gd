@@ -30,7 +30,7 @@ func _physics_process(delta):
 	# make logic for picking which frame to draw from sprite rotation
 	# maybe rework velocity system to make it based off rotation like tank controls? idk
 	
-	angle = rad_to_deg(velocity.angle())
+	angle = rad_to_deg(dir.angle())
 	angle /= 45
 	angle = round(angle)
 	print(angle)
