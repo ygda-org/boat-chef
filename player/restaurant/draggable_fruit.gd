@@ -13,6 +13,16 @@ var damping_constant: float = 50
 
 func _ready():
 	$Sprite2D.texture = texture_to_set
+	if fruit_type == 4: #Yellow
+		$Sprite2D.position = Vector2(-64.0, -68.0)
+	elif fruit_type == 3: # Purple
+		$Sprite2D.position = Vector2(-90.0, -120.0)
+	elif fruit_type == 2: # Red
+		$Sprite2D.position = Vector2(-80, -130)
+	elif fruit_type == 1: # White
+		$Sprite2D.position = Vector2(-90.0, -115.0)
+	elif fruit_type == 0: # Eliot Color
+		$Sprite2D.position = Vector2(-105.0, -115.0)
 
 func _process(delta):
 	if mouse and Input.is_action_just_pressed("left_click"):

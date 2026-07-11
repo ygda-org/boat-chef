@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ch0s7fokc1447"]
 
 [ext_resource type="Script" uid="uid://c6ufp4braxmir" path="res://player/restaurant/draggable_fruit.gd" id="1_ox65a"]
-[ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="2_ox65a"]
+[ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_ox65a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5kg8m"]
 friction = 0.4
@@ -22,10 +22,8 @@ script = ExtResource("1_ox65a")
 
 [node name="Sprite2D" type="TextureRect" parent="." unique_id=880691461]
 custom_maximum_size = Vector2(192, 192)
-offset_left = -64.0
-offset_top = -68.0
-offset_right = 64.0
-offset_bottom = 275.338
+offset_right = 146.7644
+offset_bottom = 192.0
 texture = ExtResource("2_ox65a")
 expand_mode = 3
 stretch_mode = 4
