@@ -9,7 +9,9 @@ const GRASS = Vector2i(3,3)
 
 @export var altitude : FastNoiseLite
 
-var size : Vector2i = Vector2i(300,300)
+# var size : Vector2i = Vector2i(300,300)
+# size is a global now
+var size = GameState.size
 
 @onready var tileID := $TileIDLayer
 @onready var corner_tile := $CornerTileLayer
@@ -151,6 +153,7 @@ func generate_terrain():
 	set_terrain_id()
 	fix_terrain_id()
 	set_corner_terrain()
+	$Boundaries.set_boundaries(size.x * 16)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

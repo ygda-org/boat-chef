@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqtrj2bojjmjt" path="res://terrain/terrain.gd" id="1_0rasl"]
 [ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="2_l7s0s"]
+[ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="3_2ilfp"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xwkvk"]
 frequency = 0.0172
@@ -18,3 +19,5 @@ tile_set = ExtResource("2_l7s0s")
 [node name="CornerTileLayer" type="TileMapLayer" parent="." unique_id=1212598827]
 position = Vector2(8, 8)
 tile_set = ExtResource("2_l7s0s")
+
+[node name="Boundaries" parent="." unique_id=241412120 instance=ExtResource("3_2ilfp")]
