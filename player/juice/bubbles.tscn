@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://di2fr5wd01t5t"]
+
+[ext_resource type="Texture2D" uid="uid://c0aycgi4vsp7i" path="res://assets/particles/bubble.png" id="1_kh4ov"]
+[ext_resource type="Script" uid="uid://3hrfkbuekby8" path="res://player/juice/bubbles.gd" id="2_6nxi5"]
+
+[sub_resource type="Gradient" id="Gradient_xptij"]
+colors = PackedColorArray(1, 1, 1, 0.3254902, 1, 1, 1, 0)
+
+[node name="Bubbles" type="CPUParticles2D" unique_id=1307049630]
+z_index = 10
+emitting = false
+texture = ExtResource("1_kh4ov")
+one_shot = true
+explosiveness = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(10, 1)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 9.8
+initial_velocity_max = 19.61
+color_ramp = SubResource("Gradient_xptij")
+script = ExtResource("2_6nxi5")
+
+[node name="Timer" type="Timer" parent="." unique_id=1270090010]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

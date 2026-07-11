@@ -17,6 +17,9 @@ script = ExtResource("1_xptij")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=474628985]
 texture = ExtResource("2_xptij")
 
+[node name="Marker2D" type="Marker2D" parent="Sprite2D" unique_id=1389679726]
+position = Vector2(0, 14)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1855838448]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
@@ -31,3 +34,9 @@ offset_top = 15.0
 offset_right = 12.0
 offset_bottom = 23.0
 show_percentage = false
+
+[node name="BoatParticleTimer" type="Timer" parent="." unique_id=1226650228]
+wait_time = 0.027
+autostart = true
+
+[connection signal="timeout" from="BoatParticleTimer" to="." method="_on_boat_particle_timer_timeout"]

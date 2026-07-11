@@ -10,6 +10,8 @@ const MAX_BOOST = 1.5
 
 const CAMERA_PAN_FACTOR = 1
 
+const BUBBLES = preload("uid://di2fr5wd01t5t")
+
 @onready var sprite_2d = $Sprite2D
 
 var angle
@@ -81,3 +83,12 @@ func _physics_process(delta):
 		sprite_2d.rotation = deg_to_rad(315)
 	
 	move_and_slide()
+
+
+func _on_boat_particle_timer_timeout() -> void:
+	if velocity.length() > 100:
+		var bubbles = BUBBLES.instantiate()
+		get_parent().add_child(bubbles)
+		bubbles.global_position = $Sprite2D/Marker2D.global_position
+		bubbles.rotation = sprite_2d.rotation
+		bubbles.emitting = true
