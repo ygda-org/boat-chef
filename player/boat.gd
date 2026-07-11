@@ -18,6 +18,10 @@ func _ready():
 	GameState.boat = self
 	$BoostBar.max_value = MAX_BOOST
 	$BoostBar.value = boost_amount
+	$Camera2D.limit_left = GameState.size.x / -2 * 16
+	$Camera2D.limit_right = GameState.size.x / 2 * 16
+	$Camera2D.limit_bottom = GameState.size.y / 2 * 16
+	$Camera2D.limit_top = GameState.size.y / -2 * 16
 
 func _physics_process(delta):
 	if GameState.in_restaurant:
@@ -53,7 +57,6 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, DECELERATION * delta)
 	velocity = velocity.limit_length(calc_max_speed)
 	$Camera2D.position = velocity * CAMERA_PAN_FACTOR
-	
 	# make logic for picking which frame to draw from sprite rotation
 	# maybe rework velocity system to make it based off rotation like tank controls? idk
 	
