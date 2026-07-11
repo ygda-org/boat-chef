@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb58feyabqp8m"]
 
-[ext_resource type="Script" uid="uid://diih7lcmoy417" path="res://enemies/shark.gd" id="1_127p0"]
+[ext_resource type="Script" uid="uid://diih7lcmoy417" path="res://enemies/shark/shark.gd" id="1_127p0"]
 [ext_resource type="PackedScene" uid="uid://w8ou61kumopo" path="res://enemies/player_detection.tscn" id="1_wbi65"]
 [ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="2_127p0"]
 

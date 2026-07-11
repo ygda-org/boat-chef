@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ggmoxc4vmxoo"]
 
-[ext_resource type="Script" uid="uid://yvftfgp273r8" path="res://storm/storm.gd" id="1_2jc1j"]
+[ext_resource type="Script" uid="uid://yvftfgp273r8" path="res://enemies/storm/storm.gd" id="1_2jc1j"]
 [ext_resource type="Texture2D" uid="uid://bxqmf3povndri" path="res://assets/programmer_art/cloud.png" id="2_uhs3t"]
 [ext_resource type="PackedScene" uid="uid://w8ou61kumopo" path="res://enemies/player_detection.tscn" id="3_uhs3t"]
 
