@@ -34,7 +34,7 @@ func generate_terrain():
 			# low = water
 			var distance_to_closest_island = Vector2i(x, y).distance_to(Vector2.ZERO)
 			if distance_to_closest_island < 20:
-				noise += 1 - distance_to_closest_island / 10.0
+				noise = 0.6
 				
 			var atlas : Vector2i
 			if noise < 0.4: # deep water
