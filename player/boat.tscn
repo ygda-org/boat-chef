@@ -39,4 +39,8 @@ show_percentage = false
 wait_time = 0.027
 autostart = true
 
+[node name="PlayerSpawnFinder" type="RayCast2D" parent="." unique_id=1225334925]
+target_position = Vector2(0, -50)
+collision_mask = 2
+
 [connection signal="timeout" from="BoatParticleTimer" to="." method="_on_boat_particle_timer_timeout"]
