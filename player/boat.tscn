@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://gcyfi1th04di"]
+
+[ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="1_38ni2"]
+[ext_resource type="Script" uid="uid://ce5smsbmncmp1" path="res://player/boat.gd" id="1_xptij"]
+
+[node name="Boat" type="CharacterBody2D" unique_id=1640580263]
+script = ExtResource("1_xptij")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=474628985]
+texture = ExtResource("1_38ni2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1855838448]
+position_smoothing_enabled = true

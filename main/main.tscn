@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://ccp3flae5vlf2"]
 
+[ext_resource type="PackedScene" uid="uid://gcyfi1th04di" path="res://player/boat.tscn" id="1_53q0u"]
+
 [node name="Main" type="Node2D" unique_id=1176585748]
+
+[node name="Boat" parent="." unique_id=1640580263 instance=ExtResource("1_53q0u")]
+position = Vector2(41, 45)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=972865170]
+offset_right = 40.0
+offset_bottom = 40.0
