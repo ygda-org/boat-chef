@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ch0s7fokc1447" path="res://player/restaurant/draggable_fruit.tscn" id="1_467cl"]
 [ext_resource type="Script" uid="uid://cf0pvxvalhl5h" path="res://player/restaurant/restaurant_ui.gd" id="1_pksog"]
+[ext_resource type="PackedScene" uid="uid://15vtysw33mom" path="res://player/restaurant/fruit_spawner.tscn" id="3_okdgx"]
+[ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="4_qjv2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynoh7"]
 size = Vector2(1989, 286)
@@ -112,5 +114,13 @@ offset_right = 980.0
 offset_bottom = 863.0
 text = "Blend
 "
+
+[node name="FruitSpawner" parent="." unique_id=1517058751 instance=ExtResource("3_okdgx")]
+offset_left = 53.0
+offset_top = 668.0
+offset_right = 189.0
+offset_bottom = 804.0
+pickup_texture = ExtResource("4_qjv2s")
+fruit_texture = ExtResource("4_qjv2s")
 
 [connection signal="pressed" from="Control/TempShapes/Button" to="." method="_on_button_pressed"]

@@ -25,6 +25,8 @@ func add_fruit(fruit):
 	return true
 
 func create_order():
+	if not hud:
+		return
 	var ticket = ORDER_TICKET.instantiate()
 	var order = get_new_order_resource()
 	ticket.order_resource = order

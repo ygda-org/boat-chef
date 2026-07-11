@@ -1,11 +1,15 @@
 extends RigidBody2D
 
 var fruit_type: int
+var texture_to_set
 
 var grabbed = false
 var mouse = false
 
 const FORCE_STRENGTH = 10000
+
+func _ready():
+	$Sprite2D.texture = texture_to_set
 
 func _process(delta):
 	if mouse and Input.is_action_just_pressed("left_click"):
