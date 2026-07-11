@@ -55,6 +55,7 @@ offset_right = 1947.0
 offset_bottom = 933.0
 
 [node name="ColorRect3" type="ColorRect" parent="Control/TempShapes" unique_id=958647279]
+z_index = -1000
 layout_mode = 0
 offset_left = -42.0
 offset_top = 812.0
