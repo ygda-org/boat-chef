@@ -20,5 +20,5 @@ func _on_button_down():
 	fruit.texture_to_set = fruit_texture
 	fruit.fruit_type = fruit_num
 	get_parent().get_parent().add_child(fruit)
-	fruit.global_position = global_position
+	fruit.global_position = get_global_mouse_position()
 	fruit.grabbed = true
