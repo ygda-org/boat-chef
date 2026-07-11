@@ -83,9 +83,9 @@ z_index = 1
 layout_mode = 1
 anchors_preset = -1
 offset_left = 927.0
-offset_top = 832.0
+offset_top = 943.0
 offset_right = 980.0
-offset_bottom = 863.0
+offset_bottom = 974.0
 text = "Blend
 "
 
