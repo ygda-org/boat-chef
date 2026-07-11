@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var boat = $"../../Boat"
-
 @onready var control = $Control
 
 var boat_in_area = false
