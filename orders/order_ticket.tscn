@@ -26,16 +26,18 @@ offset_right = -0.08001709
 offset_bottom = 0.07998657
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_g63pn")
 
 [node name="Background" type="TextureRect" parent="." unique_id=752705068]
-custom_maximum_size = Vector2(334.955, 573)
+custom_maximum_size = Vector2(334.955, 400)
 layout_mode = 0
 offset_left = -74.0
 offset_top = -51.0
 offset_right = 293.0
 offset_bottom = 522.0
 offset_transform_enabled = true
+mouse_filter = 2
 texture = ExtResource("2_1phc0")
 stretch_mode = 4
 
@@ -43,6 +45,7 @@ stretch_mode = 4
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Fruits" unique_id=1735426308]
 visible = false
@@ -52,6 +55,7 @@ offset_left = 4.0
 offset_top = 30.0
 offset_right = 79.0
 offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("2_2n20v")
 stretch_mode = 4
 
@@ -63,6 +67,7 @@ offset_left = 26.0
 offset_top = 58.0
 offset_right = 101.0
 offset_bottom = 133.0
+mouse_filter = 2
 texture = ExtResource("5_2n20v")
 stretch_mode = 4
 
@@ -74,6 +79,7 @@ offset_left = 3.0
 offset_top = 90.0
 offset_right = 78.0
 offset_bottom = 165.0
+mouse_filter = 2
 texture = ExtResource("5_2n20v")
 stretch_mode = 4
 
@@ -85,6 +91,7 @@ offset_left = 34.0
 offset_top = 118.0
 offset_right = 109.0
 offset_bottom = 193.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
@@ -96,6 +103,7 @@ offset_left = 7.0
 offset_top = 141.0
 offset_right = 82.0
 offset_bottom = 216.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
@@ -107,6 +115,7 @@ offset_left = 39.0
 offset_top = 160.0
 offset_right = 114.0
 offset_bottom = 235.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
@@ -118,6 +127,7 @@ offset_left = 12.0
 offset_top = 193.0
 offset_right = 87.0
 offset_bottom = 268.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
@@ -134,6 +144,7 @@ offset_left = -51.0
 offset_top = -130.0
 offset_right = 49.0
 offset_bottom = 70.0
+mouse_filter = 2
 texture = ExtResource("7_musx2")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
@@ -145,6 +156,7 @@ offset_top = 235.0
 offset_right = 207.0
 offset_bottom = 299.0
 scale = Vector2(0.778, 0.7)
+mouse_filter = 2
 step = 0.001
 texture_under = ExtResource("7_1phc0")
 texture_over = ExtResource("7_1phc0")

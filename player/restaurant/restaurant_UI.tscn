@@ -159,9 +159,9 @@ fruit_texture = ExtResource("3_1vpky")
 [node name="FruitSpawner2" parent="." unique_id=1127072335 instance=ExtResource("3_okdgx")]
 visible = false
 offset_left = 38.0
-offset_top = 136.0
-offset_right = 174.0
-offset_bottom = 272.0
+offset_top = 250.0
+offset_right = 230.0
+offset_bottom = 442.0
 pickup_texture = ExtResource("4_1vpky")
 fruit_texture = ExtResource("4_1vpky")
 fruit_num = 1

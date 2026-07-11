@@ -31,9 +31,6 @@ func _process(delta):
 	elif Input.is_action_just_released("left_click"):
 		grabbed = false
 	if grabbed:
-		var force = FORCE_STRENGTH*(get_global_mouse_position()-global_position).normalized()*delta
-		force *= (get_global_mouse_position()-global_position).length()/200
-		
 		var displacement_to_mouse = get_global_mouse_position() - global_position
 
 		var spring_force = displacement_to_mouse * spring_constant
