@@ -45,7 +45,7 @@ func generate_terrain():
 				atlas = SAND
 			else:
 				atlas = GRASS
-				if randf() < 0.1:
+				if randf() < 0.05:
 					var p = PICK_UP_FRUIT.instantiate()
 					$Decor.add_child(p)
 					p.position = Vector2(x * 16,y * 16)
