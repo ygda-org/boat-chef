@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0cagvs8ifquo"
+path="res://.godot/imported/island theme.ogg-948741159ded5b7ac4b761f6d83bab9d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/island theme.ogg"
+dest_files=["res://.godot/imported/island theme.ogg-948741159ded5b7ac4b761f6d83bab9d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=39.18
+bpm=98.0
+beat_count=0
+bar_beats=4

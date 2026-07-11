@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0p7aa2wfkyk5" path="res://player/restaurant/restaurant_world.tscn" id="5_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://j1am0k3yknp2" path="res://player/restaurant/restaurant_UI.tscn" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://ggmoxc4vmxoo" path="res://enemies/storm/storm.tscn" id="6_kfbq2"]
+[ext_resource type="AudioStream" uid="uid://0cagvs8ifquo" path="res://assets/music/island theme.ogg" id="7_4dugh"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 
@@ -25,3 +26,7 @@ position = Vector2(0, 160)
 layer = 2
 
 [node name="Inventory" parent="CanvasLayer" unique_id=2112623844 instance=ExtResource("4_c651c")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1581243815]
+stream = ExtResource("7_4dugh")
+autoplay = true
