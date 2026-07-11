@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://15vtysw33mom"]
 
-[ext_resource type="Texture2D" uid="uid://dijhhqo570114" path="res://assets/programmer_art/fruits/yellow.png" id="1_u1dcn"]
+[ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="1_u1dcn"]
 [ext_resource type="Script" uid="uid://bue0ls262um3o" path="res://player/restaurant/fruit_spawner.gd" id="1_uhqr8"]
 
 [node name="FruitSpawner" type="TextureButton" unique_id=1517058751]
+custom_maximum_size = Vector2(192, 192)
 offset_right = 96.0
 offset_bottom = 96.0
 texture_normal = ExtResource("1_u1dcn")

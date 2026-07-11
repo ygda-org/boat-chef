@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ch0s7fokc1447"]
 
 [ext_resource type="Script" uid="uid://c6ufp4braxmir" path="res://player/restaurant/draggable_fruit.gd" id="1_ox65a"]
-[ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="1_wwbow"]
+[ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="2_ox65a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5kg8m"]
 friction = 0.4
@@ -19,9 +19,13 @@ physics_material_override = SubResource("PhysicsMaterial_5kg8m")
 gravity_scale = 0.0
 script = ExtResource("1_ox65a")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328935690]
-scale = Vector2(3, 3)
-texture = ExtResource("1_wwbow")
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=880691461]
+custom_maximum_size = Vector2(192, 192)
+offset_left = -92.0
+offset_top = -84.0
+offset_right = 100.0
+offset_bottom = 108.0
+texture = ExtResource("2_ox65a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1330815323]
 shape = SubResource("CircleShape2D_5kg8m")
