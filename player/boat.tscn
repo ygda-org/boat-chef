@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccb336ldn8e6d" path="res://assets/programmer_art/boat.png" id="2_xptij"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xptij"]
+radius = 7.28011
 
 [node name="Boat" type="CharacterBody2D" unique_id=1640580263]
 collision_layer = 5
