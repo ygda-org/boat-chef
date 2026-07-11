@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gcyfi1th04di"]
 
-[ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="1_38ni2"]
 [ext_resource type="Script" uid="uid://ce5smsbmncmp1" path="res://player/boat.gd" id="1_xptij"]
+[ext_resource type="Texture2D" uid="uid://ccb336ldn8e6d" path="res://assets/programmer_art/boat.png" id="2_xptij"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwd6l"]
 radius = 63.0
@@ -16,7 +16,7 @@ platform_floor_layers = 0
 script = ExtResource("1_xptij")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=474628985]
-texture = ExtResource("1_38ni2")
+texture = ExtResource("2_xptij")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1855838448]
 position_smoothing_enabled = true
