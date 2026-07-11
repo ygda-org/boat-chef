@@ -5,6 +5,7 @@ var order_frequency: int = 10
 const ORDER_TICKET = preload("uid://5jxaioed8i86")
 
 var hud
+var terrain
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 0

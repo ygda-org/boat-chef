@@ -4,12 +4,13 @@ extends Node2D
 
 @export var altitude : FastNoiseLite
 
-@export var size : Vector2i
+var size : Vector2i = Vector2i(10,10)
 
 @onready var tilemap := $TileMapLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameState.terrain = self
 	randomize_noise(randi())
 	generate_terrain()
 
