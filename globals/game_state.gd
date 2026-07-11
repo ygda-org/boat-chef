@@ -8,7 +8,7 @@ var hud
 var terrain
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
-const MAX_INVENTORY = 0
+const MAX_INVENTORY = 10
 
 var orders = []
 
