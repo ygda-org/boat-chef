@@ -90,18 +90,62 @@ func set_corner_terrain():
 			var tile_b : Vector2i = tileID.get_cell_atlas_coords(cur_cord + Vector2i(1,0))
 			var tile_c : Vector2i = tileID.get_cell_atlas_coords(cur_cord + Vector2i(0,1))
 			var tile_d : Vector2i = tileID.get_cell_atlas_coords(cur_cord + Vector2i(1,1))
+			var corners : Array[Vector2i] = [tile_a, tile_b, tile_c, tile_d]
 			
-			var base_atlas : Vector2i
-			var cover_atlas : Vector2i
-			if DEEP_WATER in [tile_a, tile_b, tile_c, tile_d]:
-				base_atlas = DEEP_WATER
-				cover_atlas = SHALLOW_WATER
-			elif SHALLOW_WATER in [tile_a, tile_b, tile_c, tile_d]:
-				base_atlas = SHALLOW_WATER
-				cover_atlas = SAND
+			var base : Vector2i
+			var head : Vector2i
+			var offset : int = 0
+			if DEEP_WATER in corners:
+				base = DEEP_WATER
+				head = SHALLOW_WATER
+				offset = 8
+			elif SHALLOW_WATER in corners:
+				base = SHALLOW_WATER
+				head = SAND
+				offset = 4
 			else:
-				base_atlas = SAND
-				cover_atlas = GRASS
+				base = SAND
+				head = GRASS
+			#ABCD
+			#AB
+			#CD
+			match corners:
+				[base, base, base, base]:
+					if corners[0] == DEEP_WATER:
+						corner_tile.set_cell(cur_cord, 1, Vector2i(8,3))
+					else:
+						corner_tile.set_cell(cur_cord, 1, Vector2i(5 + offset,1))
+				[base, base, base, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(0 + offset,0))
+				[base, base, head, base]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,0))
+				[base, base, head, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,0))
+				[base, head, base, base]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(0 + offset,2))
+				[base, head, base, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(0 + offset,1))
+				[base, head, head, base]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,0))
+				[base, head, head, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,3))
+				[head, base, base, base]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,2))
+				[head, base, base, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,1))
+				[head, base, head, base]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,1))
+				[head, base, head, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,3))
+				[head, head, base, base]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,2))
+				[head, head, base, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,2))
+				[head, head, head, base]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,3))
+				[head, head, head, head]:
+					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,1))
+				
 
 func generate_terrain():
 	set_terrain_id()
