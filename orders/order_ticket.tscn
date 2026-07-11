@@ -1,110 +1,135 @@
 [gd_scene format=3 uid="uid://5jxaioed8i86"]
 
 [ext_resource type="Script" uid="uid://bsw0qhrmybx1m" path="res://orders/order_ticket.gd" id="1_g63pn"]
+[ext_resource type="Texture2D" uid="uid://bv6l7e7bb6j6e" path="res://assets/ui/order.png" id="2_1phc0"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_2n20v"]
-[ext_resource type="Texture2D" uid="uid://bpsq8em4s4yj4" path="res://assets/fruits/White fruit.png" id="3_2n20v"]
 [ext_resource type="Texture2D" uid="uid://itr02jcbacy8" path="res://assets/fruits/Red fruit.PNG" id="4_2n20v"]
 [ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="5_2n20v"]
-[ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="6_2n20v"]
-[ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="6_musx2"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_mbcxf"]
-font_size = 24
+[ext_resource type="Texture2D" uid="uid://ctdsowk16vqrc" path="res://assets/ui/scribble_outline.png" id="7_1phc0"]
+[ext_resource type="Texture2D" uid="uid://w78wds8vglcx" path="res://assets/decor/glass_1.png" id="7_musx2"]
+[ext_resource type="Texture2D" uid="uid://dhvqn1hwpu7e2" path="res://assets/ui/scribble.png" id="8_8upnb"]
 
 [node name="OrderTicket" type="Control" unique_id=441869335]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.19900002
+anchor_bottom = 0.349
+offset_right = -0.08001709
+offset_bottom = 0.07998657
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g63pn")
 
-[node name="Panel" type="Panel" parent="." unique_id=102788900]
+[node name="Background" type="TextureRect" parent="." unique_id=752705068]
+custom_maximum_size = Vector2(334.955, 573)
 layout_mode = 0
-offset_right = 202.0
-offset_bottom = 231.0
+offset_left = -74.0
+offset_top = -51.0
+offset_right = 293.0
+offset_bottom = 522.0
+offset_transform_enabled = true
+texture = ExtResource("2_1phc0")
+stretch_mode = 4
 
-[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=244520645]
-custom_maximum_size = Vector2(100, -1)
+[node name="Fruits" type="Control" parent="." unique_id=925422938]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Fruits" unique_id=1735426308]
+visible = false
+custom_maximum_size = Vector2(75, 75)
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 248.0
-columns = 2
-
-[node name="Sprite2DBlue" type="TextureRect" parent="Panel/GridContainer" unique_id=563002370]
-custom_maximum_size = Vector2(32, 64)
-layout_mode = 2
+offset_left = 4.0
+offset_top = 30.0
+offset_right = 79.0
+offset_bottom = 105.0
 texture = ExtResource("2_2n20v")
-expand_mode = 5
+stretch_mode = 4
 
-[node name="LabelBlue" type="Label" parent="Panel/GridContainer" unique_id=1248081904]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_mbcxf")
-
-[node name="Sprite2DWhite" type="TextureRect" parent="Panel/GridContainer" unique_id=1248012814]
-custom_maximum_size = Vector2(32, 64)
-layout_mode = 2
-texture = ExtResource("3_2n20v")
-expand_mode = 5
-
-[node name="LabelWhite" type="Label" parent="Panel/GridContainer" unique_id=1863148537]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_mbcxf")
-
-[node name="Sprite2DRed" type="TextureRect" parent="Panel/GridContainer" unique_id=2124329309]
-custom_maximum_size = Vector2(32, 64)
-layout_mode = 2
-texture = ExtResource("4_2n20v")
-expand_mode = 5
-
-[node name="LabelRed" type="Label" parent="Panel/GridContainer" unique_id=1110471953]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_mbcxf")
-
-[node name="Sprite2DPurple" type="TextureRect" parent="Panel/GridContainer" unique_id=863677876]
-custom_maximum_size = Vector2(32, 64)
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="Fruits" unique_id=276881766]
+visible = false
+custom_maximum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 58.0
+offset_right = 101.0
+offset_bottom = 133.0
 texture = ExtResource("5_2n20v")
-expand_mode = 5
+stretch_mode = 4
 
-[node name="LabelPurple" type="Label" parent="Panel/GridContainer" unique_id=497974888]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_mbcxf")
-
-[node name="Sprite2DYellow" type="TextureRect" parent="Panel/GridContainer" unique_id=8375541]
-custom_minimum_size = Vector2(32, 0)
-custom_maximum_size = Vector2(32, 64)
-layout_mode = 2
-texture = ExtResource("6_musx2")
-expand_mode = 5
-
-[node name="LabelYellow" type="Label" parent="Panel/GridContainer" unique_id=1476011525]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_mbcxf")
-
-[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=402418786]
-modulate = Color(0.6284253, 0.24902415, 0.32778266, 1)
-custom_minimum_size = Vector2(100, 0)
-custom_maximum_size = Vector2(100, -1)
+[node name="TextureRect3" type="TextureRect" parent="Fruits" unique_id=1699792962]
+visible = false
+custom_maximum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 91.0
-offset_top = 6.0
-offset_right = 191.0
-offset_bottom = 154.0
-texture = ExtResource("6_2n20v")
+offset_left = 3.0
+offset_top = 90.0
+offset_right = 78.0
+offset_bottom = 165.0
+texture = ExtResource("5_2n20v")
+stretch_mode = 4
 
-[node name="TimeBar" type="ProgressBar" parent="." unique_id=414787504]
+[node name="TextureRect4" type="TextureRect" parent="Fruits" unique_id=1466391906]
+visible = false
+custom_maximum_size = Vector2(75, 75)
 layout_mode = 0
-offset_left = 96.0
-offset_top = 158.0
-offset_right = 190.0
-offset_bottom = 185.0
-show_percentage = false
+offset_left = 34.0
+offset_top = 118.0
+offset_right = 109.0
+offset_bottom = 193.0
+texture = ExtResource("4_2n20v")
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="Fruits" unique_id=1243732414]
+visible = false
+custom_maximum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 141.0
+offset_right = 82.0
+offset_bottom = 216.0
+texture = ExtResource("4_2n20v")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="Fruits" unique_id=86663906]
+visible = false
+custom_maximum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 39.0
+offset_top = 160.0
+offset_right = 114.0
+offset_bottom = 235.0
+texture = ExtResource("4_2n20v")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="Fruits" unique_id=1916295394]
+visible = false
+custom_maximum_size = Vector2(75, 75)
+layout_mode = 0
+offset_left = 12.0
+offset_top = 193.0
+offset_right = 87.0
+offset_bottom = 268.0
+texture = ExtResource("4_2n20v")
+stretch_mode = 4
+
+[node name="Glass" type="TextureRect" parent="." unique_id=763982105]
+custom_maximum_size = Vector2(100, 200)
+layout_mode = 0
+offset_left = 94.0
+offset_top = 42.0
+offset_right = 194.0
+offset_bottom = 242.0
+texture = ExtResource("7_musx2")
+stretch_mode = 4
+
+[node name="TimeBar" type="TextureProgressBar" parent="." unique_id=1224445864]
+layout_mode = 0
+offset_left = 26.999998
+offset_top = 235.0
+offset_right = 207.0
+offset_bottom = 299.0
+scale = Vector2(0.778, 0.7)
+texture_under = ExtResource("7_1phc0")
+texture_over = ExtResource("7_1phc0")
+texture_progress = ExtResource("8_8upnb")
