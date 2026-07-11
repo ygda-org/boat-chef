@@ -10,6 +10,10 @@ size = Vector2(64, 64)
 [node name="Shark" type="CharacterBody2D" unique_id=954468664]
 collision_layer = 2
 collision_mask = 2
+motion_mode = 1
+wall_min_slide_angle = 3.1415927
+platform_on_leave = 2
+platform_floor_layers = 0
 script = ExtResource("1_127p0")
 
 [node name="PlayerDetection" parent="." unique_id=404898301 instance=ExtResource("1_wbi65")]
