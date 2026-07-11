@@ -3,16 +3,16 @@ extends Control
 var order_resource : Order
 
 const AQUABERRY = preload("uid://c4fgvek4ht1hi")
-const PURPLE_FRUIT = preload("uid://8wadg5f5bqtg")
-const RED_FRUIT = preload("uid://itr02jcbacy8")
 const WHITE_FRUIT = preload("uid://bpsq8em4s4yj4")
+const RED_FRUIT = preload("uid://itr02jcbacy8")
+const PURPLE_FRUIT = preload("uid://8wadg5f5bqtg")
 const YELLOW_FRUIT = preload("uid://bdxfbunt02bfn")
 
 var fruits = [
 	AQUABERRY,
-	PURPLE_FRUIT,
-	RED_FRUIT,
 	WHITE_FRUIT,
+	RED_FRUIT,
+	PURPLE_FRUIT,
 	YELLOW_FRUIT
 ]
 
@@ -38,13 +38,13 @@ func _ready():
 			child_idx += 1
 		fruit_idx += 1
 	base_color = base_color/child_idx
-	var color : Color = Color(base_color.x, base_color.y, base_color.z)
+	var color : Color = Color(base_color.x/255.0, base_color.y/255.0, base_color.z/255.0)
 	$Fill.texture.gradient.set_color(0, color)
+	$Fill.texture.gradient.set_color(1, Color(1.0, 1.0, 1.0, 1.0))
 	$TimeBar.max_value = order_resource.order_dur
 	$TimeBar.value = $TimeBar.max_value
 
 func _process(delta : float) -> void:
-	print($TimeBar.value)
 	$TimeBar.value -= delta
 	if $TimeBar.value == 0:
 		GameState.order_failed()
