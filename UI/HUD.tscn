@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7p5ik15uw5vx" path="res://UI/HUD.gd" id="1_62wf1"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_gppie"]
-[ext_resource type="Texture2D" uid="uid://d0wv7h4kuv7rr" path="res://assets/programmer_art/fruits/brown.png" id="3_f2511"]
+[ext_resource type="Texture2D" uid="uid://bpsq8em4s4yj4" path="res://assets/fruits/White fruit.png" id="3_gppie"]
 [ext_resource type="Texture2D" uid="uid://itr02jcbacy8" path="res://assets/fruits/Red fruit.PNG" id="4_2ptjp"]
 [ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="5_md4fy"]
 [ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="6_7i7fj"]
@@ -39,12 +39,12 @@ layout_mode = 2
 text = "1"
 label_settings = SubResource("LabelSettings_c651c")
 
-[node name="Sprite2DBrown" type="TextureRect" parent="GridContainer" unique_id=118346165]
+[node name="Sprite2DWhite" type="TextureRect" parent="GridContainer" unique_id=118346165]
 layout_mode = 2
-texture = ExtResource("3_f2511")
+texture = ExtResource("3_gppie")
 expand_mode = 5
 
-[node name="LabelBrown" type="Label" parent="GridContainer" unique_id=237337228]
+[node name="LabelWhite" type="Label" parent="GridContainer" unique_id=237337228]
 layout_mode = 2
 text = "1"
 label_settings = SubResource("LabelSettings_c651c")
