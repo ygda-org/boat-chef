@@ -4,7 +4,7 @@ const ACCELERATION = 150
 const DECELERATION = 200
 const MAX_SPEED = 200
 
-const BOOST_MULTIPLIER = 1.5
+const BOOST_MULTIPLIER = 1.8
 const MAX_BOOST = 1.5
 @onready var boost_amount = MAX_BOOST
 
