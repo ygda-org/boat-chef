@@ -7,7 +7,7 @@ const ORDER_TICKET = preload("uid://5jxaioed8i86")
 var hud
 var boat
 var terrain
-var restaurant_ui
+var restaurant_ui : Node2D
 var in_restaurant = false
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
