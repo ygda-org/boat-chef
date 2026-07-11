@@ -1,6 +1,6 @@
 extends Node2D
 
-#const PLANT = preload("uid://drl6ydjryc0mk")
+const PICK_UP_FRUIT = preload("uid://de8qg8j7lpgiu")
 
 const DEEP_WATER = Vector2i(5,1)
 const SHALLOW_WATER = Vector2i(7,0)
@@ -13,7 +13,6 @@ var size : Vector2i = Vector2i(300,300)
 
 @onready var tilemap := $TileMapLayer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.terrain = self
 	randomize_noise(randi())
@@ -44,12 +43,12 @@ func generate_terrain():
 				atlas = SHALLOW_WATER
 			elif noise < 0.75: # sand
 				atlas = SAND
-				#if randf() < 0.1:
-					#var p = PLANT.instantiate()
-					#$Decor.add_child(p)
-					#p.position = Vector2(x * 16,y * 16)
 			else:
 				atlas = GRASS
+				if randf() < 0.1:
+					var p = PICK_UP_FRUIT.instantiate()
+					$Decor.add_child(p)
+					p.position = Vector2(x * 16,y * 16)
 			
 			tilemap.set_cell(Vector2(x,y), 0, atlas)
 
