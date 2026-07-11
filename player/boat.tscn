@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://ce5smsbmncmp1" path="res://player/boat.gd" id="1_xptij"]
 [ext_resource type="Texture2D" uid="uid://ccb336ldn8e6d" path="res://assets/programmer_art/boat.png" id="2_xptij"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwd6l"]
-radius = 6.0
-height = 28.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xptij"]
 
 [node name="Boat" type="CharacterBody2D" unique_id=1640580263]
 collision_layer = 5
@@ -24,4 +22,4 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846610951]
-shape = SubResource("CapsuleShape2D_jwd6l")
+shape = SubResource("CircleShape2D_xptij")
