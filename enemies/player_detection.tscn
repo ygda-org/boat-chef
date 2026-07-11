@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://w8ou61kumopo"]
+
+[ext_resource type="Script" uid="uid://cbx3nubrt8xi4" path="res://enemies/player_detection.gd" id="1_fqx46"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0es7p"]
+radius = 100.0
+
+[node name="PlayerDetection" type="Area2D" unique_id=404898301]
+collision_layer = 0
+script = ExtResource("1_fqx46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=684019510]
+shape = SubResource("CircleShape2D_0es7p")
