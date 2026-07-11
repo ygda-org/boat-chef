@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://j1am0k3yknp2"]
 
-[ext_resource type="PackedScene" uid="uid://ch0s7fokc1447" path="res://player/restaurant/draggable_fruit.tscn" id="1_467cl"]
 [ext_resource type="Script" uid="uid://cf0pvxvalhl5h" path="res://player/restaurant/restaurant_ui.gd" id="1_pksog"]
+[ext_resource type="PackedScene" uid="uid://15vtysw33mom" path="res://player/restaurant/fruit_spawner.tscn" id="3_okdgx"]
+[ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="4_qjv2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynoh7"]
 size = Vector2(1989, 286)
@@ -18,10 +19,9 @@ points = PackedVector2Array(866, 800, 1045, 800, 1095, 464, 809, 464)
 [node name="RestaurantUi" type="Node2D" unique_id=1804860226]
 script = ExtResource("1_pksog")
 
-[node name="DraggableFruit" parent="." unique_id=139259506 instance=ExtResource("1_467cl")]
-position = Vector2(411, 395)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=93602012]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1401690443]
 position = Vector2(951.5, 950)
@@ -48,6 +48,8 @@ scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_jyp3o")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=239054513]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=747126273]
 shape = SubResource("ConvexPolygonShape2D_5kg8m")
@@ -112,5 +114,13 @@ offset_right = 980.0
 offset_bottom = 863.0
 text = "Blend
 "
+
+[node name="FruitSpawner" parent="." unique_id=1517058751 instance=ExtResource("3_okdgx")]
+offset_left = 53.0
+offset_top = 668.0
+offset_right = 189.0
+offset_bottom = 804.0
+pickup_texture = ExtResource("4_qjv2s")
+fruit_texture = ExtResource("4_qjv2s")
 
 [connection signal="pressed" from="Control/TempShapes/Button" to="." method="_on_button_pressed"]

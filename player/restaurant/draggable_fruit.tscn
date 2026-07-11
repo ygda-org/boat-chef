@@ -11,6 +11,8 @@ bounce = 0.5
 radius = 48.0
 
 [node name="DraggableFruit" type="RigidBody2D" unique_id=139259506]
+collision_layer = 8
+collision_mask = 8
 input_pickable = true
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_5kg8m")

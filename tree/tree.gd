@@ -6,6 +6,8 @@ var boat_in_area = false
 
 var fruit = (randi_range(0,4))
 
+const TREE_PARTICLES = preload("uid://blfwcc7chqy1h")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -21,6 +23,10 @@ func _process(_delta):
 	# If the boat is within range and player press E, increase inventory by 1 and queue_free
 	if boat_in_area and Input.is_action_just_pressed("interact"):
 		if GameState.add_fruit(fruit):
+			var particles = TREE_PARTICLES.instantiate()
+			get_parent().add_child(particles)
+			particles.global_position = global_position
+			particles.emitting = true
 			queue_free()
 
 func _on_area_2d_body_entered(_body):

@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://de8qg8j7lpgiu"]
 
-[ext_resource type="Script" uid="uid://8bkh62a4oysy" path="res://pick_up_fruit/pick_up_fruit.gd" id="1_j6gxb"]
-[ext_resource type="Texture2D" uid="uid://dqtm6nrcp7a2x" path="res://assets/programmer_art/tree.png" id="2_6xtks"]
+[ext_resource type="Script" uid="uid://8bkh62a4oysy" path="res://tree/tree.gd" id="1_tqxsf"]
+[ext_resource type="Texture2D" uid="uid://dqtm6nrcp7a2x" path="res://assets/programmer_art/tree.png" id="2_303ym"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwd6l"]
 radius = 39.051247
 
-[node name="PickUpFruit" type="Node2D" unique_id=1327538213]
+[node name="Tree" type="Node2D" unique_id=1327538213]
 z_index = 1
-script = ExtResource("1_j6gxb")
+script = ExtResource("1_tqxsf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=105313267]
 collision_layer = 0
@@ -31,7 +31,7 @@ text = "Press E to Collect Fruit"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=662812164]
 position = Vector2(0, -8)
-texture = ExtResource("2_6xtks")
+texture = ExtResource("2_303ym")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

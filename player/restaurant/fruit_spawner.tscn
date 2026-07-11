@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://15vtysw33mom"]
+
+[ext_resource type="Script" uid="uid://bue0ls262um3o" path="res://player/restaurant/fruit_spawner.gd" id="1_uhqr8"]
+
+[node name="FruitSpawner" type="TextureButton" unique_id=1517058751]
+offset_right = 136.0
+offset_bottom = 136.0
+script = ExtResource("1_uhqr8")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
