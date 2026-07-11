@@ -14,9 +14,10 @@ radius = 47.010635
 collision_layer = 8
 collision_mask = 8
 input_pickable = true
-mass = 0.2
+mass = 0.08
 physics_material_override = SubResource("PhysicsMaterial_5kg8m")
 gravity_scale = 0.0
+angular_damp = 7.423
 script = ExtResource("1_ox65a")
 
 [node name="Sprite2D" type="TextureRect" parent="." unique_id=880691461]

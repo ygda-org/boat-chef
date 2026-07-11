@@ -9,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://w78wds8vglcx" path="res://assets/decor/glass_1.png" id="7_musx2"]
 [ext_resource type="Texture2D" uid="uid://dhvqn1hwpu7e2" path="res://assets/ui/scribble.png" id="8_8upnb"]
 
+[sub_resource type="Gradient" id="Gradient_1phc0"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p5txo"]
+gradient = SubResource("Gradient_1phc0")
+width = 120
+height = 120
+fill_from = Vector2(1, 1)
+
 [node name="OrderTicket" type="Control" unique_id=441869335]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 3
@@ -113,15 +123,22 @@ offset_bottom = 268.0
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
-[node name="Glass" type="TextureRect" parent="." unique_id=763982105]
+[node name="Fill" type="Polygon2D" parent="." unique_id=433512423]
+texture_repeat = 2
+position = Vector2(141, 183)
+texture = SubResource("GradientTexture2D_p5txo")
+polygon = PackedVector2Array(-29, -105, -32, -82, -42, -39, -36, -11, 0, 5, 34, -10, 41, -37, 28, -83, 28, -103, 29, -114, 8, -119, -21, -117, -32, -111)
+uv = PackedVector2Array(0, 0, 0, 64, 64, 64, 64, 0)
+
+[node name="Glass" type="TextureRect" parent="Fill" unique_id=763982105]
 custom_maximum_size = Vector2(100, 200)
-layout_mode = 0
-offset_left = 94.0
-offset_top = 42.0
-offset_right = 194.0
-offset_bottom = 242.0
+offset_left = -51.0
+offset_top = -130.0
+offset_right = 49.0
+offset_bottom = 70.0
 texture = ExtResource("7_musx2")
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="TimeBar" type="TextureProgressBar" parent="." unique_id=1224445864]
 layout_mode = 0

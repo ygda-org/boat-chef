@@ -8,8 +8,8 @@ var mouse = false
 
 const FORCE_STRENGTH = 10000
 
-var spring_constant: float = 33
-var damping_constant: float = 5
+var spring_constant: float = 250
+var damping_constant: float = 50
 
 func _ready():
 	$Sprite2D.texture = texture_to_set
@@ -28,7 +28,7 @@ func _process(delta):
 		var spring_force = displacement_to_mouse * spring_constant
 		var damping_force = -linear_velocity * damping_constant
 			
-		apply_force(spring_force + damping_force)
+		apply_force((spring_force + damping_force) * delta)
 		
 	else:
 		apply_force(Vector2(0, 100))

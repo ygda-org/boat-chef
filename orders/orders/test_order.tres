@@ -1,10 +1,8 @@
 [gd_resource type="Resource" script_class="Order" format=3 uid="uid://upbygo6fbx2h"]
 
 [ext_resource type="Script" uid="uid://ct66r028r4ttr" path="res://orders/base_order.gd" id="1_cj7c5"]
-[ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="1_r0xs3"]
 
 [resource]
 script = ExtResource("1_cj7c5")
-fruit_requirements = [1, 0, 1, 1, 0]
-icon = ExtResource("1_r0xs3")
+fruit_requirements = [2, 0, 1, 1, 0]
 metadata/_custom_type_script = "uid://ct66r028r4ttr"
