@@ -62,6 +62,7 @@ interact={
 
 2d_physics/layer_1="Boat"
 2d_physics/layer_2="Terrain"
+2d_physics/layer_3="Fruit Collection"
 
 [physics]
 
