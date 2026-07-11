@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://j1am0k3yknp2"]
 
 [ext_resource type="Script" uid="uid://cf0pvxvalhl5h" path="res://player/restaurant/restaurant_ui.gd" id="1_pksog"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="2_g50oe"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="3_1vpky"]
+[ext_resource type="AudioStream" uid="uid://ccqxhh44mwssp" path="res://assets/sfx/blendervrmmmmm.mp3" id="3_ggrnm"]
 [ext_resource type="PackedScene" uid="uid://15vtysw33mom" path="res://player/restaurant/fruit_spawner.tscn" id="3_okdgx"]
 [ext_resource type="Texture2D" uid="uid://bpsq8em4s4yj4" path="res://assets/fruits/White fruit.png" id="4_1vpky"]
 [ext_resource type="Texture2D" uid="uid://itr02jcbacy8" path="res://assets/fruits/Red fruit.PNG" id="5_1vpky"]
@@ -88,6 +90,9 @@ offset_right = 980.0
 offset_bottom = 974.0
 text = "Blend
 "
+
+[node name="SfxPlayer" parent="Control/TempShapes/Button" unique_id=1644282153 instance=ExtResource("2_g50oe")]
+stream = ExtResource("3_ggrnm")
 
 [node name="Button2" type="Button" parent="Control/TempShapes" unique_id=1901180999]
 z_index = 3

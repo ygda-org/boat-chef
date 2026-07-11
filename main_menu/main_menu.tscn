@@ -89,6 +89,7 @@ sprite_frames = SubResource("SpriteFrames_jwd6l")
 
 [node name="YGDASting" parent="YGDALogo" unique_id=1644282153 instance=ExtResource("3_bws42")]
 stream = ExtResource("4_bws42")
+variate = true
 
 [node name="ColorRect" type="ColorRect" parent="YGDALogo" unique_id=1787181921]
 offset_right = 1920.0

@@ -4,4 +4,4 @@
 
 [node name="SfxPlayer" type="AudioStreamPlayer" unique_id=1644282153]
 script = ExtResource("1_ckvhc")
-metadata/variate = false
+variate = true
