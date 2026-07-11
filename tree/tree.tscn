@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://8bkh62a4oysy" path="res://tree/tree.gd" id="1_tqxsf"]
 [ext_resource type="Texture2D" uid="uid://dqtm6nrcp7a2x" path="res://assets/programmer_art/tree.png" id="2_303ym"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="3_303ym"]
+[ext_resource type="AudioStream" uid="uid://dp1fb2mp64i7x" path="res://assets/sfx/pick_up_fruit.mp3" id="4_rec30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwd6l"]
 radius = 39.051247
@@ -24,6 +26,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control" unique_id=1836228505]
+z_index = 3
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -32,6 +35,9 @@ text = "Press E to Collect Fruit"
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=662812164]
 position = Vector2(0, -8)
 texture = ExtResource("2_303ym")
+
+[node name="SfxPlayer" parent="." unique_id=1644282153 instance=ExtResource("3_303ym")]
+stream = ExtResource("4_rec30")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
