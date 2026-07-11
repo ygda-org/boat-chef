@@ -23,3 +23,6 @@ func _process(delta):
 	if $TimeBar.value == 0:
 		GameState.order_failed()
 		queue_free()
+
+func order_complete():
+	queue_free()

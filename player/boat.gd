@@ -15,10 +15,13 @@ const CAMERA_PAN_FACTOR = 1
 var angle
 
 func _ready():
+	GameState.boat = self
 	$BoostBar.max_value = MAX_BOOST
 	$BoostBar.value = boost_amount
 
 func _physics_process(delta):
+	if GameState.in_restaurant:
+		return
 	var calc_max_speed = MAX_SPEED
 	var calc_acceleration = ACCELERATION
 	if Input.is_action_pressed("boost") and boost_amount >= 0:

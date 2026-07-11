@@ -5,7 +5,10 @@ var order_frequency: int = 10
 const ORDER_TICKET = preload("uid://5jxaioed8i86")
 
 var hud
+var boat
 var terrain
+var restaurant_ui
+var in_restaurant = false
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 10
@@ -14,6 +17,16 @@ func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
 		create_order()
 	elapsed_time += delta
+
+func enter_restaurant():
+	in_restaurant = true
+	boat.get_node("Camera2D").enabled = false
+	restaurant_ui.get_node("Camera2D").enabled = true
+
+func exit_restaurant():
+	in_restaurant = false
+	boat.get_node("Camera2D").enabled = true
+	restaurant_ui.get_node("Camera2D").enabled = false
 
 func add_fruit(fruit):
 	var inventory_size = 0
@@ -37,3 +50,10 @@ func get_new_order_resource():
 
 func order_failed():
 	print("ORDER FAILED")
+
+func check_order(blend):
+	for ticket in hud.get_node("OrdersList").get_children():
+		var ticket_blend = ticket.order_resource.fruit_requirements
+		if ticket_blend == blend:
+			ticket.order_complete()
+			break
