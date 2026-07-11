@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfxy6xapqoqk4" path="res://player/restaurant/restaurant_world.gd" id="1_0a146"]
 [ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="2_r2cku"]
-[ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/programmer_set.tres" id="3_r2cku"]
+[ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="3_r2cku"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_70mun"]
 radius = 117.0

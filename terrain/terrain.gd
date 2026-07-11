@@ -11,7 +11,7 @@ const GRASS = Vector2i(3,3)
 
 var size : Vector2i = Vector2i(300,300)
 
-@onready var tilemap := $TileMapLayer
+@onready var tileID := $TileIDLayer
 
 func _ready() -> void:
 	GameState.terrain = self
@@ -25,7 +25,7 @@ func clear_decor():
 	for c in $Decor.get_children():
 		c.queue_free()
 
-func generate_terrain():
+func set_terrain_id():
 	for y : int in range(-size.y/2, size.y/2):
 		for x : int in range(-size.x/2, size.x/2):
 			var noise := altitude.get_noise_2d(x, y)
@@ -50,7 +50,37 @@ func generate_terrain():
 					$Decor.add_child(p)
 					p.position = Vector2(x * 16,y * 16)
 			
-			tilemap.set_cell(Vector2(x,y), 0, atlas)
+			tileID.set_cell(Vector2(x,y), 0, atlas)
+
+func fix_terrain_id():
+	var neighbors : Array[Vector2i] = [
+		Vector2i.DOWN,
+		Vector2i.UP,
+		Vector2i.LEFT,
+		Vector2i.RIGHT,
+		Vector2i(1,1),
+		Vector2i(-1,1),
+		Vector2i(1,-1),
+		Vector2i(-1,-1),
+	]
+	for y : int in range(-size.y/2, size.y/2):
+		for x : int in range(-size.x/2, size.x/2):
+			var cur_tile_cord : Vector2i = Vector2i(x,y)
+			var atlas : Vector2i = tileID.get_cell_atlas_coords(cur_tile_cord)
+			if atlas == DEEP_WATER or atlas == SHALLOW_WATER:
+				continue
+			for n : Vector2i in neighbors:
+				var neighbor_atlas : Vector2i = tileID.get_cell_atlas_coords(cur_tile_cord + n)
+				if atlas == SAND and neighbor_atlas == DEEP_WATER:
+					tileID.set_cell(cur_tile_cord + n, 0, SHALLOW_WATER)
+					break
+				if atlas == GRASS and neighbor_atlas == SHALLOW_WATER:
+					tileID.set_cell(cur_tile_cord + n, 0, SAND)
+					break
+func generate_terrain():
+	set_terrain_id()
+	fix_terrain_id()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

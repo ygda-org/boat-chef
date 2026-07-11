@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5d8815yxgqtd"]
 
 [ext_resource type="Script" uid="uid://dqtrj2bojjmjt" path="res://terrain/terrain.gd" id="1_0rasl"]
-[ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/programmer_set.tres" id="2_l7s0s"]
+[ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="2_l7s0s"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xwkvk"]
 frequency = 0.0172
@@ -12,5 +12,8 @@ altitude = SubResource("FastNoiseLite_xwkvk")
 
 [node name="Decor" type="Node2D" parent="." unique_id=767538614]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1431218462]
+[node name="TileIDLayer" type="TileMapLayer" parent="." unique_id=1431218462]
+tile_set = ExtResource("2_l7s0s")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1212598827]
 tile_set = ExtResource("2_l7s0s")
