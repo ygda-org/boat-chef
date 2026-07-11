@@ -2,9 +2,14 @@ extends Node2D
 
 #const PLANT = preload("uid://drl6ydjryc0mk")
 
+const DEEP_WATER = Vector2i(5,1)
+const SHALLOW_WATER = Vector2i(7,0)
+const SAND = Vector2i(3,0)
+const GRASS = Vector2i(3,3)
+
 @export var altitude : FastNoiseLite
 
-var size : Vector2i = Vector2i(100,100)
+var size : Vector2i = Vector2i(300,300)
 
 @onready var tilemap := $TileMapLayer
 
@@ -22,23 +27,30 @@ func clear_decor():
 		c.queue_free()
 
 func generate_terrain():
-	for x : int in range(size.x):
-		for y : int in range(size.y):
+	for x : int in range(-size.x/2, size.x/2):
+		for y : int in range(-size.y/2, size.y/2):
 			var noise := altitude.get_noise_2d(x, y)
-			noise = (noise + 1)/2.0
+			noise = (noise + 1)/2.0 # maps noise to [0, 1]
+			# high = grass
+			# low = water
+			var distance_to_closest_island = Vector2i(x, y).distance_to(Vector2.ZERO)
+			if distance_to_closest_island < 20:
+				noise += 1 - distance_to_closest_island / 10.0
+				
 			var atlas : Vector2i
-			if noise < 0.4:
-				atlas = Vector2i(5,1)
-			elif noise < 0.7:
-				atlas = Vector2i(7,0)
-			elif noise < 0.75:
-				atlas = Vector2i(3,0)
+			if noise < 0.4: # deep water
+				atlas = DEEP_WATER
+			elif noise < 0.7: # shallow water
+				atlas = SHALLOW_WATER
+			elif noise < 0.75: # sand
+				atlas = SAND
 				#if randf() < 0.1:
 					#var p = PLANT.instantiate()
 					#$Decor.add_child(p)
 					#p.position = Vector2(x * 16,y * 16)
 			else:
-				atlas = Vector2i(3,3)
+				atlas = GRASS
+			
 			tilemap.set_cell(Vector2(x,y), 0, atlas)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
