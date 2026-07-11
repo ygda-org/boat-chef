@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://gcyfi1th04di" path="res://player/boat.tscn" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://b5d8815yxgqtd" path="res://terrain/terrain.tscn" id="1_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://de8qg8j7lpgiu" path="res://pick_up_fruit/pick_up_fruit.tscn" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://dvk8alcqvh2tp" path="res://inventory/inventory.tscn" id="4_c651c"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 
@@ -14,3 +16,12 @@ position = Vector2(41, 45)
 [node name="ColorRect" type="ColorRect" parent="." unique_id=972865170]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Node" type="Node" parent="." unique_id=951385476]
+
+[node name="Node2D" parent="Node" unique_id=1327538213 instance=ExtResource("3_xwkvk")]
+position = Vector2(448, 249)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=781075957]
+
+[node name="Inventory" parent="CanvasLayer" unique_id=2112623844 instance=ExtResource("4_c651c")]

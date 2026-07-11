@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dvk8alcqvh2tp"]
+
+[ext_resource type="Script" uid="uid://b7p5ik15uw5vx" path="res://inventory/inventory.gd" id="1_62wf1"]
+[ext_resource type="Texture2D" uid="uid://clhgqhwis1k5d" path="res://assets/programmer_art/fruits/blue.png" id="2_rsmrt"]
+[ext_resource type="Texture2D" uid="uid://d0wv7h4kuv7rr" path="res://assets/programmer_art/fruits/brown.png" id="3_f2511"]
+[ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="4_0dv6l"]
+[ext_resource type="Texture2D" uid="uid://cvmlo366aaonf" path="res://assets/programmer_art/fruits/white.png" id="5_022t5"]
+[ext_resource type="Texture2D" uid="uid://dijhhqo570114" path="res://assets/programmer_art/fruits/yellow.png" id="6_locsq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c651c"]
+font_size = 24
+
+[node name="Inventory" type="Control" unique_id=2112623844]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62wf1")
+
+[node name="Icons" type="Node" parent="." unique_id=333547143]
+
+[node name="Sprite2DBlue" type="Sprite2D" parent="Icons" unique_id=207457985]
+position = Vector2(21, 910)
+texture = ExtResource("2_rsmrt")
+
+[node name="Sprite2DBrown" type="Sprite2D" parent="Icons" unique_id=1519802871]
+position = Vector2(21, 947)
+texture = ExtResource("3_f2511")
+
+[node name="Sprite2DRed" type="Sprite2D" parent="Icons" unique_id=226415495]
+position = Vector2(21, 984)
+texture = ExtResource("4_0dv6l")
+
+[node name="Sprite2DWhite" type="Sprite2D" parent="Icons" unique_id=500648665]
+position = Vector2(21, 1021)
+texture = ExtResource("5_022t5")
+
+[node name="Sprite2DYellow" type="Sprite2D" parent="Icons" unique_id=428751601]
+position = Vector2(21, 1058)
+texture = ExtResource("6_locsq")
+
+[node name="Labels" type="Node" parent="." unique_id=1496231051]
+
+[node name="LabelBlue" type="Label" parent="Labels" unique_id=259840147]
+offset_left = 42.0
+offset_top = 892.0
+offset_right = 511.0
+offset_bottom = 926.0
+text = "1"
+label_settings = SubResource("LabelSettings_c651c")
+
+[node name="LabelBrown" type="Label" parent="Labels" unique_id=237337228]
+offset_left = 42.0
+offset_top = 929.0
+offset_right = 511.0
+offset_bottom = 963.0
+text = "1"
+label_settings = SubResource("LabelSettings_c651c")
+
+[node name="LabelRed" type="Label" parent="Labels" unique_id=378440194]
+offset_left = 42.0
+offset_top = 967.0
+offset_right = 511.0
+offset_bottom = 1001.0
+text = "1"
+label_settings = SubResource("LabelSettings_c651c")
+
+[node name="LabelWhite" type="Label" parent="Labels" unique_id=554965182]
+offset_left = 42.0
+offset_top = 1003.0
+offset_right = 511.0
+offset_bottom = 1037.0
+text = "1"
+label_settings = SubResource("LabelSettings_c651c")
+
+[node name="LabelYellow" type="Label" parent="Labels" unique_id=707316435]
+offset_left = 42.0
+offset_top = 1043.0
+offset_right = 511.0
+offset_bottom = 1077.0
+text = "1"
+label_settings = SubResource("LabelSettings_c651c")
