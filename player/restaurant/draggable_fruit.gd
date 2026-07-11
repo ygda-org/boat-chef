@@ -23,6 +23,7 @@ func _ready():
 		$Sprite2D.position = Vector2(-90.0, -115.0)
 	elif fruit_type == 0: # Eliot Color
 		$Sprite2D.position = Vector2(-105.0, -115.0)
+	$Sprite2D.position += Vector2(8,9)
 
 func _process(delta):
 	if mouse and Input.is_action_just_pressed("left_click"):

@@ -26,7 +26,6 @@ var colors = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Fill.uv = $Fill.polygon
 	var child_idx = 0
 	var fruit_idx = 0
 	var base_color := Vector3.ZERO
