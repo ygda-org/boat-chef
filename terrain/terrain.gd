@@ -4,7 +4,7 @@ extends Node2D
 
 @export var altitude : FastNoiseLite
 
-var size : Vector2i = Vector2i(10,10)
+var size : Vector2i = Vector2i(100,100)
 
 @onready var tilemap := $TileMapLayer
 
