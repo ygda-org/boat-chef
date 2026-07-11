@@ -1,14 +1,8 @@
 [gd_scene format=3 uid="uid://dvk8alcqvh2tp"]
 
 [ext_resource type="Script" uid="uid://b7p5ik15uw5vx" path="res://UI/HUD.gd" id="1_62wf1"]
+[ext_resource type="Texture2D" uid="uid://cb8hvlhobao6p" path="res://assets/ui/inventory.png" id="2_2ptjp"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_gppie"]
-[ext_resource type="Texture2D" uid="uid://bpsq8em4s4yj4" path="res://assets/fruits/White fruit.png" id="3_gppie"]
-[ext_resource type="Texture2D" uid="uid://itr02jcbacy8" path="res://assets/fruits/Red fruit.PNG" id="4_2ptjp"]
-[ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="5_md4fy"]
-[ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="6_7i7fj"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_c651c"]
-font_size = 24
 
 [node name="Hud" type="Control" unique_id=2112623844]
 layout_mode = 3
@@ -20,71 +14,156 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_62wf1")
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=1602721342]
-custom_maximum_size = Vector2(150, 700)
+[node name="Background" type="TextureRect" parent="." unique_id=1090071608]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 550.0
-offset_right = 99.0
-offset_bottom = 1077.0
-columns = 2
-
-[node name="Sprite2DBlue" type="TextureRect" parent="GridContainer" unique_id=1424901708]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-texture = ExtResource("2_gppie")
-expand_mode = 4
-
-[node name="LabelBlue" type="Label" parent="GridContainer" unique_id=259840147]
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_c651c")
-
-[node name="Sprite2DWhite" type="TextureRect" parent="GridContainer" unique_id=118346165]
-layout_mode = 2
-texture = ExtResource("3_gppie")
-expand_mode = 5
-
-[node name="LabelWhite" type="Label" parent="GridContainer" unique_id=237337228]
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_c651c")
-
-[node name="Sprite2DRed" type="TextureRect" parent="GridContainer" unique_id=1539686555]
-layout_mode = 2
-texture = ExtResource("4_2ptjp")
-expand_mode = 5
-
-[node name="LabelRed" type="Label" parent="GridContainer" unique_id=378440194]
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_c651c")
-
-[node name="Sprite2DPurple" type="TextureRect" parent="GridContainer" unique_id=78816909]
-layout_mode = 2
-texture = ExtResource("5_md4fy")
-expand_mode = 5
-
-[node name="LabelPurple" type="Label" parent="GridContainer" unique_id=554965182]
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_c651c")
-
-[node name="Sprite2DYellow" type="TextureRect" parent="GridContainer" unique_id=1745823045]
-layout_mode = 2
-texture = ExtResource("6_7i7fj")
-expand_mode = 5
-
-[node name="LabelYellow" type="Label" parent="GridContainer" unique_id=707316435]
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_c651c")
-
-[node name="Icons" type="Node" parent="." unique_id=333547143]
-
-[node name="Labels" type="Node" parent="." unique_id=1496231051]
+offset_left = 8.0
+offset_top = 613.0
+offset_right = 592.0
+offset_bottom = 1290.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.85, 0.85)
+offset_transform_rotation = 1.5707964
+texture = ExtResource("2_2ptjp")
 
 [node name="OrdersList" type="HBoxContainer" parent="." unique_id=726756222]
 layout_mode = 0
 offset_right = 981.0
 offset_bottom = 162.0
+mouse_filter = 2
+
+[node name="Fruits" type="Control" parent="." unique_id=799525893]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Fruits" unique_id=833953754]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 853.0
+offset_right = 154.0
+offset_bottom = 978.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Fruits" unique_id=1171155472]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 43.0
+offset_top = 919.0
+offset_right = 168.0
+offset_bottom = 1044.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Fruits" unique_id=839381321]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 861.0
+offset_right = 222.0
+offset_bottom = 986.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Fruits" unique_id=668296144]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 126.0
+offset_top = 919.0
+offset_right = 251.0
+offset_bottom = 1044.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="Fruits" unique_id=102068893]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 850.0
+offset_right = 304.0
+offset_bottom = 975.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="Fruits" unique_id=1291885285]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 205.0
+offset_top = 922.0
+offset_right = 330.0
+offset_bottom = 1047.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="Fruits" unique_id=1280078889]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 265.0
+offset_top = 864.0
+offset_right = 390.0
+offset_bottom = 989.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="Fruits" unique_id=508204586]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 291.0
+offset_top = 927.0
+offset_right = 416.0
+offset_bottom = 1052.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect9" type="TextureRect" parent="Fruits" unique_id=1013063710]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 345.0
+offset_top = 858.0
+offset_right = 470.0
+offset_bottom = 983.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect10" type="TextureRect" parent="Fruits" unique_id=1077676120]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 373.0
+offset_top = 923.0
+offset_right = 498.0
+offset_bottom = 1048.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect11" type="TextureRect" parent="Fruits" unique_id=1304187259]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 407.0
+offset_top = 860.0
+offset_right = 532.0
+offset_bottom = 985.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
+
+[node name="TextureRect12" type="TextureRect" parent="Fruits" unique_id=1713850284]
+visible = false
+custom_maximum_size = Vector2(125, 125)
+layout_mode = 0
+offset_left = 447.0
+offset_top = 922.0
+offset_right = 572.0
+offset_bottom = 1047.0
+texture = ExtResource("2_gppie")
+stretch_mode = 4
