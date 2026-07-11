@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://gcyfi1th04di" path="res://player/boat.tscn" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://b5d8815yxgqtd" path="res://terrain/terrain.tscn" id="1_pjrb6"]
-[ext_resource type="PackedScene" uid="uid://de8qg8j7lpgiu" path="res://pick_up_fruit/pick_up_fruit.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://dvk8alcqvh2tp" path="res://UI/HUD.tscn" id="4_c651c"]
 [ext_resource type="PackedScene" uid="uid://0p7aa2wfkyk5" path="res://player/restaurant/restaurant_world.tscn" id="5_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://ggmoxc4vmxoo" path="res://enemies/storm/storm.tscn" id="6_kfbq2"]
@@ -13,11 +12,6 @@
 
 [node name="Boat" parent="." unique_id=1640580263 instance=ExtResource("1_53q0u")]
 position = Vector2(0, 160)
-
-[node name="Node" type="Node" parent="." unique_id=951385476]
-
-[node name="Node2D" parent="Node" unique_id=1327538213 instance=ExtResource("3_xwkvk")]
-position = Vector2(448, 249)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=781075957]
 
