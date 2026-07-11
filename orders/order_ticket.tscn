@@ -23,64 +23,64 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g63pn")
 
-[node name="PanelContainer" type="Panel" parent="." unique_id=102788900]
+[node name="Panel" type="Panel" parent="." unique_id=102788900]
 layout_mode = 0
 offset_right = 227.0
 offset_bottom = 186.0
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=244520645]
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=244520645]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_right = 227.0
 offset_bottom = 186.0
 columns = 2
 
-[node name="Sprite2DBlue" type="TextureRect" parent="PanelContainer/GridContainer" unique_id=563002370]
+[node name="Sprite2DBlue" type="TextureRect" parent="Panel/GridContainer" unique_id=563002370]
 layout_mode = 2
 texture = ExtResource("2_2n20v")
 
-[node name="LabelBlue" type="Label" parent="PanelContainer/GridContainer" unique_id=1248081904]
+[node name="LabelBlue" type="Label" parent="Panel/GridContainer" unique_id=1248081904]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
-[node name="Sprite2DBrown" type="TextureRect" parent="PanelContainer/GridContainer" unique_id=1248012814]
+[node name="Sprite2DBrown" type="TextureRect" parent="Panel/GridContainer" unique_id=1248012814]
 layout_mode = 2
 texture = ExtResource("3_musx2")
 
-[node name="LabelBrown" type="Label" parent="PanelContainer/GridContainer" unique_id=1863148537]
+[node name="LabelBrown" type="Label" parent="Panel/GridContainer" unique_id=1863148537]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
-[node name="Sprite2DRed" type="TextureRect" parent="PanelContainer/GridContainer" unique_id=2124329309]
+[node name="Sprite2DRed" type="TextureRect" parent="Panel/GridContainer" unique_id=2124329309]
 layout_mode = 2
 texture = ExtResource("4_1phc0")
 
-[node name="LabelRed" type="Label" parent="PanelContainer/GridContainer" unique_id=1110471953]
+[node name="LabelRed" type="Label" parent="Panel/GridContainer" unique_id=1110471953]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
-[node name="Sprite2DWhite" type="TextureRect" parent="PanelContainer/GridContainer" unique_id=863677876]
+[node name="Sprite2DWhite" type="TextureRect" parent="Panel/GridContainer" unique_id=863677876]
 layout_mode = 2
 texture = ExtResource("5_8upnb")
 
-[node name="LabelWhite" type="Label" parent="PanelContainer/GridContainer" unique_id=497974888]
+[node name="LabelWhite" type="Label" parent="Panel/GridContainer" unique_id=497974888]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
-[node name="Sprite2DYellow" type="TextureRect" parent="PanelContainer/GridContainer" unique_id=8375541]
+[node name="Sprite2DYellow" type="TextureRect" parent="Panel/GridContainer" unique_id=8375541]
 layout_mode = 2
 texture = SubResource("CompressedTexture2D_dluvv")
 
-[node name="LabelYellow" type="Label" parent="PanelContainer/GridContainer" unique_id=1476011525]
+[node name="LabelYellow" type="Label" parent="Panel/GridContainer" unique_id=1476011525]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=402418786]
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=402418786]
 modulate = Color(0.6284253, 0.24902415, 0.32778266, 1)
 custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(100, -1)

@@ -6,6 +6,7 @@ extends Control
 @onready var label_white = $GridContainer/LabelWhite
 @onready var label_yellow = $GridContainer/LabelYellow
 
+@onready var orders_list = $OrdersList
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

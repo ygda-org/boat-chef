@@ -10,7 +10,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_c651c"]
 font_size = 24
 
-[node name="Inventory" type="Control" unique_id=2112623844]
+[node name="Hud" type="Control" unique_id=2112623844]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +76,7 @@ label_settings = SubResource("LabelSettings_c651c")
 
 [node name="Labels" type="Node" parent="." unique_id=1496231051]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=726756222]
+[node name="OrdersList" type="HBoxContainer" parent="." unique_id=726756222]
 layout_mode = 0
 offset_right = 981.0
 offset_bottom = 162.0
