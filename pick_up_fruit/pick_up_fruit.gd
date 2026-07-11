@@ -6,7 +6,7 @@ extends Node2D
 
 var boat_in_area = false
 
-var fruit = (int)(randf_range(0,4.9999))
+var fruit = (randi_range(0,4))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,9 +26,7 @@ func _process(delta):
 		queue_free()
 
 func _on_area_2d_body_entered(body):
-	if body == boat:
-		boat_in_area = true
+	boat_in_area = true
 
 func _on_area_2d_body_exited(body):
-	if body == boat:
-		boat_in_area = false
+	boat_in_area = false

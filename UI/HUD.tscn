@@ -75,3 +75,8 @@ label_settings = SubResource("LabelSettings_c651c")
 [node name="Icons" type="Node" parent="." unique_id=333547143]
 
 [node name="Labels" type="Node" parent="." unique_id=1496231051]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=726756222]
+layout_mode = 0
+offset_right = 981.0
+offset_bottom = 162.0
