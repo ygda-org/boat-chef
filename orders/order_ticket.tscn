@@ -1,17 +1,15 @@
 [gd_scene format=3 uid="uid://5jxaioed8i86"]
 
 [ext_resource type="Script" uid="uid://bsw0qhrmybx1m" path="res://orders/order_ticket.gd" id="1_g63pn"]
-[ext_resource type="Texture2D" uid="uid://clhgqhwis1k5d" path="res://assets/programmer_art/fruits/blue.png" id="2_2n20v"]
-[ext_resource type="Texture2D" uid="uid://d0wv7h4kuv7rr" path="res://assets/programmer_art/fruits/brown.png" id="3_musx2"]
-[ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="4_1phc0"]
-[ext_resource type="Texture2D" uid="uid://cvmlo366aaonf" path="res://assets/programmer_art/fruits/white.png" id="5_8upnb"]
+[ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_2n20v"]
+[ext_resource type="Texture2D" uid="uid://bpsq8em4s4yj4" path="res://assets/fruits/White fruit.png" id="3_2n20v"]
+[ext_resource type="Texture2D" uid="uid://itr02jcbacy8" path="res://assets/fruits/Red fruit.PNG" id="4_2n20v"]
+[ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="5_2n20v"]
 [ext_resource type="Texture2D" uid="uid://b1noms3dhsr3y" path="res://assets/icon.svg" id="6_2n20v"]
+[ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="6_musx2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mbcxf"]
 font_size = 24
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dluvv"]
-load_path = "res://.godot/imported/yellow.png-d5682a38f47dfbc99bca692e2a1f6d7f.ctex"
 
 [node name="OrderTicket" type="Control" unique_id=441869335]
 custom_minimum_size = Vector2(200, 0)
@@ -26,54 +24,66 @@ script = ExtResource("1_g63pn")
 [node name="Panel" type="Panel" parent="." unique_id=102788900]
 layout_mode = 0
 offset_right = 202.0
-offset_bottom = 186.0
+offset_bottom = 231.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel" unique_id=244520645]
-custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(100, -1)
 layout_mode = 0
-offset_right = 193.0
-offset_bottom = 186.0
+offset_right = 100.0
+offset_bottom = 248.0
 columns = 2
 
 [node name="Sprite2DBlue" type="TextureRect" parent="Panel/GridContainer" unique_id=563002370]
+custom_maximum_size = Vector2(32, 64)
 layout_mode = 2
 texture = ExtResource("2_2n20v")
+expand_mode = 5
 
 [node name="LabelBlue" type="Label" parent="Panel/GridContainer" unique_id=1248081904]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
-[node name="Sprite2DBrown" type="TextureRect" parent="Panel/GridContainer" unique_id=1248012814]
+[node name="Sprite2DWhite" type="TextureRect" parent="Panel/GridContainer" unique_id=1248012814]
+custom_maximum_size = Vector2(32, 64)
 layout_mode = 2
-texture = ExtResource("3_musx2")
+texture = ExtResource("3_2n20v")
+expand_mode = 5
 
-[node name="LabelBrown" type="Label" parent="Panel/GridContainer" unique_id=1863148537]
+[node name="LabelWhite" type="Label" parent="Panel/GridContainer" unique_id=1863148537]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
 [node name="Sprite2DRed" type="TextureRect" parent="Panel/GridContainer" unique_id=2124329309]
+custom_maximum_size = Vector2(32, 64)
 layout_mode = 2
-texture = ExtResource("4_1phc0")
+texture = ExtResource("4_2n20v")
+expand_mode = 5
 
 [node name="LabelRed" type="Label" parent="Panel/GridContainer" unique_id=1110471953]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
-[node name="Sprite2DWhite" type="TextureRect" parent="Panel/GridContainer" unique_id=863677876]
+[node name="Sprite2DPurple" type="TextureRect" parent="Panel/GridContainer" unique_id=863677876]
+custom_maximum_size = Vector2(32, 64)
 layout_mode = 2
-texture = ExtResource("5_8upnb")
+texture = ExtResource("5_2n20v")
+expand_mode = 5
 
-[node name="LabelWhite" type="Label" parent="Panel/GridContainer" unique_id=497974888]
+[node name="LabelPurple" type="Label" parent="Panel/GridContainer" unique_id=497974888]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_mbcxf")
 
 [node name="Sprite2DYellow" type="TextureRect" parent="Panel/GridContainer" unique_id=8375541]
+custom_minimum_size = Vector2(32, 0)
+custom_maximum_size = Vector2(32, 64)
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_dluvv")
+texture = ExtResource("6_musx2")
+expand_mode = 5
 
 [node name="LabelYellow" type="Label" parent="Panel/GridContainer" unique_id=1476011525]
 layout_mode = 2
@@ -93,7 +103,7 @@ texture = ExtResource("6_2n20v")
 
 [node name="TimeBar" type="ProgressBar" parent="." unique_id=414787504]
 layout_mode = 0
-offset_left = 58.0
+offset_left = 96.0
 offset_top = 158.0
 offset_right = 190.0
 offset_bottom = 185.0

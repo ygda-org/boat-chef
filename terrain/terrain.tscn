@@ -14,6 +14,7 @@ altitude = SubResource("FastNoiseLite_xwkvk")
 [node name="Decor" type="Node2D" parent="." unique_id=767538614]
 
 [node name="TileIDLayer" type="TileMapLayer" parent="." unique_id=1431218462]
+visible = false
 tile_set = ExtResource("2_l7s0s")
 
 [node name="CornerTileLayer" type="TileMapLayer" parent="." unique_id=1212598827]

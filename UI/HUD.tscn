@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dvk8alcqvh2tp"]
 
 [ext_resource type="Script" uid="uid://b7p5ik15uw5vx" path="res://UI/HUD.gd" id="1_62wf1"]
-[ext_resource type="Texture2D" uid="uid://clhgqhwis1k5d" path="res://assets/programmer_art/fruits/blue.png" id="2_rsmrt"]
-[ext_resource type="Texture2D" uid="uid://d0wv7h4kuv7rr" path="res://assets/programmer_art/fruits/brown.png" id="3_f2511"]
-[ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="4_0dv6l"]
-[ext_resource type="Texture2D" uid="uid://cvmlo366aaonf" path="res://assets/programmer_art/fruits/white.png" id="5_022t5"]
-[ext_resource type="Texture2D" uid="uid://dijhhqo570114" path="res://assets/programmer_art/fruits/yellow.png" id="6_locsq"]
+[ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_gppie"]
+[ext_resource type="Texture2D" uid="uid://bpsq8em4s4yj4" path="res://assets/fruits/White fruit.png" id="3_gppie"]
+[ext_resource type="Texture2D" uid="uid://itr02jcbacy8" path="res://assets/fruits/Red fruit.PNG" id="4_2ptjp"]
+[ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="5_md4fy"]
+[ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="6_7i7fj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c651c"]
 font_size = 24
@@ -21,52 +21,59 @@ mouse_filter = 2
 script = ExtResource("1_62wf1")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=1602721342]
+custom_maximum_size = Vector2(150, 700)
 layout_mode = 0
 offset_left = 9.0
-offset_top = 847.0
-offset_right = 59.0
-offset_bottom = 1033.0
+offset_top = 550.0
+offset_right = 99.0
+offset_bottom = 1077.0
 columns = 2
 
 [node name="Sprite2DBlue" type="TextureRect" parent="GridContainer" unique_id=1424901708]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-texture = ExtResource("2_rsmrt")
+texture = ExtResource("2_gppie")
+expand_mode = 4
 
 [node name="LabelBlue" type="Label" parent="GridContainer" unique_id=259840147]
 layout_mode = 2
 text = "1"
 label_settings = SubResource("LabelSettings_c651c")
 
-[node name="Sprite2DBrown" type="TextureRect" parent="GridContainer" unique_id=118346165]
+[node name="Sprite2DWhite" type="TextureRect" parent="GridContainer" unique_id=118346165]
 layout_mode = 2
-texture = ExtResource("3_f2511")
+texture = ExtResource("3_gppie")
+expand_mode = 5
 
-[node name="LabelBrown" type="Label" parent="GridContainer" unique_id=237337228]
+[node name="LabelWhite" type="Label" parent="GridContainer" unique_id=237337228]
 layout_mode = 2
 text = "1"
 label_settings = SubResource("LabelSettings_c651c")
 
 [node name="Sprite2DRed" type="TextureRect" parent="GridContainer" unique_id=1539686555]
 layout_mode = 2
-texture = ExtResource("4_0dv6l")
+texture = ExtResource("4_2ptjp")
+expand_mode = 5
 
 [node name="LabelRed" type="Label" parent="GridContainer" unique_id=378440194]
 layout_mode = 2
 text = "1"
 label_settings = SubResource("LabelSettings_c651c")
 
-[node name="Sprite2DWhite" type="TextureRect" parent="GridContainer" unique_id=78816909]
+[node name="Sprite2DPurple" type="TextureRect" parent="GridContainer" unique_id=78816909]
 layout_mode = 2
-texture = ExtResource("5_022t5")
+texture = ExtResource("5_md4fy")
+expand_mode = 5
 
-[node name="LabelWhite" type="Label" parent="GridContainer" unique_id=554965182]
+[node name="LabelPurple" type="Label" parent="GridContainer" unique_id=554965182]
 layout_mode = 2
 text = "1"
 label_settings = SubResource("LabelSettings_c651c")
 
 [node name="Sprite2DYellow" type="TextureRect" parent="GridContainer" unique_id=1745823045]
 layout_mode = 2
-texture = ExtResource("6_locsq")
+texture = ExtResource("6_7i7fj")
+expand_mode = 5
 
 [node name="LabelYellow" type="Label" parent="GridContainer" unique_id=707316435]
 layout_mode = 2
