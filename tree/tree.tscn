@@ -38,7 +38,6 @@ texture = ExtResource("2_303ym")
 
 [node name="SfxPlayer" parent="." unique_id=1644282153 instance=ExtResource("3_303ym")]
 stream = ExtResource("4_rec30")
-metadata/variate = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
