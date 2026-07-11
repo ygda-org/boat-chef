@@ -15,10 +15,18 @@ const CAMERA_PAN_FACTOR = 1
 var angle
 
 func _ready():
+	GameState.boat = self
 	$BoostBar.max_value = MAX_BOOST
 	$BoostBar.value = boost_amount
 
 func _physics_process(delta):
+	if GameState.in_restaurant:
+		return
+	if Input.is_action_pressed("zoom_out"):
+		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(0.8,0.8), delta*2)
+		velocity = velocity.move_toward(Vector2(0,0), DECELERATION * delta)
+		move_and_slide()
+		return
 	var calc_max_speed = MAX_SPEED
 	var calc_acceleration = ACCELERATION
 	if Input.is_action_pressed("boost") and boost_amount >= 0:

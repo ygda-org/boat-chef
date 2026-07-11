@@ -8,7 +8,7 @@ func _process(_delta):
 	else:
 		$Label.visible = false
 	if boat_in_area and Input.is_action_just_pressed("interact"):
-		pass
+		GameState.enter_restaurant()
 
 func _on_area_2d_body_entered(_body):
 	boat_in_area = true
