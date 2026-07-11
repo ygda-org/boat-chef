@@ -10,8 +10,6 @@ var terrain
 var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 10
 
-var orders = []
-
 func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
 		create_order()
@@ -34,3 +32,6 @@ func create_order():
 
 func get_new_order_resource():
 	return load("res://orders/orders/test_order.tres")
+
+func order_failed():
+	print("ORDER FAILED")

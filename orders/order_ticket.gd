@@ -15,3 +15,11 @@ func _ready():
 	label_red.text = str(order_resource.fruit_requirements[2])
 	label_white.text = str(order_resource.fruit_requirements[3])
 	label_yellow.text = str(order_resource.fruit_requirements[4])
+	$TimeBar.max_value = order_resource.order_dur
+	$TimeBar.value = $TimeBar.max_value
+
+func _process(delta):
+	$TimeBar.value = $TimeBar.value - delta
+	if $TimeBar.value == 0:
+		GameState.order_failed()
+		queue_free()
