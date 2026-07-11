@@ -1,5 +1,5 @@
 extends Node
 
-# Brown Yellow White Red Blue
+# Blue Brown Red White Yellow
 
 var inventory = [0,0,0,0,0]

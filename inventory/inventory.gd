@@ -1,10 +1,11 @@
 extends Control
 
-@onready var label_blue = $Labels/LabelBlue
-@onready var label_brown = $Labels/LabelBrown
-@onready var label_red = $Labels/LabelRed
-@onready var label_white = $Labels/LabelWhite
-@onready var label_yellow = $Labels/LabelYellow
+@onready var label_blue = $GridContainer/LabelBlue
+@onready var label_brown = $GridContainer/LabelBrown
+@onready var label_red = $GridContainer/LabelRed
+@onready var label_white = $GridContainer/LabelWhite
+@onready var label_yellow = $GridContainer/LabelYellow
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
