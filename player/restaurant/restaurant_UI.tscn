@@ -1,9 +1,29 @@
 [gd_scene format=3 uid="uid://j1am0k3yknp2"]
 
-[node name="RestaurantUi" type="Control" unique_id=218188739]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="PackedScene" uid="uid://ch0s7fokc1447" path="res://player/restaurant/draggable_fruit.tscn" id="1_467cl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynoh7"]
+size = Vector2(1989, 286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
+size = Vector2(70, 908.5)
+
+[node name="RestaurantUi" type="Node2D" unique_id=1804860226]
+
+[node name="DraggableFruit" parent="." unique_id=139259506 instance=ExtResource("1_467cl")]
+position = Vector2(411, 395)
+constant_torque = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=93602012]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1401690443]
+position = Vector2(951.5, 950)
+shape = SubResource("RectangleShape2D_ynoh7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1738637813]
+position = Vector2(1923, 413.25)
+shape = SubResource("RectangleShape2D_5kg8m")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=2024866634]
+position = Vector2(-1, 436)
+shape = SubResource("RectangleShape2D_5kg8m")

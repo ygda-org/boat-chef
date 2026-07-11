@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ch0s7fokc1447"]
+
+[ext_resource type="Script" uid="uid://c6ufp4braxmir" path="res://player/restaurant/draggable_fruit.gd" id="1_ox65a"]
+[ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="1_wwbow"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5kg8m"]
+friction = 0.4
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5kg8m"]
+radius = 48.0
+
+[node name="DraggableFruit" type="RigidBody2D" unique_id=139259506]
+input_pickable = true
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_5kg8m")
+gravity_scale = 0.0
+constant_force = Vector2(0, 100)
+script = ExtResource("1_ox65a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328935690]
+scale = Vector2(3, 3)
+texture = ExtResource("1_wwbow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1330815323]
+shape = SubResource("CircleShape2D_5kg8m")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
