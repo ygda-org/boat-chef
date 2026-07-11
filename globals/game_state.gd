@@ -7,9 +7,9 @@ const ORDER_TICKET = preload("uid://5jxaioed8i86")
 var hud
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
-const MAX_INVENTORY = 10
+const MAX_INVENTORY = 0
 
-var orders = [[1,2,3,0,1],[3,2,0,0,0,0]]
+var orders = []
 
 func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
@@ -20,14 +20,15 @@ func add_fruit(fruit):
 	var inventory_size = 0
 	for f in inventory:
 		inventory_size += f
-	if inventory_size > MAX_INVENTORY:
+	if inventory_size >= MAX_INVENTORY:
 		return false
 	inventory[fruit] += 1
 	return true
 
 func create_order():
 	var ticket = ORDER_TICKET.instantiate()
-	ticket.order_resource = get_new_order_resource()
+	var order = get_new_order_resource()
+	ticket.order_resource = order
 	hud.orders_list.add_child(ticket)
 
 func get_new_order_resource():
