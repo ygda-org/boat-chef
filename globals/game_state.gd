@@ -2,11 +2,12 @@ extends Node
 
 var elapsed_time = 0.0
 var order_frequency: int = 10
-var ORDER_TICKET = preload("uid://5jxaioed8i86")
+const ORDER_TICKET = preload("uid://5jxaioed8i86")
 
 var hud
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
+const MAX_INVENTORY = 10
 
 var orders = [[1,2,3,0,1],[3,2,0,0,0,0]]
 
@@ -15,6 +16,14 @@ func _process(delta):
 		create_order()
 	elapsed_time += delta
 
+func add_fruit(fruit):
+	var inventory_size = 0
+	for f in inventory:
+		inventory_size += f
+	if inventory_size > MAX_INVENTORY:
+		return false
+	inventory[fruit] += 1
+	return true
 
 func create_order():
 	var ticket = ORDER_TICKET.instantiate()

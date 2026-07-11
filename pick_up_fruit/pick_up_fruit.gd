@@ -22,8 +22,8 @@ func _process(delta):
 	
 	# If the boat is within range and player press E, increase inventory by 1 and queue_free
 	if boat_in_area == true and Input.is_action_just_pressed("interact"):
-		GameState.inventory[fruit] += 1
-		queue_free()
+		if GameState.add_fruit(fruit):
+			queue_free()
 
 func _on_area_2d_body_entered(body):
 	boat_in_area = true
