@@ -19,6 +19,7 @@ script = ExtResource("1_xptij")
 texture = ExtResource("2_xptij")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1855838448]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
