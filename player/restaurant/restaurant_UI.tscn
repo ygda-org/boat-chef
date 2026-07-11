@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cf0pvxvalhl5h" path="res://player/restaurant/restaurant_ui.gd" id="1_pksog"]
 [ext_resource type="PackedScene" uid="uid://15vtysw33mom" path="res://player/restaurant/fruit_spawner.tscn" id="3_okdgx"]
+[ext_resource type="Texture2D" uid="uid://clhgqhwis1k5d" path="res://assets/programmer_art/fruits/blue.png" id="4_1vpky"]
 [ext_resource type="Texture2D" uid="uid://bxmgayu6wu417" path="res://assets/programmer_art/fruits/red.png" id="4_qjv2s"]
+[ext_resource type="Texture2D" uid="uid://d0wv7h4kuv7rr" path="res://assets/programmer_art/fruits/brown.png" id="5_g50oe"]
+[ext_resource type="Texture2D" uid="uid://cvmlo366aaonf" path="res://assets/programmer_art/fruits/white.png" id="6_ggrnm"]
+[ext_resource type="Texture2D" uid="uid://dijhhqo570114" path="res://assets/programmer_art/fruits/yellow.png" id="7_6oknh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynoh7"]
 size = Vector2(1989, 286)
@@ -12,6 +16,9 @@ size = Vector2(70, 908.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyp3o"]
 size = Vector2(384.05063, 55.50026)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vpky"]
+size = Vector2(1989, 105)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_5kg8m"]
 points = PackedVector2Array(866, 800, 1045, 800, 1095, 464, 809, 464)
@@ -51,6 +58,7 @@ offset_left = -42.0
 offset_top = 812.0
 offset_right = 1947.0
 offset_bottom = 1073.0
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Control/TempShapes" unique_id=387805641]
 layout_mode = 0
@@ -118,6 +126,10 @@ rotation = -1.3962634
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_jyp3o")
 
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=370718825]
+position = Vector2(956, -46.5)
+shape = SubResource("RectangleShape2D_1vpky")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=239054513]
 collision_layer = 8
 collision_mask = 8
@@ -125,17 +137,58 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=747126273]
 shape = SubResource("ConvexPolygonShape2D_5kg8m")
 
-[node name="FruitSpawner" parent="." unique_id=1517058751 instance=ExtResource("3_okdgx")]
-offset_left = 53.0
-offset_top = 668.0
-offset_right = 189.0
-offset_bottom = 804.0
-pickup_texture = ExtResource("4_qjv2s")
-fruit_texture = ExtResource("4_qjv2s")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=122737247]
 position = Vector2(960, 540)
 enabled = false
+
+[node name="FruitSpawner" parent="." unique_id=1517058751 instance=ExtResource("3_okdgx")]
+visible = false
+offset_left = 38.0
+offset_top = 465.0
+offset_right = 174.0
+offset_bottom = 601.0
+pickup_texture = ExtResource("4_1vpky")
+fruit_texture = ExtResource("4_1vpky")
+
+[node name="FruitSpawner2" parent="." unique_id=1127072335 instance=ExtResource("3_okdgx")]
+visible = false
+offset_left = 38.0
+offset_top = 136.0
+offset_right = 174.0
+offset_bottom = 272.0
+pickup_texture = ExtResource("5_g50oe")
+fruit_texture = ExtResource("5_g50oe")
+fruit_num = 1
+
+[node name="FruitSpawner3" parent="." unique_id=1425030695 instance=ExtResource("3_okdgx")]
+visible = false
+offset_left = 1740.0
+offset_top = 646.0
+offset_right = 1876.0
+offset_bottom = 782.0
+pickup_texture = ExtResource("4_qjv2s")
+fruit_texture = ExtResource("4_qjv2s")
+fruit_num = 2
+
+[node name="FruitSpawner4" parent="." unique_id=602598296 instance=ExtResource("3_okdgx")]
+visible = false
+offset_left = 1735.0
+offset_top = 307.0
+offset_right = 1871.0
+offset_bottom = 443.0
+pickup_texture = ExtResource("6_ggrnm")
+fruit_texture = ExtResource("6_ggrnm")
+fruit_num = 3
+
+[node name="FruitSpawner5" parent="." unique_id=9828094 instance=ExtResource("3_okdgx")]
+visible = false
+offset_left = 1738.0
+offset_top = 36.0
+offset_right = 1874.0
+offset_bottom = 172.0
+pickup_texture = ExtResource("7_6oknh")
+fruit_texture = ExtResource("7_6oknh")
+fruit_num = 4
 
 [connection signal="pressed" from="Control/TempShapes/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/TempShapes/Button2" to="." method="_on_button_2_pressed"]

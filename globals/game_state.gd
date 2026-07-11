@@ -12,6 +12,7 @@ var in_restaurant = false
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 10
+signal inventory_modified
 
 func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
@@ -35,7 +36,12 @@ func add_fruit(fruit):
 	if inventory_size >= MAX_INVENTORY:
 		return false
 	inventory[fruit] += 1
+	inventory_modified.emit()
 	return true
+
+func remove_fruit(fruit):
+	inventory[fruit] -= 1
+	inventory_modified.emit()
 
 func create_order():
 	if not hud:
@@ -54,6 +60,8 @@ func order_failed():
 func check_order(blend):
 	for ticket in hud.get_node("OrdersList").get_children():
 		var ticket_blend = ticket.order_resource.fruit_requirements
+		print(ticket_blend)
+		print(blend)
 		if ticket_blend == blend:
 			ticket.order_complete()
 			break

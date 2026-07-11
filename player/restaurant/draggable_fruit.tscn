@@ -5,7 +5,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5kg8m"]
 friction = 0.4
-bounce = 0.5
+bounce = 0.3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5kg8m"]
 radius = 48.0
@@ -17,7 +17,6 @@ input_pickable = true
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_5kg8m")
 gravity_scale = 0.0
-constant_force = Vector2(0, 100)
 script = ExtResource("1_ox65a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=328935690]

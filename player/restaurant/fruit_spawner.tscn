@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://15vtysw33mom"]
 
+[ext_resource type="Texture2D" uid="uid://dijhhqo570114" path="res://assets/programmer_art/fruits/yellow.png" id="1_u1dcn"]
 [ext_resource type="Script" uid="uid://bue0ls262um3o" path="res://player/restaurant/fruit_spawner.gd" id="1_uhqr8"]
 
 [node name="FruitSpawner" type="TextureButton" unique_id=1517058751]
-offset_right = 136.0
-offset_bottom = 136.0
+offset_right = 96.0
+offset_bottom = 96.0
+texture_normal = ExtResource("1_u1dcn")
+stretch_mode = 4
 script = ExtResource("1_uhqr8")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

@@ -23,9 +23,9 @@ script = ExtResource("1_62wf1")
 [node name="GridContainer" type="GridContainer" parent="." unique_id=1602721342]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 887.0
+offset_top = 847.0
 offset_right = 59.0
-offset_bottom = 1073.0
+offset_bottom = 1033.0
 columns = 2
 
 [node name="Sprite2DBlue" type="TextureRect" parent="GridContainer" unique_id=1424901708]

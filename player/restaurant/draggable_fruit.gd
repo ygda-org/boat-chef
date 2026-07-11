@@ -18,9 +18,10 @@ func _process(delta):
 		grabbed = false
 	if grabbed:
 		var force = FORCE_STRENGTH*(get_global_mouse_position()-global_position).normalized()*delta
-		if force.y < 0:
-			force.y *= 2
+		force *= (get_global_mouse_position()-global_position).length()/200
 		apply_force(force)
+	else:
+		apply_force(Vector2(0, 100))
 
 func _on_mouse_entered():
 	mouse = true

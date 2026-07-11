@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_cj7c5")
-fruit_requirements = [1, 0, 3, 2, 0]
+fruit_requirements = [1, 0, 1, 1, 0]
 icon = ExtResource("1_r0xs3")
 metadata/_custom_type_script = "uid://ct66r028r4ttr"
