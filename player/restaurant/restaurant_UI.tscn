@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://j1am0k3yknp2"]
 
 [ext_resource type="PackedScene" uid="uid://ch0s7fokc1447" path="res://player/restaurant/draggable_fruit.tscn" id="1_467cl"]
+[ext_resource type="Script" uid="uid://cf0pvxvalhl5h" path="res://player/restaurant/restaurant_ui.gd" id="1_pksog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynoh7"]
 size = Vector2(1989, 286)
@@ -8,11 +9,17 @@ size = Vector2(1989, 286)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
 size = Vector2(70, 908.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyp3o"]
+size = Vector2(384.05063, 55.50026)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_5kg8m"]
+points = PackedVector2Array(866, 800, 1045, 800, 1099, 467, 809, 468)
+
 [node name="RestaurantUi" type="Node2D" unique_id=1804860226]
+script = ExtResource("1_pksog")
 
 [node name="DraggableFruit" parent="." unique_id=139259506 instance=ExtResource("1_467cl")]
 position = Vector2(411, 395)
-constant_torque = 0.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=93602012]
 
@@ -27,3 +34,83 @@ shape = SubResource("RectangleShape2D_5kg8m")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=2024866634]
 position = Vector2(-1, 436)
 shape = SubResource("RectangleShape2D_5kg8m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=84496743]
+position = Vector2(799, 665)
+rotation = 1.3962634
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_jyp3o")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=148204962]
+position = Vector2(1112.9999, 664.99994)
+rotation = -1.3962634
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_jyp3o")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=239054513]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=747126273]
+shape = SubResource("ConvexPolygonShape2D_5kg8m")
+
+[node name="Control" type="Control" parent="." unique_id=1042234789]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TempShapes" type="Control" parent="Control" unique_id=2065640408]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/TempShapes" unique_id=880912102]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -6.0
+offset_right = 30.0
+offset_bottom = 942.0
+
+[node name="ColorRect2" type="ColorRect" parent="Control/TempShapes" unique_id=141517920]
+layout_mode = 0
+offset_left = 1893.0
+offset_top = -15.0
+offset_right = 1947.0
+offset_bottom = 933.0
+
+[node name="ColorRect3" type="ColorRect" parent="Control/TempShapes" unique_id=958647279]
+layout_mode = 0
+offset_left = -42.0
+offset_top = 812.0
+offset_right = 1947.0
+offset_bottom = 1073.0
+
+[node name="ColorRect4" type="ColorRect" parent="Control/TempShapes" unique_id=387805641]
+layout_mode = 0
+offset_left = 1114.088
+offset_top = 455.9928
+offset_right = 1177.088
+offset_bottom = 855.3324
+rotation = 0.17453292
+color = Color(0.4382773, 0.43827733, 0.4382773, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control/TempShapes" unique_id=792130712]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 468.00006
+offset_right = 791.0
+offset_bottom = 867.33966
+rotation = -0.17453292
+color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+
+[node name="Button" type="Button" parent="Control/TempShapes" unique_id=1962335553]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+offset_left = 927.0
+offset_top = 832.0
+offset_right = 980.0
+offset_bottom = 863.0
+text = "Blend
+"
+
+[connection signal="pressed" from="Control/TempShapes/Button" to="." method="_on_button_pressed"]

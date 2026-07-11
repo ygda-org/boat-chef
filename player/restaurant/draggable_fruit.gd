@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var fruit_type: int
+
 var grabbed = false
 var mouse = false
 
