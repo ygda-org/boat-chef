@@ -7,11 +7,10 @@ var sharks = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$SharkTimer.start(1)
 	GameState.difficulty_updated.connect(set_difficulty)
 
 func set_difficulty():
-	$StormTimer.wait_time = 10.0 - float(GameState.difficulty) ** 0.3
+	$StormTimer.wait_time = 20.0 - float(GameState.difficulty) ** 0.3
 	$SharkTimer.wait_time = 20.0 - 2*(float(GameState.difficulty) ** 0.3)
 
 func _on_storm_timer_timeout() -> void:

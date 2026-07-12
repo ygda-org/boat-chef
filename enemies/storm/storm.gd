@@ -43,7 +43,9 @@ func _on_life_timer_timeout():
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	$ThickRain.emitting = true
+	visible = true
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	$ThickRain.emitting = false
+	visible = false
