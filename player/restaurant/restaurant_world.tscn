@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dhpxo0tnxw11c" path="res://assets/decor/FRUIT3.png" id="3_8eea0"]
 [ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="3_r2cku"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="4_8eea0"]
+[ext_resource type="Texture2D" uid="uid://dawe7m127fstl" path="res://assets/ui/e key.PNG" id="4_hf6nj"]
 [ext_resource type="AudioStream" uid="uid://c7jfdii135b2a" path="res://assets/sfx/resturant_enter.mp3" id="5_hf6nj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_70mun"]
@@ -32,10 +33,15 @@ tile_set = ExtResource("3_r2cku")
 position = Vector2(0, -16)
 texture = ExtResource("3_8eea0")
 
-[node name="Label" type="Label" parent="." unique_id=1029179297]
-offset_right = 172.0
-offset_bottom = 23.0
-text = "Press E to enter"
+[node name="Label" type="TextureRect" parent="." unique_id=1774833582]
+custom_maximum_size = Vector2(80, 80)
+propagate_maximum_size = true
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 61.0
+offset_bottom = 57.0
+texture = ExtResource("4_hf6nj")
+stretch_mode = 4
 
 [node name="EnterRestaurantSound" parent="." unique_id=1644282153 instance=ExtResource("4_8eea0")]
 stream = ExtResource("5_hf6nj")
