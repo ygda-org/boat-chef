@@ -135,4 +135,7 @@ void fragment()
 	
 	vec4 finalRGBColor = mix(waterFinal, finalOutlineColor, outline);
 	COLOR = vec4(finalRGBColor.r, finalRGBColor.g, finalRGBColor.b, mainTex.b * generalTransparency);
+	COLOR.r += 0.2;
+	COLOR.g += 0.3;
+	COLOR.b += 0.35;
 }
