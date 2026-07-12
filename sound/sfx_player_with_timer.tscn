@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dupfut6blne7t"]
+
+[ext_resource type="Script" uid="uid://b8e3unx42d2t7" path="res://sound/sfx_player_with_timer.gd" id="1_lva8p"]
+
+[node name="SfxPlayer" type="AudioStreamPlayer" unique_id=1644282153]
+script = ExtResource("1_lva8p")
+variate = true
+type = "sfx"
+
+[node name="Timer" type="Timer" parent="." unique_id=1921988036]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

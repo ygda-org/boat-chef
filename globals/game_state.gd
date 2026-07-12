@@ -24,6 +24,7 @@ var lock_orders : bool = false
 
 signal inventory_modified
 
+var player_disembarked
 
 func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):

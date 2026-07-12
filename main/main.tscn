@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="8_grrlh"]
 [ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/wave.mp3" id="10_0i4oc"]
 [ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="11_bsumw"]
+[ext_resource type="PackedScene" uid="uid://dupfut6blne7t" path="res://sound/sfx_player_with_timer.tscn" id="12_na0o7"]
+[ext_resource type="AudioStream" uid="uid://bx2rkf8761153" path="res://assets/sfx/frogambience.mp3" id="13_73k8k"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 
@@ -49,3 +51,6 @@ type = "sfx"
 stream = ExtResource("11_bsumw")
 variate = false
 type = "sfx"
+
+[node name="FrogSound" parent="." unique_id=2091784347 instance=ExtResource("12_na0o7")]
+stream = ExtResource("13_73k8k")

@@ -164,6 +164,7 @@ func _physics_process(delta):
 	GameState.player_position = global_position
 
 func player_disembark():
+	GameState.player_disembarked = true
 	disembark_boat_sound.playSound()
 	var raycast: RayCast2D = $PlayerSpawnFinder
 	for i in range(8):
@@ -179,6 +180,7 @@ func player_disembark():
 			raycast.force_raycast_update()
 
 func embark():
+	GameState.player_disembarked = false
 	disembark_boat_sound.playSound()
 	player_disembarked = false
 	$Label.visible = false
