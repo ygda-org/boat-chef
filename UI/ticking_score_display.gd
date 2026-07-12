@@ -6,7 +6,7 @@ var target_score = 0
 var current_step_size = 1
 
 func _ready():
-	add_score(300, 1)
+	GameState.score_ticker = self
 
 func add_score(amount, step_size):
 	target_score = target_score + amount

@@ -5,6 +5,10 @@ var boat
 
 const EMBARK_THRESHOLD = 70
 
+func _ready():
+	if not boat:
+		boat = get_parent().get_node("Boat")
+
 func _physics_process(_delta):
 	var dir = Input.get_vector("left", "right", "up", "down")
 	if dir.x:

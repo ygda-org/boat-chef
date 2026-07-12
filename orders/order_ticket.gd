@@ -132,7 +132,8 @@ func _process(delta : float) -> void:
 		pause = false
 
 func order_complete():
-	await get_tree().create_timer(1.9).timeout
+	$CompleteTimer.start()
+	await $CompleteTimer.timeout
 	ding_complete_sound.playSound()
 	queue_free()
 

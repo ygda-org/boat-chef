@@ -21,8 +21,8 @@ var goal = ""
 
 var angle
 
-var player_disembarked = false
-var player
+var player_disembarked = true
+@onready var player = get_parent().get_node("Player")
 
 const PAUSE_MENU = preload("uid://dconohkodldha")
 

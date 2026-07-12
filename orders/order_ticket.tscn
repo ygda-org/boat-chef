@@ -162,6 +162,10 @@ autostart = true
 stream = ExtResource("10_wfgsf")
 type = "sfx"
 
+[node name="CompleteTimer" type="Timer" parent="." unique_id=333115216]
+wait_time = 1.9
+one_shot = true
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Background" to="." method="_on_background_mouse_entered"]
