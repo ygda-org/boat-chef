@@ -165,6 +165,7 @@ func player_disembark():
 			raycast.force_raycast_update()
 
 func embark():
+	disembark_boat_sound.playSound()
 	player_disembarked = false
 	$Label.visible = false
 	velocity = Vector2(0, 0)
