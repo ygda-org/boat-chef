@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ceqwh0tcs7ulh" path="res://assets/sfx/tree_harvest.wav" id="6_erh2v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwd6l"]
-radius = 69.065186
+radius = 45.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rec30"]
 resource_local_to_scene = true

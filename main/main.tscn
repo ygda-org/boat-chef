@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://j1am0k3yknp2" path="res://player/restaurant/restaurant_UI.tscn" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://dconohkodldha" path="res://pause_menu/pause_menu.tscn" id="6_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="7_4dugh"]
-[ext_resource type="AudioStream" uid="uid://bhvmry4mcsou2" path="res://assets/music/island theme.ogg" id="8_67ri8"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="8_grrlh"]
 [ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/wave.mp3" id="10_0i4oc"]
+[ext_resource type="AudioStream" uid="uid://djfvu73vfmpg" path="res://assets/music/the_real_theme.ogg" id="10_5xyti"]
 [ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="11_bsumw"]
 [ext_resource type="PackedScene" uid="uid://dupfut6blne7t" path="res://sound/sfx_player_with_timer.tscn" id="12_na0o7"]
-[ext_resource type="AudioStream" uid="uid://df431cevoaen2" path="res://assets/sfx/seagull.wav" id="14_5xyti"]
 [ext_resource type="PackedScene" uid="uid://rw44bs7ullm0" path="res://player/player.tscn" id="14_73k8k"]
+[ext_resource type="AudioStream" uid="uid://c0vfkm8efusqh" path="res://assets/sfx/seagull (1).wav" id="15_5xyti"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 script = ExtResource("1_n3o0a")
@@ -44,7 +44,7 @@ visible = false
 visible = true
 
 [node name="IslandTheme" parent="." unique_id=1644282153 instance=ExtResource("8_grrlh")]
-stream = ExtResource("8_67ri8")
+stream = ExtResource("10_5xyti")
 autoplay = true
 type = "music"
 
@@ -62,4 +62,4 @@ type = "sfx"
 position = Vector2(0, 69)
 
 [node name="BirdSound" parent="." unique_id=1386631493 instance=ExtResource("12_na0o7")]
-stream = ExtResource("14_5xyti")
+stream = ExtResource("15_5xyti")
