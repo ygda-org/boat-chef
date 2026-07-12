@@ -8,8 +8,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwd6l"]
 radius = 69.065186
 
-[node name="Tree" type="Node2D" unique_id=1327538213]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
+size = Vector2(40, 57)
+
+[node name="Tree" type="StaticBody2D" unique_id=1493668305]
 z_index = 1
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_tqxsf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=105313267]
@@ -39,6 +44,10 @@ texture = ExtResource("2_rec30")
 [node name="FruitCollectSound" parent="." unique_id=1644282153 instance=ExtResource("3_303ym")]
 stream = ExtResource("4_rec30")
 type = "sfx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110212579]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_5kg8m")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
