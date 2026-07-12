@@ -14,4 +14,3 @@ func _on_body_entered(body):
 			return
 		GameState.inventory[valid_idx[randi_range(0,len(valid_idx) - 1)]] -= 1
 		GameState.emit_signal("inventory_modified")
-		print("shouldve stolen one")
