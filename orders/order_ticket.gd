@@ -10,7 +10,6 @@ const YELLOW_FRUIT = preload("uid://cd8y0nps6bv2j")
 
 var pause : bool = false
 var mouse : bool = false
-var hid : bool = false
 
 var bar_gradeint : Gradient = Gradient.new()
 
@@ -139,14 +138,12 @@ func order_complete():
 
 func _on_hide_timer_timeout() -> void:
 	if pause or GameState.lock_orders:
-		hid = false
 		return
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	pause = true
 	await tween.finished
 	pause = false
-	hid = true
 
 func _on_mouse_entered() -> void:
 	mouse = true
