@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbuohuaiygm6t" path="res://assets/water/CausticTexture-300x300.png" id="4_mk5yb"]
 [ext_resource type="Texture2D" uid="uid://casqiclkefw7i" path="res://assets/water/CausticTextureHighlights-300x300.png" id="4_nc45s"]
 [ext_resource type="Shader" uid="uid://7lraru8lblap" path="res://terrain/water.gdshader" id="5_mk5yb"]
+[ext_resource type="PackedScene" uid="uid://0p7aa2wfkyk5" path="res://player/restaurant/restaurant_world.tscn" id="8_fpiom"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xwkvk"]
 frequency = 0.0172
@@ -77,3 +78,5 @@ position = Vector2(8, 8)
 tile_set = ExtResource("2_l7s0s")
 
 [node name="Boundaries" parent="." unique_id=241412120 instance=ExtResource("3_2ilfp")]
+
+[node name="Home" parent="." unique_id=2043455874 instance=ExtResource("8_fpiom")]

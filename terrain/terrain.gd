@@ -29,9 +29,18 @@ func clear_decor():
 	for c in $Decor.get_children():
 		c.queue_free()
 
+func check_center(n):
+	if n >= 0:
+		return n < 6
+	else:
+		return n > -7
+
 func set_terrain_id():
 	for y : int in range(-size.y/2, size.y/2):
 		for x : int in range(-size.x/2, size.x/2):
+			if check_center(x) and check_center(y):
+				tileID.set_cell(Vector2(x,y), 0, $Home/TileMapLayer.get_cell_atlas_coords(Vector2i(x,y)))
+				continue
 			var noise := altitude.get_noise_2d(x, y)
 			noise = (noise + 1)/2.0 # maps noise to [0, 1]
 			# high = grass
@@ -56,6 +65,7 @@ func set_terrain_id():
 					p.position = Vector2(x * 16,y * 16)
 			
 			tileID.set_cell(Vector2(x,y), 0, atlas)
+	$Home/TileMapLayer.queue_free()
 
 ## Prevent Grass touching ocean and sand touching deep ocean
 func fix_terrain_id():
