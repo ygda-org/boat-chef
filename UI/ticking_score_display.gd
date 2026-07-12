@@ -1,9 +1,12 @@
 extends Label
 
-var displayed_score
+var displayed_score = 0
 
-var target_score
-var current_step_size
+var target_score = 0
+var current_step_size = 1
+
+func _ready():
+	add_score(300, 1)
 
 func add_score(amount, step_size):
 	target_score = target_score + amount
@@ -11,4 +14,7 @@ func add_score(amount, step_size):
 
 func _process(_delta):
 	displayed_score += current_step_size
+	if displayed_score > target_score:
+		displayed_score = target_score
+	text = str(displayed_score)
 	
