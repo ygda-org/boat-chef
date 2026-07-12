@@ -174,5 +174,8 @@ func try_fish_spawn(x,y):
 	$Decor.call_deferred("add_child", spawn)
 
 func apply_shader():
-	$Water/SubViewport.size = size
-	$Water/SubViewport.add_child($CornerTileLayer.duplicate())
+	$Water/SubViewport.size = size * 16
+	var copy_set = $CornerTileLayer.duplicate()
+	copy_set.material = null
+	$Water/SubViewport.add_child(copy_set)
+	copy_set.position += Vector2(size)*8

@@ -3,18 +3,53 @@
 [ext_resource type="Script" uid="uid://dqtrj2bojjmjt" path="res://terrain/terrain.gd" id="1_0rasl"]
 [ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="2_l7s0s"]
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="3_2ilfp"]
+[ext_resource type="Shader" uid="uid://6vxjtndhamh" path="res://terrain/no_water.gdshader" id="3_7nt5j"]
+[ext_resource type="Texture2D" uid="uid://dbuohuaiygm6t" path="res://assets/water/CausticTexture-300x300.png" id="4_mk5yb"]
+[ext_resource type="Texture2D" uid="uid://casqiclkefw7i" path="res://assets/water/CausticTextureHighlights-300x300.png" id="4_nc45s"]
 [ext_resource type="Shader" uid="uid://7lraru8lblap" path="res://terrain/water.gdshader" id="5_mk5yb"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xwkvk"]
 frequency = 0.0172
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nigp7"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_25lit"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ilfp"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xcjn4"]
+noise = SubResource("FastNoiseLite_25lit")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jk8on"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fpiom"]
+noise = SubResource("FastNoiseLite_jk8on")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7nt5j"]
 shader = ExtResource("5_mk5yb")
+shader_parameter/aspectRatio = 1.0
+shader_parameter/pixelization = 4096.0
+shader_parameter/causticColor = Vector4(0.455, 0.773, 0.765, 1)
+shader_parameter/causticHighlightColor = Vector4(0.741, 0.894, 0.898, 1)
+shader_parameter/causticTexture = ExtResource("4_mk5yb")
+shader_parameter/causticHighlightTexture = ExtResource("4_nc45s")
+shader_parameter/causticNoiseTexture = SubResource("NoiseTexture2D_fpiom")
+shader_parameter/causticFadeNoiseTexture = SubResource("NoiseTexture2D_xcjn4")
+shader_parameter/causticScale = 12.0
+shader_parameter/causticSpeed = 0.005
+shader_parameter/causticMovementAmount = 0.15
+shader_parameter/causticFaderMultiplier = 1.45
+shader_parameter/specularColor = Vector4(1, 1, 1, 1)
+shader_parameter/specularThreshold = 0.35
+shader_parameter/specularSpeed = 0.025
+shader_parameter/specularScale = 15.0
+shader_parameter/foamColor = Vector4(1, 1, 1, 1)
+shader_parameter/foamIntensity = 0.2
+shader_parameter/foamScale = 15.0
+shader_parameter/outlineColor = Vector4(0.675, 0.86, 1, 1)
+shader_parameter/generalTransparency = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5kg8m"]
 viewport_path = NodePath("Water/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nigp7"]
+shader = ExtResource("3_7nt5j")
 
 [node name="Terrain" type="Node2D" unique_id=544464051]
 z_index = -1
@@ -27,16 +62,18 @@ altitude = SubResource("FastNoiseLite_xwkvk")
 visible = false
 tile_set = ExtResource("2_l7s0s")
 
+[node name="Water" type="Sprite2D" parent="." unique_id=645879764]
+material = SubResource("ShaderMaterial_7nt5j")
+texture = SubResource("ViewportTexture_5kg8m")
+
+[node name="SubViewport" type="SubViewport" parent="Water" unique_id=1854694121]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1024, 1024)
+
 [node name="CornerTileLayer" type="TileMapLayer" parent="." unique_id=1212598827]
 material = SubResource("ShaderMaterial_nigp7")
 position = Vector2(8, 8)
 tile_set = ExtResource("2_l7s0s")
 
 [node name="Boundaries" parent="." unique_id=241412120 instance=ExtResource("3_2ilfp")]
-
-[node name="Water" type="Sprite2D" parent="." unique_id=645879764]
-visible = false
-material = SubResource("ShaderMaterial_2ilfp")
-texture = SubResource("ViewportTexture_5kg8m")
-
-[node name="SubViewport" type="SubViewport" parent="Water" unique_id=1854694121]
