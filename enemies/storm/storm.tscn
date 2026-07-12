@@ -9,13 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://ci1dkq7dbx46i" path="res://assets/programmer_art/shadow.png" id="7_h0edi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwd6l"]
-height = 64.0
+radius = 49.0
+height = 254.0
 
 [node name="Storm" type="Node2D" unique_id=1018423783]
 script = ExtResource("1_2jc1j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1657965330]
 z_index = 15
+position = Vector2(0, -52)
+scale = Vector2(4, 4)
 texture = ExtResource("2_3e5a4")
 
 [node name="RainSound" type="AudioStreamPlayer2D" parent="." unique_id=855894645]
@@ -25,30 +28,38 @@ max_distance = 200.0
 
 [node name="ThinRain" type="CPUParticles2D" parent="." unique_id=922048894]
 position = Vector2(0, 15)
-amount = 12
+amount = 300
 texture = ExtResource("5_hn3mb")
 lifetime = 0.4
 local_coords = true
 emission_shape = 3
-emission_rect_extents = Vector2(32, 0)
+emission_rect_extents = Vector2(128, 0)
 
 [node name="ThickRain" type="CPUParticles2D" parent="." unique_id=651911623]
 position = Vector2(0, 15)
-amount = 2
+amount = 12
 texture = ExtResource("4_il5hx")
 lifetime = 0.4
 local_coords = true
 emission_shape = 3
-emission_rect_extents = Vector2(32, 0)
+emission_rect_extents = Vector2(128, 0)
 
 [node name="TakeItem" parent="." unique_id=392922631 instance=ExtResource("6_yb5q3")]
 position = Vector2(0, 90)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TakeItem" unique_id=612952609]
+position = Vector2(0, -21)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_jwd6l")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1590187368]
 z_index = -1
 position = Vector2(0, 90)
+scale = Vector2(4.2, 1)
 texture = ExtResource("7_h0edi")
+
+[node name="TargetTimer" type="Timer" parent="." unique_id=1599205001]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="timeout" from="TargetTimer" to="." method="_on_target_timer_timeout"]
