@@ -553,6 +553,7 @@ animation = &"right"
 autoplay = "right"
 
 [node name="Foam" type="AnimatedSprite2D" parent="." unique_id=2045354500]
+visible = false
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_8i58c")
 animation = &"up"
