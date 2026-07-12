@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 100
 var boat
 
-const EMBARK_THRESHOLD = 50
+const EMBARK_THRESHOLD = 70
 
 func _physics_process(_delta):
 	var dir = Input.get_vector("left", "right", "up", "down")
