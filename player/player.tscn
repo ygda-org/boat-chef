@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxq3k0pp8acy" path="res://assets/player/Walk cycle front .PNG" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dmfqxdie3k1ww" path="res://player/player.gd" id="1_yw30f"]
 [ext_resource type="Texture2D" uid="uid://bp2kh5bjua1vm" path="res://assets/player/Walk cycle side.PNG" id="3_yw30f"]
+[ext_resource type="PackedScene" uid="uid://bag5jc6gjggld" path="res://player/poof_particles.tscn" id="5_qjkh3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6k8r"]
 atlas = ExtResource("1_g1dw6")
@@ -122,19 +123,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
 size = Vector2(8, 17)
 
-[sub_resource type="Gradient" id="Gradient_yw30f"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5kg8m"]
-gradient = SubResource("Gradient_yw30f")
-width = 2
-height = 2
-
-[sub_resource type="Gradient" id="Gradient_qjkh3"]
-offsets = PackedFloat32Array(0, 0.5640394, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
 [node name="Player" type="CharacterBody2D" unique_id=1348453819]
 collision_layer = 4
 collision_mask = 16
@@ -151,18 +139,4 @@ shape = SubResource("RectangleShape2D_5kg8m")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1962937037]
 
-[node name="SpawnParticles" type="CPUParticles2D" parent="." unique_id=473169818]
-z_index = 2
-position = Vector2(0, 3)
-emitting = false
-amount = 40
-texture = SubResource("GradientTexture2D_5kg8m")
-lifetime = 0.25
-one_shot = true
-explosiveness = 1.0
-emission_shape = 1
-emission_sphere_radius = 5.0
-gravity = Vector2(0, 0)
-radial_accel_min = 800.0
-radial_accel_max = 800.0
-color_ramp = SubResource("Gradient_qjkh3")
+[node name="PoofParticles" parent="." unique_id=149224647 instance=ExtResource("5_qjkh3")]
