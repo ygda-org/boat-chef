@@ -8,6 +8,7 @@
 frequency = 0.0172
 
 [node name="Terrain" type="Node2D" unique_id=544464051]
+z_index = -1
 script = ExtResource("1_0rasl")
 altitude = SubResource("FastNoiseLite_xwkvk")
 

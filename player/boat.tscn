@@ -323,6 +323,7 @@ animation = &"right"
 autoplay = "right"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1855838448]
+z_index = 1
 zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
