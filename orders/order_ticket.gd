@@ -86,7 +86,7 @@ func _ready():
 	bar_gradeint.add_point(0.5, Color.from_rgba8(224, 218, 96))
 	bar_gradeint.remove_point(0)
 	bar_gradeint.add_point(1, Color.from_rgba8(150, 184, 115))
-	bar_gradeint.add_point(0, Color.from_rgba8(184, 115, 115))
+	bar_gradeint.add_point(0.2, Color.from_rgba8(184, 115, 115))
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
