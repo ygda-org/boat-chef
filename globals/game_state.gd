@@ -5,7 +5,8 @@ var music_volume = 0
 var sfx_volume = 0.5
 
 var elapsed_time = 0.0
-var order_frequency: int = 10
+var order_frequency: int = 40
+var difficulty: int = 1
 const ORDER_TICKET = preload("uid://5jxaioed8i86")
 
 var score_ticker
@@ -25,6 +26,7 @@ var lock_orders : bool = false
 var max_orders : int = 7
 
 signal inventory_modified
+signal difficulty_updated
 
 var player_disembarked
 
@@ -81,6 +83,12 @@ func order_failed():
 	print("ORDER FAILED")
 
 func check_order(blend):
+	if order_frequency > 15:
+		order_frequency -= 1
+		difficulty += 1
+	else:
+		difficulty += 3
+	difficulty_updated.emit()
 	for ticket in hud.get_node("OrdersList").get_children():
 		var ticket_blend = ticket.order_resource.fruit_requirements
 		if ticket_blend == blend:

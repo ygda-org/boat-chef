@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dhxsd4yahgcah" path="res://assets/ui/door_hover.png" id="8_rcdv8"]
 [ext_resource type="AudioStream" uid="uid://c7jfdii135b2a" path="res://assets/sfx/resturant_enter.mp3" id="9_rcdv8"]
 [ext_resource type="PackedScene" uid="uid://b5flpe5g0s4jf" path="res://UI/ticking_score_display.tscn" id="10_xnohp"]
+[ext_resource type="Texture2D" uid="uid://b54pmsmbspyf" path="res://assets/ui/rim.png" id="11_ybvgn"]
+[ext_resource type="Texture2D" uid="uid://dui1det3hxpfo" path="res://assets/ui/glass.png" id="19_bmgun"]
+[ext_resource type="Texture2D" uid="uid://cd8h3qy5xx35b" path="res://assets/ui/lid.png" id="20_wiyd1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oknh"]
 size = Vector2(1989, 181)
@@ -47,6 +50,9 @@ points = PackedVector2Array(794, 789, 1041, 786, 1056, 457, 787, 459)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6oknh"]
 load_path = "res://.godot/imported/Yellow fruit.PNG-fc63e0f5fbe471ce1b7abe195a264844.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vluf6"]
+size = Vector2(440, 132)
 
 [node name="RestaurantUi" type="Node2D" unique_id=1804860226]
 z_index = 100
@@ -105,6 +111,21 @@ offset_left = 1518.0
 offset_top = 259.0
 offset_right = 1598.0
 offset_bottom = 298.0
+
+[node name="BlenderBack" type="Control" parent="." unique_id=1571213073]
+z_index = -4096
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="BlenderBack" unique_id=1947239795]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 369.0
+offset_right = 1200.0
+offset_bottom = 534.0
+texture = ExtResource("11_ybvgn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=93602012]
 collision_layer = 8
@@ -212,11 +233,54 @@ pickup_texture = ExtResource("7_ggrnm")
 fruit_texture = ExtResource("7_ggrnm")
 fruit_num = 4
 
-[node name="BoxFront" type="TextureRect" parent="." unique_id=1519563754]
+[node name="AboveFruit" type="Control" parent="." unique_id=791321913]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="BoxFront" type="TextureRect" parent="AboveFruit" unique_id=1519563754]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("5_cygxp")
+
+[node name="Glass" type="TextureRect" parent="AboveFruit" unique_id=890376461]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("19_bmgun")
+
+[node name="Glass2" type="TextureRect" parent="AboveFruit" unique_id=508200554]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("19_bmgun")
+
+[node name="Glass3" type="TextureRect" parent="AboveFruit" unique_id=657336706]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("19_bmgun")
+
+[node name="Lid" type="StaticBody2D" parent="." unique_id=469278704]
+collision_layer = 8
+collision_mask = 8
+
+[node name="TextureRect" type="TextureRect" parent="Lid" unique_id=554185084]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("20_wiyd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lid" unique_id=371206099]
+position = Vector2(917, 425)
+shape = SubResource("RectangleShape2D_vluf6")
 
 [connection signal="mouse_entered" from="Control/BlendButton" to="." method="_on_blend_button_mouse_entered"]
 [connection signal="pressed" from="Control/BlendButton" to="." method="blend"]
