@@ -22,6 +22,7 @@ position = Vector2(0, 15)
 amount = 12
 texture = ExtResource("4_il5hx")
 lifetime = 0.4
+local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(32, 0)
 
