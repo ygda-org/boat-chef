@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cybyl7vaqcdo7"]
+
+[ext_resource type="PackedScene" uid="uid://gcyfi1th04di" path="res://player/boat.tscn" id="1_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://cdh1rhe1wptod" path="res://enemies/take_item/take_item.tscn" id="2_6uqi0"]
+
+[node name="Test" type="Node2D" unique_id=532533891]
+
+[node name="Boat" parent="." unique_id=1640580263 instance=ExtResource("1_8uh7m")]
+
+[node name="TakeItem" parent="." unique_id=392922631 instance=ExtResource("2_6uqi0")]

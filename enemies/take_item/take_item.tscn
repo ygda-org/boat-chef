@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cdh1rhe1wptod"]
+
+[ext_resource type="Script" uid="uid://c3c0ige33meed" path="res://enemies/take_item/take_item.gd" id="1_wkbii"]
+
+[node name="TakeItem" type="Area2D" unique_id=392922631]
+script = ExtResource("1_wkbii")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
