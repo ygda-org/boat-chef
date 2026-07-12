@@ -10,7 +10,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="SharkTimer" type="Timer" parent="." unique_id=1077532330]
-wait_time = 0.5
+wait_time = 30.0
 autostart = true
 
 [connection signal="timeout" from="StormTimer" to="." method="_on_storm_timer_timeout"]

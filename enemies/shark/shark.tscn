@@ -297,4 +297,9 @@ collision_mask = 14
 wait_time = 3.0
 one_shot = true
 
+[node name="RandomnessTimer" type="Timer" parent="." unique_id=1107288063]
+wait_time = 5.0
+autostart = true
+
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
+[connection signal="timeout" from="RandomnessTimer" to="." method="_on_randomness_timer_timeout"]

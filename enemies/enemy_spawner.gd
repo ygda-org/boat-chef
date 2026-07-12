@@ -35,7 +35,7 @@ func find_legal_spawn() -> Vector2:
 	for i in range(1000):
 		var spawn = Vector2(randf_range(GameState.size.x * 16 / -2, GameState.size.x  * 16 / 2), randf_range(GameState.size.y  * 16 / -2, GameState.size.y  * 16 / 2))
 		var dist = spawn.distance_to(GameState.player_position) 
-		if dist > 1000 and dist < 1500 or i == 999:
+		if dist > 500 and dist < 1000 or i == 999:
 			return spawn
 	# forced to return bc godot is a meanie
 	return Vector2.ZERO
