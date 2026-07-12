@@ -322,9 +322,6 @@ sprite_frames = SubResource("SpriteFrames_vagi7")
 animation = &"right"
 autoplay = "right"
 
-[node name="Marker2D" type="Marker2D" parent="Anim" unique_id=1389679726]
-position = Vector2(0, 14)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1855838448]
 zoom = Vector2(2, 2)
 process_callback = 0
@@ -403,6 +400,9 @@ initial_velocity_max = 100.0
 radial_accel_min = -80.0
 radial_accel_max = -80.0
 color = Color(1, 1, 1, 0.42745098)
+
+[node name="Marker2D" type="Marker2D" parent="WaterStreamArm" unique_id=1389679726]
+position = Vector2(0, 36)
 
 [node name="TurnTimer" type="Timer" parent="." unique_id=533274340]
 wait_time = 0.05

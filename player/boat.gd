@@ -174,7 +174,7 @@ func _on_boat_particle_timer_timeout() -> void:
 	if velocity.length() > 100 and not player_disembarked:
 		var bubbles = BUBBLES.instantiate()
 		get_parent().add_child(bubbles)
-		bubbles.global_position = $Anim/Marker2D.global_position
+		bubbles.global_position = $WaterStreamArm/Marker2D.global_position
 		bubbles.rotation = velocity.angle()
 		bubbles.emitting = true
 
