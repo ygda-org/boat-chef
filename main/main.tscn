@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bka7l8ufo0x27" path="res://main/main.gd" id="1_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://b5d8815yxgqtd" path="res://terrain/terrain.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://dvk8alcqvh2tp" path="res://UI/HUD.tscn" id="4_c651c"]
+[ext_resource type="PackedScene" uid="uid://bldi3bnegfj5p" path="res://main/fps_counter.tscn" id="5_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://j1am0k3yknp2" path="res://player/restaurant/restaurant_UI.tscn" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://dconohkodldha" path="res://pause_menu/pause_menu.tscn" id="6_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="7_4dugh"]
@@ -29,6 +30,8 @@ position = Vector2(0, 160)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=781075957]
 layer = 2
+
+[node name="FPSCounter" parent="CanvasLayer" unique_id=286114129 instance=ExtResource("5_n3o0a")]
 
 [node name="Inventory" parent="CanvasLayer" unique_id=2112623844 instance=ExtResource("4_c651c")]
 

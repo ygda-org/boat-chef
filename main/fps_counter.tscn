@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bldi3bnegfj5p"]
+
+[ext_resource type="Script" uid="uid://digncomfe6e3b" path="res://main/fps_counter.gd" id="1_jt0p6"]
+
+[node name="FPSCounter" type="Label" unique_id=286114129]
+process_mode = 3
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_jt0p6")
