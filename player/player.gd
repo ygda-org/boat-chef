@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 80
+const SPEED = 100
 var boat
 
 const EMBARK_THRESHOLD = 50
