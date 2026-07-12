@@ -27,13 +27,15 @@ func on_shark_death() -> void:
 
 
 func find_legal_spawn(closest, furthest) -> Vector2:
-	for i in range(1000):
-		var spawn = Vector2(randf_range(GameState.size.x * 16 / -2, GameState.size.x  * 16 / 2), randf_range(GameState.size.y  * 16 / -2, GameState.size.y  * 16 / 2))
-		var dist = spawn.distance_to(GameState.player_position) 
-		if dist > closest and dist < furthest or i == 999:
-			return spawn
-	# forced to return bc godot is a meanie
-	return Vector2.ZERO
+	var offset_vector = Vector2(randf_range(closest, furthest), randf_range(closest, furthest))
+	return GameState.player_position + offset_vector
+	#for i in range(1000):
+		#var spawn = Vector2(randf_range(GameState.size.x * 16 / -2, GameState.size.x  * 16 / 2), randf_range(GameState.size.y  * 16 / -2, GameState.size.y  * 16 / 2))
+		#var dist = spawn.distance_to(GameState.player_position) 
+		#if dist > closest and dist < furthest or i == 999:
+			#return spawn
+	## forced to return bc godot is a meanie
+	#return Vector2.ZERO
 	
 func spawn_shark() -> void:
 	if sharks > 1:
