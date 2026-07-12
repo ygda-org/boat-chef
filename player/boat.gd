@@ -113,6 +113,7 @@ func player_disembark():
 func embark():
 	player_disembarked = false
 	$Label.visible = false
+	velocity = Vector2(0, 0)
 
 func _on_boat_particle_timer_timeout() -> void:
 	if velocity.length() > 100:
