@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://yp8f47mtjl5"]
+
+[ext_resource type="Script" uid="uid://c7iu4nt1ir6jc" path="res://extra_decor/fish.gd" id="1_ye8l2"]
+[ext_resource type="Texture2D" uid="uid://cupi6tdrcqkpo" path="res://assets/decor/fish.png" id="2_4jydd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jydd"]
+size = Vector2(200, 200)
+
+[node name="Fish" type="Area2D" unique_id=2006995699]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_ye8l2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1051792030]
+modulate = Color(1, 1, 1, 0.2509804)
+texture = ExtResource("2_4jydd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1222164036]
+shape = SubResource("RectangleShape2D_4jydd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
