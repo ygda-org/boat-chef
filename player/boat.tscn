@@ -90,7 +90,7 @@ anim_speed_max = 4.0
 [node name="WaterStreamArm" type="Node2D" parent="." unique_id=493019781]
 
 [node name="WaterStream" type="CPUParticles2D" parent="WaterStreamArm" unique_id=284552529]
-position = Vector2(0, -22)
+position = Vector2(0, 20)
 amount = 128
 texture = ExtResource("4_pnosw")
 lifetime = 1.5
