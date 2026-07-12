@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://yvftfgp273r8" path="res://enemies/storm/storm.gd" id="1_2jc1j"]
 [ext_resource type="Texture2D" uid="uid://bxqmf3povndri" path="res://assets/programmer_art/cloud.png" id="2_uhs3t"]
-[ext_resource type="PackedScene" uid="uid://w8ou61kumopo" path="res://enemies/player_detection.tscn" id="3_uhs3t"]
 
 [node name="Storm" type="Node2D" unique_id=1018423783]
 z_index = 2
@@ -11,5 +10,3 @@ script = ExtResource("1_2jc1j")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1657965330]
 z_index = 5
 texture = ExtResource("2_uhs3t")
-
-[node name="PlayerDetection" parent="." unique_id=404898301 instance=ExtResource("3_uhs3t")]
