@@ -13,17 +13,21 @@ func _ready() -> void:
 		offset = Vector2(0,0)
 	else:
 		SPEED = 12000
-		offset = Vector2(randf_range(-200,200),randf_range(-200,200))
+		offset = Vector2(randf_range(-150,150),randf_range(-150,150))
 	
 	if move_and_collide(Vector2.ZERO, true):
 		death.emit()
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	$DeathTimer.stop()
+	if global_position.distance_to(GameState.player_position) > 1000:
+		if $DeathTimer.is_stopped():
+			$DeathTimer.start()
+	else:
+		$DeathTimer.stop()
 	
-	if global_position.distance_to(GameState.boat.global_position + offset) < 50:
-		offset = Vector2(randf_range(-200,200),randf_range(-200,200))
+	if global_position.distance_to(GameState.boat.global_position + offset) < 200 / max(($OffsetCooldown.time_left / 2.0), 0.1):
+		generate_offset()
 	
 	if get_real_velocity().length() < 50:
 		stuck += delta
@@ -46,7 +50,9 @@ func _physics_process(delta: float) -> void:
 	var angle = fmod(rad_to_deg(velocity.angle()) + 360, 360)
 	angle /= 45
 	angle = roundi(angle) % 8
-	$AnimatedSprite2D.play(str(angle))
+	if $SpriteChangeCooldown.is_stopped() and $AnimatedSprite2D.animation != str(angle):
+		$SpriteChangeCooldown.start()
+		$AnimatedSprite2D.play(str(angle))
 	
 	move_and_slide()
 
@@ -56,7 +62,17 @@ func _on_death_timer_timeout() -> void:
 
 
 func _on_randomness_timer_timeout() -> void:
+	generate_offset()
+
+func generate_offset() -> void:
+	$OffsetCooldown.start()
 	if killer:
 		return
-	else:
-		offset = Vector2(randf_range(-200,200),randf_range(-200,200))
+	for i in range(1000):
+		var new_offset = Vector2(randf_range(0,150),randf_range(0,150))
+		if offset.x > 0 and new_offset.x > 0:
+			new_offset.x *= -1
+		if offset.y > 0 and new_offset.y > 0:
+			new_offset.y *= -1
+		if new_offset.distance_to(offset) > 300:
+			offset = new_offset

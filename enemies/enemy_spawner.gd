@@ -7,8 +7,7 @@ var sharks = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	$SharkTimer.start(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -20,16 +19,12 @@ func _on_storm_timer_timeout() -> void:
 	add_child(storm)
 
 func _on_shark_timer_timeout() -> void:
-	if sharks > 5:
-		return
-	var shark = SHARKSPAWN.instantiate()
-	shark.position = find_legal_spawn()
-	shark.death.connect(on_shark_death)
-	sharks += 1
-	add_child(shark)
-	
+	spawn_shark()
+
 func on_shark_death() -> void:
 	sharks -= 1
+	$SharkTimer.start(1)
+
 
 func find_legal_spawn() -> Vector2:
 	for i in range(1000):
@@ -39,3 +34,12 @@ func find_legal_spawn() -> Vector2:
 			return spawn
 	# forced to return bc godot is a meanie
 	return Vector2.ZERO
+	
+func spawn_shark() -> void:
+	if sharks > 1:
+		return
+	var shark = SHARKSPAWN.instantiate()
+	shark.position = find_legal_spawn()
+	shark.death.connect(on_shark_death)
+	sharks += 1
+	add_child(shark)

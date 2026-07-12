@@ -32,11 +32,11 @@ layer = 2
 [node name="Boundaries" parent="." unique_id=241412120 instance=ExtResource("7_4dugh")]
 
 [node name="EnemySpawner" parent="." unique_id=115923181 instance=ExtResource("1_67ri8")]
+visible = true
 
 [node name="IslandTheme" parent="." unique_id=1644282153 instance=ExtResource("8_grrlh")]
 stream = ExtResource("8_67ri8")
 autoplay = true
-variate = false
 type = "music"
 
 [node name="WaveSounds" parent="." unique_id=1229135443 instance=ExtResource("8_grrlh")]

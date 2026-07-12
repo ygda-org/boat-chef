@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dacyof5tynvu0" path="res://enemies/enemy_spawner.gd" id="1_gunmi"]
 
 [node name="EnemySpawner" type="Node2D" unique_id=115923181]
+visible = false
 script = ExtResource("1_gunmi")
 
 [node name="StormTimer" type="Timer" parent="." unique_id=1348502383]
@@ -10,8 +11,8 @@ wait_time = 5.0
 autostart = true
 
 [node name="SharkTimer" type="Timer" parent="." unique_id=1077532330]
-wait_time = 30.0
-autostart = true
+wait_time = 20.0
+one_shot = true
 
 [connection signal="timeout" from="StormTimer" to="." method="_on_storm_timer_timeout"]
 [connection signal="timeout" from="SharkTimer" to="." method="_on_shark_timer_timeout"]
