@@ -1,6 +1,6 @@
 extends Button
 @onready var ygda_logo = $"../YGDALogo"
-@onready var ygda_logo_sprite = $"../YGDALogo/YGDALogoSprite"
+@onready var ygda_logo_sprite : AnimatedSprite2D = $"../YGDALogo/YGDALogoSprite"
 @onready var ygda_sting = $"../YGDALogo/YGDASting"
 
 @onready var play_game_button_sound = $PlayGameButtonSound
@@ -8,9 +8,12 @@ extends Button
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ygda_logo.visible = true
-	ygda_logo_sprite.play("default")
 	ygda_sting.play()
-	await get_tree().create_timer(4).timeout
+	var tween = get_tree().create_tween()
+	tween.tween_property(ygda_logo_sprite, "self_modulate", Color(1.0,1.0,1.0,1.0), 1.0).set_trans(Tween.TRANS_SINE)
+	await get_tree().create_timer(1.41).timeout
+	ygda_logo_sprite.play("default")
+	await get_tree().create_timer(2.59).timeout
 	ygda_sting.playing = false
 	ygda_logo.visible = false
 
