@@ -409,6 +409,9 @@ position = Vector2(0, 36)
 wait_time = 0.05
 one_shot = true
 
+[node name="BounceTimer" type="Timer" parent="." unique_id=989502039]
+one_shot = true
+
 [node name="BoatFastSFX" parent="." unique_id=1644282153 instance=ExtResource("5_x6or4")]
 stream = ExtResource("6_l63hx")
 type = "sfx"

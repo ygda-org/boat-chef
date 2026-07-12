@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://3riixia4o7ih" path="res://enemies/enemy_spawner.tscn" id="1_67ri8"]
 [ext_resource type="PackedScene" uid="uid://b5d8815yxgqtd" path="res://terrain/terrain.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://dvk8alcqvh2tp" path="res://UI/HUD.tscn" id="4_c651c"]
-[ext_resource type="PackedScene" uid="uid://0p7aa2wfkyk5" path="res://player/restaurant/restaurant_world.tscn" id="5_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://j1am0k3yknp2" path="res://player/restaurant/restaurant_UI.tscn" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://dconohkodldha" path="res://pause_menu/pause_menu.tscn" id="6_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="7_4dugh"]
@@ -19,8 +18,6 @@
 position = Vector2(30000, 0)
 
 [node name="Terrain" parent="." unique_id=544464051 instance=ExtResource("1_pjrb6")]
-
-[node name="Home" parent="." unique_id=2043455874 instance=ExtResource("5_3wy1v")]
 
 [node name="Boat" parent="." unique_id=1640580263 instance=ExtResource("1_53q0u")]
 position = Vector2(0, 160)
@@ -50,4 +47,5 @@ type = "sfx"
 
 [node name="DingCompleteSound" parent="." unique_id=1511952968 instance=ExtResource("8_grrlh")]
 stream = ExtResource("11_bsumw")
+variate = false
 type = "sfx"

@@ -4,7 +4,8 @@ extends Node2D
 
 var boat_in_area = false
 
-var fruit = (randi_range(0,4))
+var fruit
+@export var fruit_colors: Array[Color]
 
 const TREE_PARTICLES = preload("uid://blfwcc7chqy1h")
 
@@ -16,6 +17,8 @@ var collected = false
 func _ready():
 	randomize()
 	GameState.tree_pos.append(self)
+	fruit = randi_range(0,4)
+	$Sprite2D.material.set_shader_parameter("fruit_color", fruit_colors[fruit])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -6,7 +6,6 @@ const MAX_SPEED = 200
 
 const BOOST_MULTIPLIER = 1.8
 const MAX_BOOST = 1.5
-var max_speed_override = false
 @onready var boost_amount = MAX_BOOST
 
 const CAMERA_PAN_FACTOR = 1
@@ -46,13 +45,6 @@ func _ready():
 	$Camera2D.limit_bottom = GameState.size.y / 2 * 16 - 8
 
 func _physics_process(delta):
-	
-	if Input.is_action_pressed("boost") and boost_amount > 0.1:
-		play_engine_sound("boost")
-	elif velocity.length() > 0:
-		play_engine_sound("normal")
-	else:
-		play_engine_sound("none")
 		
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = true
@@ -84,29 +76,46 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 	var calc_max_speed
-	if max_speed_override:
-		calc_max_speed = MAX_SPEED * 1000
-	else:
+	if $BounceTimer.is_stopped():
 		calc_max_speed = MAX_SPEED
+	else:
+		calc_max_speed = MAX_SPEED * 1000
 	var calc_acceleration = ACCELERATION
-	if Input.is_action_pressed("boost") and boost_amount >= 0:
+	
+	var dir
+	if $BounceTimer.is_stopped():
+		dir = Input.get_vector("left", "right", "up", "down")
+	else:
+		dir = Vector2.ZERO
+	
+	var boosted = Input.is_action_pressed("boost") and boost_amount >= 0 and dir and $BounceTimer.is_stopped()
+	if boosted:
 		if not $Smoke.emitting:
 			$Smoke.emitting = true
 			$FastSmoke.emitting = false
 		boost_amount -= delta
 		calc_max_speed *= BOOST_MULTIPLIER
 		calc_acceleration *= BOOST_MULTIPLIER
+		
 	else:
 		if not $FastSmoke.emitting:
 			$Smoke.emitting = false
 			$FastSmoke.emitting = true
 		boost_amount = clampf(boost_amount + delta/2, -1, MAX_BOOST)
+	
+	if boosted:
+		play_engine_sound("boost")
+	elif velocity.length() > 0 and $BounceTimer.is_stopped():
+		play_engine_sound("normal")
+	else:
+		play_engine_sound("none")
+	
 	#var zoom_amount = 300/velocity.length() + 1.0
 	var zoom_amount = 2.5 * 0.999**velocity.length()
 	zoom_amount = clampf(zoom_amount, 1.0, 2.5)
 	$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(zoom_amount, zoom_amount), delta)
 	$BoostBar.value = boost_amount
-	var dir = Input.get_vector("left", "right", "up", "down")
+	
 	if not dir:
 		$Smoke.emitting = false
 		$FastSmoke.emitting = false
