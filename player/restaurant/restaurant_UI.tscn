@@ -112,13 +112,6 @@ texture_disabled = ExtResource("6_eevce")
 stream = ExtResource("9_rcdv8")
 type = "sfx"
 
-[node name="TickingScoreDisplay" parent="Control" unique_id=1792886533 instance=ExtResource("10_xnohp")]
-layout_mode = 0
-offset_left = 1518.0
-offset_top = 259.0
-offset_right = 1598.0
-offset_bottom = 298.0
-
 [node name="BlenderBack" type="Control" parent="." unique_id=1571213073]
 z_index = -4096
 layout_mode = 3
@@ -295,6 +288,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("19_bmgun")
+
+[node name="TickingScoreDisplay" parent="." unique_id=1792886533 instance=ExtResource("10_xnohp")]
+offset_left = 1381.0
+offset_top = 927.0
+offset_right = 1719.0
+offset_bottom = 971.0
+theme_override_font_sizes/font_size = 44
 
 [connection signal="mouse_entered" from="Control/BlendButton" to="." method="_on_blend_button_mouse_entered"]
 [connection signal="pressed" from="Control/BlendButton" to="." method="blend"]
