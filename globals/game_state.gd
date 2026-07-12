@@ -54,7 +54,12 @@ func create_order():
 	hud.orders_list.add_child(ticket)
 
 func get_new_order_resource():
-	return load("res://orders/orders/test_order.tres")
+	var resource: Order = Order.new()
+	var ingredients_size = randi_range(1,5)
+	for i in range(ingredients_size):
+		resource.fruit_requirements[randi_range(0,4)] += 1
+	resource.order_dur = ingredients_size * 15 + 40
+	return resource
 
 func order_failed():
 	print("ORDER FAILED")
