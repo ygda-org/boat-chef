@@ -112,13 +112,16 @@ func _process(delta : float) -> void:
 		queue_free()
 	if pause or not hid: return
 	if mouse:
+		if offset_transform_position.y == 0:
+			return
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 		pause = true
 		await tween.finished
 		pause = false
 	else:
-		if pause: return
+		if offset_transform_position.y == -240:
+			return
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
 		pause = true
