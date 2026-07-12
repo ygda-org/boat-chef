@@ -2,6 +2,7 @@ extends Button
 @onready var ygda_logo = $"../YGDALogo"
 @onready var ygda_logo_sprite : AnimatedSprite2D = $"../YGDALogo/YGDALogoSprite"
 @onready var ygda_sting = $"../YGDALogo/YGDASting"
+@onready var color_rect = $"../YGDALogo/ColorRect"
 
 @onready var play_game_button_sound = $PlayGameButtonSound
 
@@ -9,11 +10,15 @@ extends Button
 func _ready():
 	ygda_logo.visible = true
 	ygda_sting.play()
-	var tween = get_tree().create_tween()
-	tween.tween_property(ygda_logo_sprite, "self_modulate", Color(1.0,1.0,1.0,1.0), 1.0).set_trans(Tween.TRANS_SINE)
+	var tween_opening = get_tree().create_tween()
+	tween_opening.tween_property(ygda_logo_sprite, "self_modulate", Color(1.0,1.0,1.0,1.0), 1.0).set_trans(Tween.TRANS_SINE)
 	await get_tree().create_timer(1.41).timeout
 	ygda_logo_sprite.play("default")
 	await get_tree().create_timer(2.59).timeout
+	var tween_closing = get_tree().create_tween()
+	tween_closing.tween_property(ygda_logo_sprite, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0).set_trans(Tween.TRANS_SINE)
+	tween_closing.parallel().tween_property(color_rect, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.0).set_trans(Tween.TRANS_SINE)
+	await get_tree().create_timer(1.41).timeout 
 	ygda_sting.playing = false
 	ygda_logo.visible = false
 
