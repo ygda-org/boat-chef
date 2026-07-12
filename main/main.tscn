@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ccp3flae5vlf2"]
 
 [ext_resource type="PackedScene" uid="uid://gcyfi1th04di" path="res://player/boat.tscn" id="1_53q0u"]
+[ext_resource type="PackedScene" uid="uid://3riixia4o7ih" path="res://enemies/enemy_spawner.tscn" id="1_67ri8"]
 [ext_resource type="PackedScene" uid="uid://b5d8815yxgqtd" path="res://terrain/terrain.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://dvk8alcqvh2tp" path="res://UI/HUD.tscn" id="4_c651c"]
 [ext_resource type="PackedScene" uid="uid://0p7aa2wfkyk5" path="res://player/restaurant/restaurant_world.tscn" id="5_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://j1am0k3yknp2" path="res://player/restaurant/restaurant_UI.tscn" id="6_4dugh"]
-[ext_resource type="PackedScene" uid="uid://ggmoxc4vmxoo" path="res://enemies/storm/storm.tscn" id="6_kfbq2"]
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="7_4dugh"]
 [ext_resource type="AudioStream" uid="uid://bhvmry4mcsou2" path="res://assets/music/island theme.ogg" id="8_67ri8"]
 
@@ -21,8 +21,6 @@ position = Vector2(30000, 0)
 [node name="Boat" parent="." unique_id=1640580263 instance=ExtResource("1_53q0u")]
 position = Vector2(0, 160)
 
-[node name="Storm" parent="." unique_id=1018423783 instance=ExtResource("6_kfbq2")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=781075957]
 layer = 2
 
@@ -33,3 +31,6 @@ layer = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=197907815]
 stream = ExtResource("8_67ri8")
 autoplay = true
+
+[node name="EnemySpawner" parent="." unique_id=115923181 instance=ExtResource("1_67ri8")]
+position = Vector2(30000, 0)

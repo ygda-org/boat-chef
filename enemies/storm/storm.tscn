@@ -9,6 +9,7 @@ z_index = 2
 script = ExtResource("1_2jc1j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1657965330]
+z_index = 5
 texture = ExtResource("2_uhs3t")
 
 [node name="PlayerDetection" parent="." unique_id=404898301 instance=ExtResource("3_uhs3t")]
