@@ -1,12 +1,14 @@
 extends Control
 
+class_name OrderTicket
+
 var order_resource : Order
 
-const AQUA_FRUIT = preload("uid://bm6ftgeqahmmo")
-const WHITE_FRUIT = preload("uid://cue6c3y5nxydj")
-const RED_FRUIT = preload("uid://cg44l1p318nlq")
-const PURPLE_FRUIT = preload("uid://dkptjjkagw65d")
-const YELLOW_FRUIT = preload("uid://cd8y0nps6bv2j")
+const AQUA_FRUIT := preload("uid://bm6ftgeqahmmo")
+const WHITE_FRUIT := preload("uid://cue6c3y5nxydj")
+const RED_FRUIT := preload("uid://cg44l1p318nlq")
+const PURPLE_FRUIT := preload("uid://dkptjjkagw65d")
+const YELLOW_FRUIT := preload("uid://cd8y0nps6bv2j")
 
 var pause : bool = false
 var mouse : bool = false
@@ -18,7 +20,7 @@ var bar_gradeint : Gradient = Gradient.new()
 @onready var failed_sound = $FailedSound
 @onready var receipt_paper_dissapear = $ReceiptPaperDissapear
 
-var fruits = [
+var fruits : Array[Variant] = [
 	AQUA_FRUIT,
 	WHITE_FRUIT,
 	RED_FRUIT,
@@ -34,26 +36,26 @@ var colors = [
 	Vector3(238/255.0,214/255.0,132/255.0),
 ]
 
-func get_gradient_colors() -> Array[Color]:
+func get_gradient_colors(fruit_requirements : Array) -> Array[Color]:
 	var lower_color := Vector3.ZERO
 	var upper_color := Vector3.ZERO
 	
 	var color_list : Array[int] = []
 	
 	#Aqua
-	for i in range(order_resource.fruit_requirements[0]):
+	for i in range(fruit_requirements[0]):
 		color_list.append(0)
 	#Yellow
-	for i in range(order_resource.fruit_requirements[4]):
+	for i in range(fruit_requirements[4]):
 		color_list.append(4)
 	#White
-	for i in range(order_resource.fruit_requirements[1]):
+	for i in range(fruit_requirements[1]):
 		color_list.append(1)
 	#Purple
-	for i in range(order_resource.fruit_requirements[3]):
+	for i in range(fruit_requirements[3]):
 		color_list.append(3)
 	#Red
-	for i in range(order_resource.fruit_requirements[2]):
+	for i in range(fruit_requirements[2]):
 		color_list.append(2)
 	
 	for i in range(len(color_list)/2):
@@ -85,7 +87,7 @@ func _ready():
 			$Fruits.get_child(child_idx).visible = true
 			child_idx += 1
 		fruit_idx += 1
-	var gradient_colors : Array[Color] = get_gradient_colors()
+	var gradient_colors : Array[Color] = get_gradient_colors(order_resource.fruit_requirements)
 	$Fill.texture.gradient = Gradient.new()
 	$Fill.texture.gradient.set_color(0, gradient_colors[0])
 	$Fill.texture.gradient.set_color(1, gradient_colors[1])
