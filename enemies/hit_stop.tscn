@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cgf87p1aa8id6"]
+
+[ext_resource type="Script" uid="uid://cwaan2fkeodtr" path="res://enemies/hit_stop.gd" id="1_6ef8a"]
+
+[node name="HitStop" type="Node" unique_id=462659674]
+process_mode = 3
+script = ExtResource("1_6ef8a")

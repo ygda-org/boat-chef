@@ -258,3 +258,7 @@ func play_engine_sound(state):
 		boat_normal_sfx.playSound()
 		
 	old_engine_state = state
+
+
+func _on_white_flash_timer_timeout():
+	spt.material.shader = null
