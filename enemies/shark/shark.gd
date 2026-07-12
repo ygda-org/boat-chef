@@ -4,7 +4,6 @@ var SPEED = 10000
 var is_roaming: bool = false
 var offset: Vector2
 var killer: bool = randf() < 0.1
-var stuck = 0
 
 signal death
 
@@ -26,16 +25,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		$DeathTimer.stop()
 	
-	if global_position.distance_to(GameState.boat.global_position + offset) < 200 / max(($OffsetCooldown.time_left / 2.0), 0.1):
+	if global_position.distance_to(GameState.boat.global_position + offset) < 200:
+		if global_position.distance_to(GameState.boat.global_position + offset) < 50:
+			$OffsetCooldown.stop()
 		generate_offset()
-	
-	if get_real_velocity().length() < 50:
-		stuck += delta
-	else:
-		stuck = 0
-	if stuck >= 5:
-		death.emit()
-		queue_free()
 	
 	var dir
 	if GameState.boat.player_disembarked:
@@ -65,6 +58,8 @@ func _on_randomness_timer_timeout() -> void:
 	generate_offset()
 
 func generate_offset() -> void:
+	if not $OffsetCooldown.is_stopped():
+		return
 	$OffsetCooldown.start()
 	if killer:
 		return
