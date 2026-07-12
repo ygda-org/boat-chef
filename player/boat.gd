@@ -51,6 +51,7 @@ func _physics_process(delta):
 		$Smoke.emitting = false
 		$FastSmoke.emitting = false
 		$WaterStreamArm/WaterStream.emitting = false
+		$Foam.visible = false
 		if player:
 			if player.global_position.distance_to(global_position) < 70:
 				$Label.visible = true
