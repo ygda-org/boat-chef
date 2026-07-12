@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var shark_hit_sound = $SharkHitSound
+
 const SPEED = 200
 var is_roaming: bool = false
 var offset: Vector2
@@ -48,6 +50,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if collision and collision.get_collider() == GameState.boat and not GameState.boat.player_disembarked:
+		shark_hit_sound.playSound()
 		GameState.boat.spt.material.shader = load("uid://b5axrk4ip4dca")
 		GameState.boat.get_node("WhiteFlashTimer").start()
 		call_deferred("add_child", load("uid://cgf87p1aa8id6").instantiate()) # hitstop

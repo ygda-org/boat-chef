@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dpwxgqbvwssws" path="res://assets/enemies/shark/shark_directional_animation.png" id="3_bdosu"]
 [ext_resource type="AudioStream" uid="uid://7rgo4wlgv3tx" path="res://assets/sfx/shark_swimming.wav" id="3_tftwl"]
 [ext_resource type="Script" uid="uid://bwg61vkpm5iro" path="res://enemies/shark/shark_swimming_sound.gd" id="4_tftwl"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="5_4gyon"]
+[ext_resource type="AudioStream" uid="uid://bfrt3whvbgsc" path="res://assets/sfx/shark_hit.wav" id="6_12eeh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjbfh"]
 radius = 6.519202
@@ -320,6 +322,10 @@ volume_db = 2.0
 autoplay = true
 max_distance = 200.0
 script = ExtResource("4_tftwl")
+
+[node name="SharkHitSound" parent="." unique_id=1644282153 instance=ExtResource("5_4gyon")]
+stream = ExtResource("6_12eeh")
+type = "sfx"
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="RandomnessTimer" to="." method="_on_randomness_timer_timeout"]
