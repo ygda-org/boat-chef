@@ -33,7 +33,7 @@ func _physics_process(delta):
 		return
 	if player_disembarked: # camera follow player
 		if player:
-			if player.global_position.distance_to(global_position) < 50:
+			if player.global_position.distance_to(global_position) < 70:
 				$Label.visible = true
 			else:
 				$Label.visible = false
