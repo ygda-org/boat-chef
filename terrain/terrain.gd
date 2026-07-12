@@ -21,8 +21,8 @@ func _ready() -> void:
 	randomize_noise(randi())
 	generate_terrain()
 
-func randomize_noise(seed : int):
-	altitude.seed = seed
+func randomize_noise(random_seed : int):
+	altitude.seed = random_seed
 
 func clear_decor():
 	for c in $Decor.get_children():
@@ -157,7 +157,7 @@ func generate_terrain():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		randomize_noise(randi())
 		clear_decor()

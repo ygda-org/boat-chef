@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var terrain = $"../Terrain"
+@onready var terrain = GameState.terrain
 
 const TARGET_DISTANCE_MARGIN = 100
 
