@@ -23,6 +23,7 @@ func _ready():
 		$Sprite2D.position = Vector2(-90.0, -115.0)
 	elif fruit_type == 0: # Eliot Color
 		$Sprite2D.position = Vector2(-105.0, -115.0)
+	$Sprite2D.position += Vector2(8,9)
 
 func _process(delta):
 	if mouse and Input.is_action_just_pressed("left_click"):
@@ -30,9 +31,6 @@ func _process(delta):
 	elif Input.is_action_just_released("left_click"):
 		grabbed = false
 	if grabbed:
-		var force = FORCE_STRENGTH*(get_global_mouse_position()-global_position).normalized()*delta
-		force *= (get_global_mouse_position()-global_position).length()/200
-		
 		var displacement_to_mouse = get_global_mouse_position() - global_position
 
 		var spring_force = displacement_to_mouse * spring_constant

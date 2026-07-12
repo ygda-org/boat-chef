@@ -18,31 +18,38 @@ height = 120
 fill_from = Vector2(1, 1)
 
 [node name="OrderTicket" type="Control" unique_id=441869335]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(270, 200)
 layout_mode = 3
 anchor_right = 0.19900002
 anchor_bottom = 0.349
-offset_right = -0.08001709
-offset_bottom = 0.07998657
+offset_right = -182.08002
+offset_bottom = -176.92001
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -325)
+mouse_filter = 2
 script = ExtResource("1_g63pn")
 
 [node name="Background" type="TextureRect" parent="." unique_id=752705068]
-custom_maximum_size = Vector2(334.955, 573)
+custom_maximum_size = Vector2(334.955, 400)
 layout_mode = 0
-offset_left = -74.0
-offset_top = -51.0
-offset_right = 293.0
-offset_bottom = 522.0
+offset_left = -13.0
+offset_top = -33.0
+offset_right = 321.955
+offset_bottom = 367.0
 offset_transform_enabled = true
+mouse_filter = 2
 texture = ExtResource("2_1phc0")
 stretch_mode = 4
 
 [node name="Fruits" type="Control" parent="." unique_id=925422938]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 61.0
+offset_top = 18.0
+offset_right = 101.0
+offset_bottom = 58.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Fruits" unique_id=1735426308]
 visible = false
@@ -52,6 +59,7 @@ offset_left = 4.0
 offset_top = 30.0
 offset_right = 79.0
 offset_bottom = 105.0
+mouse_filter = 2
 texture = ExtResource("2_2n20v")
 stretch_mode = 4
 
@@ -63,6 +71,7 @@ offset_left = 26.0
 offset_top = 58.0
 offset_right = 101.0
 offset_bottom = 133.0
+mouse_filter = 2
 texture = ExtResource("5_2n20v")
 stretch_mode = 4
 
@@ -74,6 +83,7 @@ offset_left = 3.0
 offset_top = 90.0
 offset_right = 78.0
 offset_bottom = 165.0
+mouse_filter = 2
 texture = ExtResource("5_2n20v")
 stretch_mode = 4
 
@@ -85,6 +95,7 @@ offset_left = 34.0
 offset_top = 118.0
 offset_right = 109.0
 offset_bottom = 193.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
@@ -96,6 +107,7 @@ offset_left = 7.0
 offset_top = 141.0
 offset_right = 82.0
 offset_bottom = 216.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
@@ -107,6 +119,7 @@ offset_left = 39.0
 offset_top = 160.0
 offset_right = 114.0
 offset_bottom = 235.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
@@ -118,12 +131,13 @@ offset_left = 12.0
 offset_top = 193.0
 offset_right = 87.0
 offset_bottom = 268.0
+mouse_filter = 2
 texture = ExtResource("4_2n20v")
 stretch_mode = 4
 
 [node name="Fill" type="Polygon2D" parent="." unique_id=433512423]
 texture_repeat = 2
-position = Vector2(141, 183)
+position = Vector2(202, 201)
 texture = SubResource("GradientTexture2D_p5txo")
 polygon = PackedVector2Array(-29, -105, -32, -82, -42, -39, -36, -11, 0, 5, 34, -10, 41, -37, 28, -83, 28, -103, 29, -114, 8, -119, -21, -117, -32, -111)
 uv = PackedVector2Array(-29, -105, -32, -82, -42, -39, -36, -11, 0, 5, 34, -10, 41, -37, 28, -83, 28, -103, 29, -114, 8, -119, -21, -117, -32, -111)
@@ -134,17 +148,19 @@ offset_left = -51.0
 offset_top = -130.0
 offset_right = 49.0
 offset_bottom = 70.0
+mouse_filter = 2
 texture = ExtResource("7_musx2")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="TimeBar" type="TextureProgressBar" parent="." unique_id=1224445864]
 layout_mode = 0
-offset_left = 26.999998
-offset_top = 235.0
-offset_right = 207.0
-offset_bottom = 299.0
+offset_left = 87.99999
+offset_top = 253.0
+offset_right = 268.0
+offset_bottom = 317.0
 scale = Vector2(0.778, 0.7)
+mouse_filter = 2
 step = 0.001
 texture_under = ExtResource("7_1phc0")
 texture_over = ExtResource("7_1phc0")
