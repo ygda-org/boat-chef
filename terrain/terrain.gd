@@ -69,21 +69,22 @@ func fix_terrain_id():
 		Vector2i(1,-1),
 		Vector2i(-1,-1),
 	]
-	for y : int in range(-size.y/2, size.y/2):
-		for x : int in range(-size.x/2, size.x/2):
-			var cur_cord : Vector2i = Vector2i(x,y)
-			var atlas : Vector2i = tileID.get_cell_atlas_coords(cur_cord)
-			if atlas == DEEP_WATER or atlas == SHALLOW_WATER:
-				continue
-			for n : Vector2i in neighbors:
-				var neighbor_atlas : Vector2i = tileID.get_cell_atlas_coords(cur_cord + n)
-				if atlas == SAND and neighbor_atlas == DEEP_WATER:
-					tileID.set_cell(cur_cord + n, 0, SHALLOW_WATER)
-					break
-				if atlas == GRASS and neighbor_atlas == SHALLOW_WATER:
-					tileID.set_cell(cur_cord + n, 0, SAND)
-					break
-
+	for i in range(10):
+		var changes : int = 0
+		for y : int in range(-size.y/2, size.y/2):
+			for x : int in range(-size.x/2, size.x/2):
+				var cur_cord : Vector2i = Vector2i(x,y)
+				var atlas : Vector2i = tileID.get_cell_atlas_coords(cur_cord)
+				if atlas == DEEP_WATER or atlas == SHALLOW_WATER:
+					continue	
+				for n : Vector2i in neighbors:
+					var neighbor_atlas : Vector2i = tileID.get_cell_atlas_coords(cur_cord + n)
+					if atlas == GRASS and neighbor_atlas == SHALLOW_WATER:
+						tileID.set_cell(cur_cord + n, 0, SAND)
+						changes += 1
+		print('Pass ' + str(i + 1) + ': ' + str(changes))
+		if changes == 0:
+			break
 func set_corner_terrain():
 	for y : int in range(-size.y/2, size.y/2):
 		for x : int in range(-size.x/2, size.x/2):
