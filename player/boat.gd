@@ -6,6 +6,7 @@ const MAX_SPEED = 200
 
 const BOOST_MULTIPLIER = 1.8
 const MAX_BOOST = 1.5
+var max_speed_override = false
 @onready var boost_amount = MAX_BOOST
 
 const CAMERA_PAN_FACTOR = 1
@@ -84,7 +85,11 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2(0,0), DECELERATION * delta)
 		move_and_slide()
 		return
-	var calc_max_speed = MAX_SPEED
+	var calc_max_speed
+	if max_speed_override:
+		calc_max_speed = MAX_SPEED * 1000
+	else:
+		calc_max_speed = MAX_SPEED
 	var calc_acceleration = ACCELERATION
 	if Input.is_action_pressed("boost") and boost_amount >= 0:
 		if not $Smoke.emitting:

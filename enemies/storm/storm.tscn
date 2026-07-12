@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://yvftfgp273r8" path="res://enemies/storm/storm.gd" id="1_2jc1j"]
 [ext_resource type="Texture2D" uid="uid://bm8mjwhofbmoi" path="res://assets/enemies/cloud/clouddd.png" id="2_3e5a4"]
 [ext_resource type="AudioStream" uid="uid://b8r13kn5ih7uv" path="res://assets/sfx/rain.wav" id="3_il5hx"]
+[ext_resource type="Script" uid="uid://ccw8nackhhhd5" path="res://enemies/storm/rain_sound.gd" id="4_c3a67"]
 [ext_resource type="Texture2D" uid="uid://nyqfrck28bd6" path="res://assets/enemies/cloud/thick_rain.png" id="4_il5hx"]
 [ext_resource type="Texture2D" uid="uid://bigbxpjk7ogfk" path="res://assets/enemies/cloud/thin_rain.png" id="5_hn3mb"]
 [ext_resource type="PackedScene" uid="uid://cdh1rhe1wptod" path="res://enemies/take_item/take_item.tscn" id="6_yb5q3"]
@@ -25,6 +26,7 @@ texture = ExtResource("2_3e5a4")
 stream = ExtResource("3_il5hx")
 autoplay = true
 max_distance = 200.0
+script = ExtResource("4_c3a67")
 
 [node name="ThinRain" type="CPUParticles2D" parent="." unique_id=922048894]
 position = Vector2(0, 15)

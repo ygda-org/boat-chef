@@ -274,7 +274,7 @@ animations = [{
 }]
 
 [node name="Shark" type="CharacterBody2D" unique_id=954468664]
-collision_mask = 2
+collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 3.1415927
 platform_on_leave = 2
@@ -307,6 +307,9 @@ one_shot = true
 
 [node name="OffsetCooldown" type="Timer" parent="." unique_id=1558569757]
 wait_time = 2.0
+one_shot = true
+
+[node name="RetreatTimer" type="Timer" parent="." unique_id=1251374345]
 one_shot = true
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

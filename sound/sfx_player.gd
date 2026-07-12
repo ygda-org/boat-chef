@@ -11,7 +11,15 @@ func playSound():
 	else:
 		pitch_scale = 1.0
 		volume_db = 0.0
-	play()
+		
+	if GameState.master_volume == 0:
+		return
+		
+	if type == "music" and GameState.music_volume > 0:
+		play()
+	
+	if type == "sfx" and GameState.sfx_volume > 0:
+		play()
 
 func _process(_delta):
 	if type == "music":
