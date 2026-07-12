@@ -42,6 +42,9 @@ func _ready():
 	$Fill.texture.gradient.set_color(1, Color(1.0, 1.0, 1.0, 1.0))
 	$TimeBar.max_value = order_resource.order_dur
 	$TimeBar.value = $TimeBar.max_value
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 func _process(delta : float) -> void:
 	$TimeBar.value -= delta
