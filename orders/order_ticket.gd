@@ -5,7 +5,7 @@ var order_resource : Order
 const AQUABERRY = preload("uid://c4fgvek4ht1hi")
 const WHITE_FRUIT = preload("uid://bpsq8em4s4yj4")
 const RED_FRUIT = preload("uid://itr02jcbacy8")
-const PURPLE_FRUIT = preload("uid://8wadg5f5bqtg")
+const PURPLE_FRUIT = preload("uid://c3fnfd7gp1s1w")
 const YELLOW_FRUIT = preload("uid://bdxfbunt02bfn")
 
 var fruits = [
@@ -56,6 +56,13 @@ func get_gradient_colors() -> Array[Color]:
 		upper_color += colors[color_list[floor(len(color_list)/2)]]
 	lower_color = lower_color/ ( ceil(len(color_list)/2.0) )
 	upper_color = upper_color/ ( ceil(len(color_list)/2.0) )
+	
+	#Check if every item is the same
+	if color_list.all(func(e): return e == color_list.front()):
+		lower_color *= 0.85
+	lower_color *= 1.0 - 0.01 * len(color_list)
+	upper_color *= 1.0 - 0.01 * len(color_list)
+	
 	return [Color(lower_color.x, lower_color.y, lower_color.z), Color(upper_color.x, upper_color.y, upper_color.z)]
 
 # Called when the node enters the scene tree for the first time.
