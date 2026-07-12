@@ -12,6 +12,8 @@ const TREE_PARTICLES = preload("uid://blfwcc7chqy1h")
 @onready var fruit_collect_sound = $FruitCollectSound
 
 var collected = false
+var last_collection_time
+const REFRESH_TIME = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,9 +31,11 @@ func _process(_delta):
 	else:
 		control.visible = false
 	
+	
 	# If the boat is within range and player press E, increase inventory by 1 and queue_free
-	if boat_in_area and Input.is_action_just_pressed("interact") and collected == false:
+	if visible and boat_in_area and Input.is_action_just_pressed("interact") and collected == false:
 		if GameState.add_fruit(fruit):
+			last_collection_time = GameState.elapsed_time
 			$CollisionShape2D.disabled = true
 			var particles = TREE_PARTICLES.instantiate()
 			get_parent().add_child(particles)
@@ -41,7 +45,16 @@ func _process(_delta):
 			fruit_collect_sound.playSound()
 			collected = true
 			await fruit_collect_sound.finished
-			queue_free()
+			visible = false
+	if not visible and GameState.elapsed_time - last_collection_time > REFRESH_TIME:
+		visible = true
+		collected = false
+		$CollisionShape2D.disabled = false
+		var particles = TREE_PARTICLES.instantiate()
+		get_parent().add_child(particles)
+		particles.global_position = global_position
+		fruit_collect_sound.playSound()
+		particles.emitting = true
 
 func _on_area_2d_body_entered(_body):
 	boat_in_area = true
