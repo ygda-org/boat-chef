@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://di2fr5wd01t5t"]
 
 [ext_resource type="Texture2D" uid="uid://c0aycgi4vsp7i" path="res://assets/particles/bubble.png" id="1_kh4ov"]
-[ext_resource type="Script" uid="uid://3hrfkbuekby8" path="res://player/juice/bubbles.gd" id="2_6nxi5"]
 
 [sub_resource type="Gradient" id="Gradient_xptij"]
 offsets = PackedFloat32Array(0.0073891627, 1)
@@ -20,6 +19,5 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 9.8
 initial_velocity_max = 19.61
 color_ramp = SubResource("Gradient_xptij")
-script = ExtResource("2_6nxi5")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
