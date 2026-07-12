@@ -18,11 +18,11 @@ func _ready():
 	
 	map_size = GameState.terrain.size * tile_size
 	
-	position = Vector2(0,0)
-	#position = Vector2(
-		#randf()*map_size.x,
-		#randf()*map_size.y
-	#)
+	#position = Vector2(0,0)
+	position = Vector2(
+		randf()*map_size.x,
+		randf()*map_size.y
+	)
 	target = get_new_target()
 
 

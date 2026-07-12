@@ -20,6 +20,9 @@ var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 12
 signal inventory_modified
 
+signal lock_orders
+signal unlock_orders
+
 
 func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
@@ -30,11 +33,13 @@ func enter_restaurant():
 	in_restaurant = true
 	boat.get_node("Camera2D").enabled = false
 	restaurant_ui.get_node("Camera2D").enabled = true
+	lock_orders.emit()
 
 func exit_restaurant():
 	in_restaurant = false
 	boat.get_node("Camera2D").enabled = true
 	restaurant_ui.get_node("Camera2D").enabled = false
+	unlock_orders.emit()
 
 func add_fruit(fruit):
 	var inventory_size = 0
