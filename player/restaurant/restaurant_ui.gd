@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var sfx_player = $Control/TempShapes/Button/SfxPlayer
+@onready var sfx_player = $Control/BlendButton/SfxPlayer
 
 func _ready():
 	GameState.restaurant_ui = self
@@ -17,5 +17,5 @@ func blend():
 	GameState.check_order(blended)
 
 
-func _on_button_2_pressed():
+func _on_exit_door_pressed():
 	GameState.exit_restaurant()
