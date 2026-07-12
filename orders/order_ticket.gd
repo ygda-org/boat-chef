@@ -12,8 +12,6 @@ var pause : bool = false
 var mouse : bool = false
 var hid : bool = false
 
-var lock_open : bool = false
-
 var bar_gradeint : Gradient = Gradient.new()
 
 @onready var receipt_paper_appear = $ReceiptPaperAppear
@@ -76,10 +74,6 @@ func get_gradient_colors() -> Array[Color]:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	GameState.lock_orders.connect(_on_lock_orders)
-	GameState.unlock_orders.connect(_on_unlock_orders)
-	
 	receipt_paper_appear.playSound()
 	#Set fruits and juice color
 	var child_idx = 0
@@ -120,8 +114,8 @@ func _process(delta : float) -> void:
 		await tween.finished
 		pause = false
 		queue_free()
-	if pause or not hid: return
-	if mouse or lock_open:
+	if pause or not $HideTimer.is_stopped(): return
+	if mouse or GameState.lock_orders:
 		if offset_transform_position.y == 0:
 			return
 		var tween = get_tree().create_tween()
@@ -144,7 +138,9 @@ func order_complete():
 	queue_free()
 
 func _on_hide_timer_timeout() -> void:
-	if pause: return
+	if pause or GameState.lock_orders:
+		hid = false
+		return
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	pause = true
@@ -157,9 +153,3 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouse = false
-
-func _on_lock_orders():
-	lock_open = true
-
-func _on_unlock_orders():
-	lock_open = false
