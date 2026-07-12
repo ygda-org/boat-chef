@@ -103,9 +103,10 @@ func player_disembark():
 		if raycast.is_colliding():
 			player = load("uid://rw44bs7ullm0").instantiate()
 			player.boat = self
+			player.global_position = raycast.get_collision_point() + global_position.direction_to(raycast.get_collision_point()) * 20
 			get_parent().add_child(player)
 			player_disembarked = true
-			player.global_position = raycast.get_collision_point() + global_position.direction_to(raycast.get_collision_point()) * 20
+			break
 		else:
 			raycast.target_position = raycast.target_position.rotated(i*PI/4)
 			raycast.force_raycast_update()
