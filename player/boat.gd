@@ -45,10 +45,6 @@ func _ready():
 	$Camera2D.limit_bottom = GameState.size.y / 2 * 16 - 8
 
 func _physics_process(delta):
-		
-	if Input.is_action_just_pressed("pause"):
-		get_tree().paused = true
-	
 	if GameState.in_restaurant:
 		return
 	if player_disembarked: # camera follow player

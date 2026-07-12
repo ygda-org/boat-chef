@@ -172,10 +172,11 @@ func generate_terrain():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		randomize_noise(randi())
-		clear_decor()
-		generate_terrain()
+	#if Input.is_action_just_pressed("ui_accept"):
+		#randomize_noise(randi())
+		#clear_decor()
+		#generate_terrain()
+	pass
 
 func try_fish_spawn(x,y):
 	if randi_range(0, 500):
