@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtqqt7j82sivn" path="res://assets/ui/ctrl key.PNG" id="3_8i58c"]
 [ext_resource type="Texture2D" uid="uid://3yy2wf7p2lrc" path="res://assets/player/foam_6.png" id="3_dafpv"]
 [ext_resource type="Texture2D" uid="uid://cry1g26v3xag3" path="res://assets/player/foam_1.png" id="3_l06dd"]
+[ext_resource type="PackedScene" uid="uid://di2fr5wd01t5t" path="res://player/juice/bubbles.tscn" id="3_nks3j"]
 [ext_resource type="Texture2D" uid="uid://yb7hetahp804" path="res://assets/player/smoke_sheet.png" id="3_vagi7"]
 [ext_resource type="Texture2D" uid="uid://dehw8tsnnxt5a" path="res://assets/particles/water.png" id="4_pnosw"]
 [ext_resource type="Texture2D" uid="uid://du7234d4a3ktp" path="res://assets/player/foam_5.png" id="4_y83ph"]
@@ -547,7 +548,7 @@ radial_accel_min = -80.0
 radial_accel_max = -80.0
 color = Color(1, 1, 1, 0.42745098)
 
-[node name="Marker2D" type="Marker2D" parent="WaterStreamArm" unique_id=1389679726]
+[node name="Bubbles" parent="WaterStreamArm" unique_id=1307049630 instance=ExtResource("3_nks3j")]
 position = Vector2(0, 36)
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1768426539]
@@ -580,10 +581,6 @@ offset_top = 15.0
 offset_right = 12.0
 offset_bottom = 23.0
 show_percentage = false
-
-[node name="BoatParticleTimer" type="Timer" parent="." unique_id=1226650228]
-wait_time = 0.027
-autostart = true
 
 [node name="PlayerSpawnFinder" type="RayCast2D" parent="." unique_id=1225334925]
 target_position = Vector2(0, -50)
@@ -657,6 +654,5 @@ one_shot = true
 stream = ExtResource("16_y83ph")
 type = "sfx"
 
-[connection signal="timeout" from="BoatParticleTimer" to="." method="_on_boat_particle_timer_timeout"]
 [connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]
 [connection signal="timeout" from="WhiteFlashTimer" to="." method="_on_white_flash_timer_timeout"]

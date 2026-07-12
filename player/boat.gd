@@ -52,6 +52,7 @@ func _physics_process(delta):
 		$Smoke.emitting = false
 		$FastSmoke.emitting = false
 		$WaterStreamArm/WaterStream.emitting = false
+		$WaterStreamArm/Bubbles.emitting = false
 		$Foam.visible = false
 		if player:
 			if player.global_position.distance_to(global_position) < 70:
@@ -67,6 +68,9 @@ func _physics_process(delta):
 		if not $WaterStreamArm/WaterStream.emitting:
 			$WaterStreamArm/WaterStream.emitting = true
 		$Foam.visible = true
+		if not $WaterStreamArm/Bubbles.emitting:
+			$WaterStreamArm/Bubbles.emitting = true
+		$WaterStreamArm/Bubbles.rotation = velocity.angle()
 	else:
 		$WaterStreamArm/WaterStream.emitting = false
 		$Foam.visible = false
@@ -190,13 +194,6 @@ func embark():
 	$Label.visible = false
 	velocity = Vector2(0, 0)
 
-func _on_boat_particle_timer_timeout() -> void:
-	if velocity.length() > 100 and not player_disembarked:
-		var bubbles = BUBBLES.instantiate()
-		get_parent().add_child(bubbles)
-		bubbles.global_position = $WaterStreamArm/Marker2D.global_position
-		bubbles.rotation = velocity.angle()
-		bubbles.emitting = true
 
 func _on_turn_timer_timeout():
 	if goal == "none":
