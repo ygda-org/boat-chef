@@ -1,10 +1,11 @@
-extends Button
+extends TextureButton
 @onready var ygda_logo = $"../YGDALogo"
 @onready var ygda_logo_sprite : AnimatedSprite2D = $"../YGDALogo/YGDALogoSprite"
 @onready var ygda_sting = $"../YGDALogo/YGDASting"
 @onready var color_rect = $"../YGDALogo/ColorRect"
 
 @onready var play_game_button_sound = $PlayGameButtonSound
+@onready var animation: AnimationPlayer = get_parent().get_node("AnimationPlayer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,12 +23,23 @@ func _ready():
 	ygda_sting.playing = false
 	ygda_logo.visible = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
-func _on_button_up():
+func _on_settings_pressed():
+	animation.play("buttons_out")
+	play_game_button_sound.playSound()
+
+func _on_credits_pressed():
+	play_game_button_sound.playSound()
+	animation.play("buttons_out")
+	animation.queue("credits_in")
+
+func _on_pressed():
+	play_game_button_sound.playSound()
+	animation.play("buttons_out")
 	get_tree().change_scene_to_file("res://main/main.tscn")
 
-func _on_button_down():
-	play_game_button_sound.playSound()
+
+func _on_back_pressed():
+	animation.play_backwards("credits_in")
+	await animation.animation_finished
+	animation.play_backwards("buttons_out")
