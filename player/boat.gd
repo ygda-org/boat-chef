@@ -53,10 +53,7 @@ func _physics_process(delta):
 		play_engine_sound("normal")
 	else:
 		play_engine_sound("none")
-		
-	if Input.is_action_just_pressed("pause"):
-		get_tree().paused = true
-	
+
 	if GameState.in_restaurant:
 		return
 	if player_disembarked: # camera follow player
