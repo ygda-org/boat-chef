@@ -32,6 +32,7 @@ const PAUSE_MENU = preload("uid://dconohkodldha")
 @onready var boat_normal_sfx = $BoatNormalSFX
 
 @onready var disembark_boat_sound = $DisembarkBoatSound
+@onready var embark_boat_sound = $EmbarkBoatSound
 
 var old_engine_state = "none"
 
@@ -184,7 +185,7 @@ func player_disembark():
 func embark():
 	boat_normal_sfx.stream_paused = false
 	GameState.player_disembarked = false
-	disembark_boat_sound.playSound()
+	embark_boat_sound.playSound()
 	player_disembarked = false
 	$Label.visible = false
 	velocity = Vector2(0, 0)

@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://0le1wmehgkv5" path="res://assets/sfx/boat_going_normal.wav" id="7_8i58c"]
 [ext_resource type="Texture2D" uid="uid://cad7iswlx7elq" path="res://assets/player/foam_4.png" id="8_itcif"]
 [ext_resource type="AudioStream" uid="uid://dgovcjnhod0ha" path="res://assets/sfx/therealfinalgetoffboatpoof.mp3" id="8_l63hx"]
+[ext_resource type="AudioStream" uid="uid://cn4o15ux2eids" path="res://assets/sfx/get_on_boat.wav" id="16_y83ph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y83ph"]
 
@@ -651,6 +652,10 @@ type = "sfx"
 process_mode = 3
 wait_time = 0.2
 one_shot = true
+
+[node name="EmbarkBoatSound" parent="." unique_id=2061686916 instance=ExtResource("5_x6or4")]
+stream = ExtResource("16_y83ph")
+type = "sfx"
 
 [connection signal="timeout" from="BoatParticleTimer" to="." method="_on_boat_particle_timer_timeout"]
 [connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]

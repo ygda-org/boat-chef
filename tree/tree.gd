@@ -10,6 +10,7 @@ var fruit
 const TREE_PARTICLES = preload("uid://blfwcc7chqy1h")
 
 @onready var fruit_collect_sound = $FruitCollectSound
+@onready var tree_fall_sound = $TreeFallSound
 
 var collected = false
 var last_collection_time
@@ -43,6 +44,7 @@ func _process(_delta):
 			particles.emitting = true
 			visible = false
 			fruit_collect_sound.playSound()
+			tree_fall_sound.playSound()
 			collected = true
 			await fruit_collect_sound.finished
 			visible = false
@@ -54,6 +56,7 @@ func _process(_delta):
 		get_parent().add_child(particles)
 		particles.global_position = global_position
 		fruit_collect_sound.playSound()
+		tree_fall_sound.playSound()
 		particles.emitting = true
 
 func _on_area_2d_body_entered(_body):

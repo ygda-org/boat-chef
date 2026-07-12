@@ -13,8 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/wave.mp3" id="10_0i4oc"]
 [ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="11_bsumw"]
 [ext_resource type="PackedScene" uid="uid://dupfut6blne7t" path="res://sound/sfx_player_with_timer.tscn" id="12_na0o7"]
+[ext_resource type="AudioStream" uid="uid://df431cevoaen2" path="res://assets/sfx/seagull.wav" id="14_5xyti"]
 [ext_resource type="PackedScene" uid="uid://rw44bs7ullm0" path="res://player/player.tscn" id="14_73k8k"]
-[ext_resource type="AudioStream" uid="uid://bu17ng77lbtjw" path="res://assets/sfx/bird.wav" id="15_5xyti"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 script = ExtResource("1_n3o0a")
@@ -59,4 +59,4 @@ type = "sfx"
 position = Vector2(0, 69)
 
 [node name="BirdSound" parent="." unique_id=1386631493 instance=ExtResource("12_na0o7")]
-stream = ExtResource("15_5xyti")
+stream = ExtResource("14_5xyti")
