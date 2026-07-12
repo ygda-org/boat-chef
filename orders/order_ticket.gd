@@ -8,6 +8,8 @@ const RED_FRUIT = preload("uid://cg44l1p318nlq")
 const PURPLE_FRUIT = preload("uid://dkptjjkagw65d")
 const YELLOW_FRUIT = preload("uid://cd8y0nps6bv2j")
 
+var bar_gradeint : Gradient = Gradient.new()
+
 var fruits = [
 	AQUA_FRUIT,
 	WHITE_FRUIT,
@@ -65,6 +67,7 @@ func get_gradient_colors() -> Array[Color]:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Set fruits and juice color
 	var child_idx = 0
 	var fruit_idx = 0
 	for req in order_resource.fruit_requirements:
@@ -79,12 +82,19 @@ func _ready():
 	$Fill.texture.gradient.set_color(1, gradient_colors[1])
 	$TimeBar.max_value = order_resource.order_dur
 	$TimeBar.value = $TimeBar.max_value
+	bar_gradeint.remove_point(0)
+	bar_gradeint.add_point(0.5, Color.from_rgba8(224, 218, 96))
+	bar_gradeint.remove_point(0)
+	bar_gradeint.add_point(1, Color.from_rgba8(150, 184, 115))
+	bar_gradeint.add_point(0.2, Color.from_rgba8(184, 115, 115))
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 func _process(delta : float) -> void:
 	$TimeBar.value -= delta
+	var c = bar_gradeint.sample($TimeBar.value/$TimeBar.max_value)
+	$TimeBar.self_modulate = c
 	if $TimeBar.value == 0:
 		GameState.order_failed()
 		queue_free()
