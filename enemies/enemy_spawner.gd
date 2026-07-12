@@ -8,15 +8,15 @@ var sharks = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$SharkTimer.start(1)
+	GameState.difficulty_updated.connect(set_difficulty)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
+func set_difficulty():
+	$StormTimer.wait_time = 10.0 - float(GameState.difficulty) ** 0.3
+	$SharkTimer.wait_time = 20.0 - 2*(float(GameState.difficulty) ** 0.3)
 
 func _on_storm_timer_timeout() -> void:
 	var storm = STORMSPAWN.instantiate()
-	storm.global_position = find_legal_spawn(10,20)
+	storm.global_position = find_legal_spawn(1100,2000)
 	add_child(storm)
 
 func _on_shark_timer_timeout() -> void:
