@@ -147,8 +147,8 @@ texture_progress = ExtResource("7_8upnb")
 
 [node name="TextureRect" type="TextureRect" parent="TimeBar" unique_id=605266051]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 180.0
+offset_bottom = 64.0
 texture = ExtResource("7_1phc0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=738398195]

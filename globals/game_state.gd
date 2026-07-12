@@ -56,7 +56,7 @@ func create_order():
 
 func get_new_order_resource():
 	var resource: Order = Order.new()
-	var ingredients_size = randi_range(1,5)
+	var ingredients_size = randi_range(0,2) + randi_range(1,3)
 	for i in range(ingredients_size):
 		resource.fruit_requirements[randi_range(0,4)] += 1
 	resource.order_dur = ingredients_size * 15 + 40
