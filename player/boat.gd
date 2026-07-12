@@ -73,6 +73,7 @@ func _physics_process(delta):
 		$WaterStreamArm/Bubbles.rotation = velocity.angle()
 	else:
 		$WaterStreamArm/WaterStream.emitting = false
+		$WaterStreamArm/Bubbles.emitting = false
 		$Foam.visible = false
 	if Input.is_action_pressed("zoom_out"):
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(0.8,0.8), delta*2)
