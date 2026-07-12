@@ -47,7 +47,7 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("boost") and boost_amount > 0.1:
+	if Input.is_action_pressed("boost") and boost_amount > 0.1 and player_disembarked == false:
 		play_engine_sound("boost")
 	elif velocity.length() > 0:
 		play_engine_sound("normal")

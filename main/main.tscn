@@ -31,6 +31,7 @@ layer = 2
 [node name="Inventory" parent="CanvasLayer" unique_id=2112623844 instance=ExtResource("4_c651c")]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1249245165 instance=ExtResource("6_fwcvl")]
+process_mode = 3
 visible = false
 
 [node name="Boundaries" parent="." unique_id=241412120 instance=ExtResource("7_4dugh")]
@@ -50,4 +51,5 @@ type = "sfx"
 
 [node name="DingCompleteSound" parent="." unique_id=1511952968 instance=ExtResource("8_grrlh")]
 stream = ExtResource("11_bsumw")
+variate = false
 type = "sfx"
