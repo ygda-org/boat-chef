@@ -8,6 +8,10 @@ const RED_FRUIT = preload("uid://cg44l1p318nlq")
 const PURPLE_FRUIT = preload("uid://dkptjjkagw65d")
 const YELLOW_FRUIT = preload("uid://cd8y0nps6bv2j")
 
+var pause : bool = false
+var mouse : bool = false
+var hid : bool = false
+
 var bar_gradeint : Gradient = Gradient.new()
 
 var fruits = [
@@ -90,6 +94,9 @@ func _ready():
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	pause = true
+	await tween.finished
+	pause = false
 
 func _process(delta : float) -> void:
 	$TimeBar.value -= delta
@@ -97,7 +104,42 @@ func _process(delta : float) -> void:
 	$TimeBar.self_modulate = c
 	if $TimeBar.value == 0:
 		GameState.order_failed()
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
+		pause = true
+		await tween.finished
+		pause = false
 		queue_free()
+	if pause or not hid: return
+	if mouse:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+		pause = true
+		await tween.finished
+		pause = false
+	else:
+		if pause: return
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
+		pause = true
+		await tween.finished
+		pause = false
 
 func order_complete():
 	queue_free()
+
+
+func _on_hide_timer_timeout() -> void:
+	if pause: return
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	pause = true
+	await tween.finished
+	pause = false
+	hid = true
+
+func _on_mouse_entered() -> void:
+	mouse = true
+
+func _on_mouse_exited() -> void:
+	mouse = false
