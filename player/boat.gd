@@ -143,6 +143,8 @@ func _physics_process(delta):
 		goal = "up"
 	elif angle == -3:
 		goal = "up_left"
+	if not dir:
+		goal = "none"
 	if goal != spt.animation and $TurnTimer.is_stopped():
 		$TurnTimer.start()
 	
@@ -179,6 +181,8 @@ func _on_boat_particle_timer_timeout() -> void:
 		bubbles.emitting = true
 
 func _on_turn_timer_timeout():
+	if goal == "none":
+		return
 	var goal_ind = ANIMATION_NAMES.find(goal)
 	var current_ind = ANIMATION_NAMES.find(spt.animation)
 	if goal_ind == current_ind:
