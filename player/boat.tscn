@@ -59,7 +59,7 @@ offset_bottom = -1.0
 scale = Vector2(0.3, 0.3)
 text = "Press Ctrl to board"
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1184015269]
+[node name="Smoke" type="CPUParticles2D" parent="." unique_id=1184015269]
 material = SubResource("CanvasItemMaterial_fe51w")
 amount = 50
 texture = ExtResource("3_vagi7")
@@ -67,7 +67,21 @@ lifetime = 3.0
 gravity = Vector2(0, 0)
 angular_velocity_min = -90.0
 angular_velocity_max = 90.0
-scale_amount_min = 0.2
+scale_amount_min = 0.15
+scale_amount_max = 0.2
+anim_speed_min = 1.0
+anim_speed_max = 4.0
+
+[node name="FastSmoke" type="CPUParticles2D" parent="." unique_id=1503742460]
+material = SubResource("CanvasItemMaterial_fe51w")
+emitting = false
+amount = 70
+texture = ExtResource("3_vagi7")
+lifetime = 3.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_min = 0.15
 scale_amount_max = 0.2
 anim_speed_min = 1.0
 anim_speed_max = 4.0

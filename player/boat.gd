@@ -59,11 +59,17 @@ func _physics_process(delta):
 	var calc_max_speed = MAX_SPEED
 	var calc_acceleration = ACCELERATION
 	if Input.is_action_pressed("boost") and boost_amount >= 0:
+		if not $Smoke.emitting:
+			$Smoke.emitting = true
+			$FastSmoke.emitting = false
 		boost_amount -= delta
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(1.8,1.8), delta)
 		calc_max_speed *= BOOST_MULTIPLIER
 		calc_acceleration *= BOOST_MULTIPLIER
 	else:
+		if not $FastSmoke.emitting:
+			$Smoke.emitting = false
+			$FastSmoke.emitting = true
 		boost_amount = clampf(boost_amount + delta/2, -1, MAX_BOOST)
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2,2), delta)
 	$BoostBar.value = boost_amount
