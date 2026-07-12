@@ -6,16 +6,19 @@ extends AudioStreamPlayer
 
 @onready var timer = $Timer
 
-@export var min = 20
+@export var land_only = false
+
+@export var minimum = 20
 @export var default = 30
-@export var max = 40
+@export var maximum = 40
 
 func _on_timer_timeout():
-	if GameState.player_disembarked != true:
-		return
+	if land_only == true:
+		if GameState.player_disembarked != true:
+			return
 	playSound()
 	timer.wait_time = default
-	timer.wait_time = randi_range(min,max)
+	timer.wait_time = randi_range(minimum,maximum)
 
 func playSound():
 	if variate == true:

@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://kjud6xoxltmd" path="res://tree/tree.gdshader" id="2_haf48"]
 [ext_resource type="Texture2D" uid="uid://dkxro708slsi" path="res://assets/tile_sets/treewfruit.png" id="2_rec30"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="3_303ym"]
-[ext_resource type="AudioStream" uid="uid://dp1fb2mp64i7x" path="res://assets/sfx/pick_up_fruit.mp3" id="4_rec30"]
+[ext_resource type="AudioStream" uid="uid://ceqwh0tcs7ulh" path="res://assets/sfx/tree_harvest.wav" id="6_erh2v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwd6l"]
 radius = 69.065186
@@ -55,7 +55,7 @@ position = Vector2(0, -8)
 texture = ExtResource("2_rec30")
 
 [node name="FruitCollectSound" parent="." unique_id=1644282153 instance=ExtResource("3_303ym")]
-stream = ExtResource("4_rec30")
+stream = ExtResource("6_erh2v")
 type = "sfx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110212579]

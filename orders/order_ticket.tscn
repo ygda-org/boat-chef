@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cwnbm50ptxfgo" path="res://assets/ui/scribble_white.png" id="7_8upnb"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="9_8upnb"]
 [ext_resource type="AudioStream" uid="uid://b7vpshulwnorf" path="res://assets/sfx/receipt_paper_appear.wav" id="10_wfgsf"]
+[ext_resource type="AudioStream" uid="uid://dhtawfbhel3oi" path="res://assets/sfx/order_fail.mp3" id="11_5eieq"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_c3odn"]
 resource_local_to_scene = true
@@ -149,6 +150,10 @@ type = "sfx"
 [node name="CompleteTimer" type="Timer" parent="." unique_id=333115216]
 wait_time = 1.9
 one_shot = true
+
+[node name="FailedSound" parent="." unique_id=1087385764 instance=ExtResource("9_8upnb")]
+stream = ExtResource("11_5eieq")
+type = "sfx"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

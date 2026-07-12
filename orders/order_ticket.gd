@@ -15,6 +15,7 @@ var bar_gradeint : Gradient = Gradient.new()
 
 @onready var receipt_paper_appear = $ReceiptPaperAppear
 @onready var ding_complete_sound = $"../../../../DingCompleteSound"
+@onready var failed_sound = $FailedSound
 
 var fruits = [
 	AQUA_FRUIT,
@@ -136,6 +137,11 @@ func order_complete():
 	await $CompleteTimer.timeout
 	ding_complete_sound.playSound()
 	queue_free()
+
+func order_failed_sound():
+	$CompleteTimer.start()
+	await $CompleteTimer.timeout
+	failed_sound.playSound()
 
 func _on_hide_timer_timeout() -> void:
 	if pause or GameState.lock_orders:

@@ -95,3 +95,5 @@ func check_order(blend):
 			await ticket.get_node("CompleteTimer").timeout
 			score_ticker.add_score(score_gain, int(score_gain/120)+1)
 			break
+		else:
+			ticket.order_failed_sound()

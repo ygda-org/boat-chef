@@ -165,6 +165,7 @@ func _physics_process(delta):
 	GameState.player_position = global_position
 
 func player_disembark():
+	boat_normal_sfx.stream_paused = true
 	GameState.player_disembarked = true
 	disembark_boat_sound.playSound()
 	var raycast: RayCast2D = $PlayerSpawnFinder
@@ -181,6 +182,7 @@ func player_disembark():
 			raycast.force_raycast_update()
 
 func embark():
+	boat_normal_sfx.stream_paused = false
 	GameState.player_disembarked = false
 	disembark_boat_sound.playSound()
 	player_disembarked = false
@@ -251,6 +253,9 @@ func play_engine_sound(state):
 		return
 	
 	boat_fast_sfx.stop()
+	
+	if state == "none":
+		boat_normal_sfx.stop()
 	
 	if state == "boost":
 		boat_fast_sfx.playSound()

@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var hover_button_sound = $Control/BlendButton/HoverButtonSound
+
 @onready var blend_sound = $Control/BlendButton/BlendSound
 @onready var exit_sound = $Control/ExitDoor/ExitSound
 

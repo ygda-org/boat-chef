@@ -79,7 +79,7 @@ texture_hover = ExtResource("4_h2m70")
 texture_disabled = ExtResource("3_uoxct")
 texture_focused = ExtResource("3_uoxct")
 
-[node name="BlendSound" parent="Control/BlendButton" unique_id=1644282153 instance=ExtResource("2_g50oe")]
+[node name="BlendSound" parent="Control/BlendButton" unique_id=1307709056 instance=ExtResource("2_g50oe")]
 stream = ExtResource("6_h2m70")
 type = "sfx"
 
@@ -218,5 +218,6 @@ offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("5_cygxp")
 
+[connection signal="mouse_entered" from="Control/BlendButton" to="." method="_on_blend_button_mouse_entered"]
 [connection signal="pressed" from="Control/BlendButton" to="." method="blend"]
 [connection signal="pressed" from="Control/ExitDoor" to="." method="_on_exit_door_pressed"]

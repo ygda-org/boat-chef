@@ -22,4 +22,5 @@ func _process(_delta):
 
 func _on_audio_stream_player_finished():
 	if displayed_score != target_score:
+		$AudioStreamPlayer.pitch_scale += 0.0005
 		$AudioStreamPlayer.play()
