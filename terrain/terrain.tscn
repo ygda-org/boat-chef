@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dqtrj2bojjmjt" path="res://terrain/terrain.gd" id="1_0rasl"]
 [ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="2_l7s0s"]
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="3_2ilfp"]
-[ext_resource type="Shader" uid="uid://6vxjtndhamh" path="res://terrain/no_water.gdshader" id="3_7nt5j"]
 [ext_resource type="Texture2D" uid="uid://dbuohuaiygm6t" path="res://assets/water/CausticTexture-300x300.png" id="4_mk5yb"]
 [ext_resource type="Texture2D" uid="uid://casqiclkefw7i" path="res://assets/water/CausticTextureHighlights-300x300.png" id="4_nc45s"]
 [ext_resource type="Shader" uid="uid://7lraru8lblap" path="res://terrain/water.gdshader" id="5_mk5yb"]
@@ -50,7 +49,6 @@ shader_parameter/generalTransparency = 1.0
 viewport_path = NodePath("Water/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nigp7"]
-shader = ExtResource("3_7nt5j")
 
 [node name="Terrain" type="Node2D" unique_id=544464051]
 z_index = -1
@@ -64,6 +62,7 @@ visible = false
 tile_set = ExtResource("2_l7s0s")
 
 [node name="Water" type="Sprite2D" parent="." unique_id=645879764]
+visible = false
 material = SubResource("ShaderMaterial_7nt5j")
 texture = SubResource("ViewportTexture_5kg8m")
 
