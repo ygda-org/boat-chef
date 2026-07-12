@@ -61,13 +61,6 @@ offset_bottom = 676.0
 text = "SFX Volume"
 label_settings = SubResource("LabelSettings_prb04")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=997264062]
-layout_mode = 0
-offset_left = -2557.0
-offset_top = -461.0
-offset_right = -638.0
-offset_bottom = 624.0
-
 [node name="MasterVolumeSlider" type="HSlider" parent="." unique_id=1470541747]
 layout_mode = 0
 offset_left = 29.0

@@ -55,8 +55,6 @@ func _physics_process(delta):
 		play_engine_sound("none")
 		
 	if Input.is_action_just_pressed("pause"):
-		var pause_menu = PAUSE_MENU.instantiate()
-		canvas_layer.add_child(pause_menu)
 		get_tree().paused = true
 	
 	if GameState.in_restaurant:
