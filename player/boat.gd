@@ -17,6 +17,7 @@ const BUBBLES = preload("uid://di2fr5wd01t5t")
 var angle
 
 var player_disembarked = false
+var player
 
 func _ready():
 	GameState.boat = self
@@ -28,7 +29,14 @@ func _ready():
 	$Camera2D.limit_bottom = GameState.size.y / 2 * 16 - 8
 
 func _physics_process(delta):
-	if GameState.in_restaurant or player_disembarked:
+	if GameState.in_restaurant:
+		return
+	if player_disembarked: # camera follow player
+		if player:
+			if player.global_position.distance_to(global_position) < 50:
+				$Label.visible = true
+			else:
+				$Label.visible = false
 		return
 	if Input.is_action_just_pressed("exit_boat"):
 		player_disembark()
@@ -92,13 +100,18 @@ func player_disembark():
 	var raycast: RayCast2D = $PlayerSpawnFinder
 	for i in range(8):
 		if raycast.is_colliding():
-			var player = load("uid://rw44bs7ullm0").instantiate()
+			player = load("uid://rw44bs7ullm0").instantiate()
+			player.boat = self
 			get_parent().add_child(player)
 			player_disembarked = true
 			player.global_position = raycast.get_collision_point() + global_position.direction_to(raycast.get_collision_point()) * 20
 		else:
 			raycast.target_position = raycast.target_position.rotated(i*PI/4)
 			raycast.force_raycast_update()
+
+func embark():
+	player_disembarked = false
+	$Label.visible = false
 
 func _on_boat_particle_timer_timeout() -> void:
 	if velocity.length() > 100:

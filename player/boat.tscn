@@ -43,4 +43,13 @@ autostart = true
 target_position = Vector2(0, -50)
 collision_mask = 2
 
+[node name="Label" type="Label" parent="." unique_id=619721638]
+visible = false
+offset_left = -22.0
+offset_top = -24.0
+offset_right = 122.0
+offset_bottom = -1.0
+scale = Vector2(0.3, 0.3)
+text = "Press Ctrl to board"
+
 [connection signal="timeout" from="BoatParticleTimer" to="." method="_on_boat_particle_timer_timeout"]
