@@ -117,7 +117,7 @@ func embark():
 	velocity = Vector2(0, 0)
 
 func _on_boat_particle_timer_timeout() -> void:
-	if velocity.length() > 100:
+	if velocity.length() > 100 and not player_disembarked:
 		var bubbles = BUBBLES.instantiate()
 		get_parent().add_child(bubbles)
 		bubbles.global_position = $Sprite2D/Marker2D.global_position
