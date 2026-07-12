@@ -8,6 +8,7 @@ var elapsed_time = 0.0
 var order_frequency: int = 10
 const ORDER_TICKET = preload("uid://5jxaioed8i86")
 
+var score_ticker
 var hud
 var boat
 var terrain
@@ -79,8 +80,15 @@ func order_failed():
 func check_order(blend):
 	for ticket in hud.get_node("OrdersList").get_children():
 		var ticket_blend = ticket.order_resource.fruit_requirements
-		print(ticket_blend)
-		print(blend)
 		if ticket_blend == blend:
 			ticket.order_complete()
+			var score_gain = 0.0
+			for amount in ticket_blend:
+				score_gain += amount
+			score_gain = float(score_gain) ** 1.2
+			score_gain *= 200
+			score_gain *= 1 + 0.2 * ticket.get_node("TimeBar").value / ticket.get_node("TimeBar").max_value
+			score_gain = int(score_gain)
+			await ticket.get_node("CompleteTimer").timeout
+			score_ticker.add_score(score_gain, int(score_gain/120)+1)
 			break
