@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce5smsbmncmp1" path="res://player/boat.gd" id="1_xptij"]
 [ext_resource type="Texture2D" uid="uid://bvbjtahbfu7ex" path="res://assets/player/boatsprite.png" id="2_pnosw"]
+[ext_resource type="Texture2D" uid="uid://dtqqt7j82sivn" path="res://assets/ui/ctrl key.PNG" id="3_8i58c"]
 [ext_resource type="Texture2D" uid="uid://yb7hetahp804" path="res://assets/player/smoke_sheet.png" id="3_vagi7"]
 [ext_resource type="Texture2D" uid="uid://dehw8tsnnxt5a" path="res://assets/particles/water.png" id="4_pnosw"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="5_x6or4"]
@@ -347,14 +348,17 @@ autostart = true
 target_position = Vector2(0, -50)
 collision_mask = 2
 
-[node name="Label" type="Label" parent="." unique_id=619721638]
+[node name="Label" type="TextureRect" parent="." unique_id=1062432585]
 visible = false
-offset_left = -22.0
-offset_top = -24.0
-offset_right = 122.0
-offset_bottom = -1.0
+custom_maximum_size = Vector2(180, 180)
+offset_left = -20.0
+offset_top = -27.0
+offset_right = 160.0
+offset_bottom = 153.0
 scale = Vector2(0.3, 0.3)
-text = "Press Ctrl to board"
+texture = ExtResource("3_8i58c")
+expand_mode = 4
+stretch_mode = 4
 
 [node name="Smoke" type="CPUParticles2D" parent="." unique_id=1184015269]
 material = SubResource("CanvasItemMaterial_fe51w")

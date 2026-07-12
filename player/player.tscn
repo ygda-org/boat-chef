@@ -139,6 +139,4 @@ z_index = 1000
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_5kg8m")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1962937037]
-
 [node name="PoofParticles" parent="." unique_id=149224647 instance=ExtResource("5_qjkh3")]
