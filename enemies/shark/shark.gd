@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 	if GameState.boat.player_disembarked or not $RetreatTimer.is_stopped():
 		dir = global_position.direction_to(GameState.boat.global_position) * -1
 	else:
-		GameState.boat.max_speed_override = false
 		$RayCast2D.target_position = GameState.boat.global_position - global_position
 		if $RayCast2D.get_collider() is CharacterBody2D and $RayCast2D.get_collider().get_collision_layer_value(3):
 			dir = global_position.direction_to(GameState.boat.global_position + offset)
@@ -49,8 +48,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if collision and collision.get_collider() == GameState.boat and not GameState.boat.player_disembarked:
-		GameState.boat.velocity = velocity * 3
-		GameState.boat.max_speed_override = true
+		GameState.boat.velocity = velocity * 2
+		GameState.boat.get_node("BounceTimer").start()
 		$RetreatTimer.start()
 
 func _on_death_timer_timeout() -> void:
