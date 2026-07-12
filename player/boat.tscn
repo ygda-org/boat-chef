@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://ce5smsbmncmp1" path="res://player/boat.gd" id="1_xptij"]
 [ext_resource type="Texture2D" uid="uid://ccb336ldn8e6d" path="res://assets/programmer_art/boat.png" id="2_xptij"]
+[ext_resource type="Texture2D" uid="uid://yb7hetahp804" path="res://assets/player/smoke_sheet.png" id="3_vagi7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xptij"]
 radius = 6.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fe51w"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 5
+particles_anim_loop = false
 
 [node name="Boat" type="CharacterBody2D" unique_id=1640580263]
 collision_layer = 5
@@ -51,5 +58,18 @@ offset_right = 122.0
 offset_bottom = -1.0
 scale = Vector2(0.3, 0.3)
 text = "Press Ctrl to board"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1184015269]
+material = SubResource("CanvasItemMaterial_fe51w")
+amount = 50
+texture = ExtResource("3_vagi7")
+lifetime = 3.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+anim_speed_min = 1.0
+anim_speed_max = 4.0
 
 [connection signal="timeout" from="BoatParticleTimer" to="." method="_on_boat_particle_timer_timeout"]
