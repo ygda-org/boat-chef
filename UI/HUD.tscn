@@ -172,11 +172,14 @@ stretch_mode = 4
 
 [node name="OrderLock" type="TextureButton" parent="." unique_id=1854297763]
 layout_mode = 0
-offset_left = -6.0
-offset_top = 274.0
-offset_right = 578.0
-offset_bottom = 951.0
+offset_left = 1754.0
+offset_top = -10.0
+offset_right = 2338.0
+offset_bottom = 667.0
 scale = Vector2(0.3, 0.3)
+offset_transform_enabled = true
 toggle_mode = true
 texture_normal = ExtResource("4_f2wx0")
 texture_pressed = ExtResource("4_uk570")
+
+[connection signal="pressed" from="OrderLock" to="." method="_on_order_lock_pressed"]

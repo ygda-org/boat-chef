@@ -36,3 +36,9 @@ func update_fruit():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+func _on_order_lock_pressed() -> void:
+	if $OrderLock.button_pressed:
+		GameState.lock_orders = true
+	else:
+		GameState.lock_orders = false

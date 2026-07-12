@@ -22,6 +22,7 @@ var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 12
 
 var lock_orders : bool = false
+var max_orders : int = 7
 
 signal inventory_modified
 
@@ -29,7 +30,9 @@ var player_disembarked
 
 func _process(delta):
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
-		create_order()
+		if hud.orders_list.get_child_count() < max_orders:
+			
+			create_order()
 	elapsed_time += delta
 
 func enter_restaurant():
