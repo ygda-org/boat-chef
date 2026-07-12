@@ -16,6 +16,7 @@ var collected = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	GameState.tree_pos.append(self)
 	fruit = randi_range(0,4)
 	$Sprite2D.material.set_shader_parameter("fruit_color", fruit_colors[fruit])
 
