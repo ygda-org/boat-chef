@@ -5,6 +5,9 @@ var boat
 
 const EMBARK_THRESHOLD = 50
 
+func _ready():
+	$SpawnParticles.emitting = true
+
 func _physics_process(_delta):
 	var dir = Input.get_vector("left", "right", "up", "down")
 	if dir.x:
