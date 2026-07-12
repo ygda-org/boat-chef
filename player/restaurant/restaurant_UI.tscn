@@ -199,7 +199,6 @@ fruit_texture = ExtResource("7_ggrnm")
 fruit_num = 4
 
 [node name="BoxFront" type="TextureRect" parent="." unique_id=1519563754]
-visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
