@@ -19,6 +19,10 @@ var angle
 var player_disembarked = false
 var player
 
+const PAUSE_MENU = preload("uid://dconohkodldha")
+
+@onready var canvas_layer = $"../CanvasLayer"
+
 func _ready():
 	GameState.boat = self
 	$BoostBar.max_value = MAX_BOOST
@@ -29,6 +33,12 @@ func _ready():
 	$Camera2D.limit_bottom = GameState.size.y / 2 * 16 - 8
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("pause"):
+		print("paused")
+		var pause_menu = PAUSE_MENU.instantiate()
+		canvas_layer.add_child(pause_menu)
+		get_tree().paused = true
+	
 	if GameState.in_restaurant:
 		return
 	if player_disembarked: # camera follow player

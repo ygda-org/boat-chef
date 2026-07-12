@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dconohkodldha"]
+
+[ext_resource type="Script" uid="uid://du8oilhn8rx6p" path="res://pause_menu/pause_menu.gd" id="1_5hbt6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jwd6l"]
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="Control" unique_id=1249245165]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5hbt6")
+
+[node name="Label" type="Label" parent="." unique_id=228264265]
+z_index = 1
+layout_mode = 0
+offset_left = 470.0
+offset_top = 387.0
+offset_right = 1288.0
+offset_bottom = 765.0
+text = "PAUSE MENU"
+label_settings = SubResource("LabelSettings_jwd6l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1018276507]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 347.0
+offset_right = 1174.0
+offset_bottom = 696.0
