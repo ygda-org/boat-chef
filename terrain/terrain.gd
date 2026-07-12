@@ -1,6 +1,7 @@
 extends Node2D
 
 const PICK_UP_FRUIT = preload("uid://de8qg8j7lpgiu")
+const FISH_SPAWNER = preload("uid://duermpwuilun1")
 
 const DEEP_WATER = Vector2i(5,1)
 const SHALLOW_WATER = Vector2i(7,0)
@@ -42,6 +43,7 @@ func set_terrain_id():
 			var atlas : Vector2i
 			if noise < 0.4: # deep water
 				atlas = DEEP_WATER
+				try_fish_spawn(x,y)
 			elif noise < 0.67: # shallow water
 				atlas = SHALLOW_WATER
 			elif noise < 0.72: # sand
@@ -162,3 +164,10 @@ func _process(_delta: float) -> void:
 		randomize_noise(randi())
 		clear_decor()
 		generate_terrain()
+
+func try_fish_spawn(x,y):
+	if randi_range(0, 500):
+		return
+	var spawn: VisibleOnScreenNotifier2D = FISH_SPAWNER.instantiate()
+	spawn.global_position = Vector2(x*16,y*16)
+	$Decor.call_deferred("add_child", spawn)

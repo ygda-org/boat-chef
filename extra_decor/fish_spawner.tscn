@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://duermpwuilun1"]
+
+[ext_resource type="Script" uid="uid://cheg74yn832fu" path="res://extra_decor/fish_spawner.gd" id="1_s814i"]
+
+[node name="FishSpawner" type="VisibleOnScreenNotifier2D" unique_id=1493296141]
+rect = Rect2(-50, -50, 100, 100)
+script = ExtResource("1_s814i")
+
+[connection signal="screen_entered" from="." to="." method="_on_screen_entered"]
+[connection signal="screen_exited" from="." to="." method="_on_screen_exited"]

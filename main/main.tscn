@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="8_grrlh"]
 [ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/wave.mp3" id="10_0i4oc"]
 [ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="11_bsumw"]
-[ext_resource type="PackedScene" uid="uid://yp8f47mtjl5" path="res://extra_decor/fish.tscn" id="12_fwcvl"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 
@@ -48,6 +47,3 @@ type = "sfx"
 [node name="DingCompleteSound" parent="." unique_id=1511952968 instance=ExtResource("8_grrlh")]
 stream = ExtResource("11_bsumw")
 type = "sfx"
-
-[node name="Fish" parent="." unique_id=2006995699 instance=ExtResource("12_fwcvl")]
-position = Vector2(421, 316)
