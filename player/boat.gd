@@ -37,6 +37,7 @@ func _physics_process(delta):
 				$Label.visible = true
 			else:
 				$Label.visible = false
+			$Camera2D.global_position = player.global_position
 		return
 	if Input.is_action_just_pressed("exit_boat"):
 		player_disembark()
