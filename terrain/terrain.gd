@@ -156,6 +156,7 @@ func generate_terrain():
 	fix_terrain_id()
 	set_corner_terrain()
 	$Boundaries.set_boundaries(size.x * 16)
+	apply_shader()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -171,3 +172,7 @@ func try_fish_spawn(x,y):
 	var spawn: VisibleOnScreenNotifier2D = FISH_SPAWNER.instantiate()
 	spawn.global_position = Vector2(x*16,y*16)
 	$Decor.call_deferred("add_child", spawn)
+
+func apply_shader():
+	$Water/SubViewport.size = size
+	$Water/SubViewport.add_child($CornerTileLayer.duplicate())
