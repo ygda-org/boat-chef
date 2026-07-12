@@ -33,3 +33,17 @@ func get_new_target():
 
 func _on_target_timer_timeout() -> void:
 	target = GameState.tree_pos.pick_random().global_position
+
+
+func _on_life_timer_timeout():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", Color(0.0, 0.0, 0.0, 0.0), 1)
+	queue_free()
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	$ThickRain.emitting = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	$ThickRain.emitting = false
