@@ -27,8 +27,6 @@ func _physics_process(delta: float) -> void:
 		if global_position.distance_to(GameState.boat.global_position + offset) < 50:
 			$OffsetCooldown.stop()
 		generate_offset()
-	print(global_position.distance_to(GameState.boat.global_position + offset))
-	
 	var dir
 	if GameState.boat.player_disembarked or not $RetreatTimer.is_stopped():
 		dir = global_position.direction_to(GameState.boat.global_position) * -1
