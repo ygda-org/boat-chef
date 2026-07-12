@@ -210,6 +210,40 @@ func _on_turn_timer_timeout():
 			dist_down = i
 	var direction = int(dist_up < dist_down or dist_up == 12) * 2 - 1
 	spt.play(ANIMATION_NAMES[(current_ind+direction)%24])
+	current_ind = ANIMATION_NAMES.find(spt.animation)
+	var foam_animation = spt.animation
+	if current_ind > 0 and current_ind < 7:
+		$Foam.flip_h = false
+		$Foam.flip_v = false
+	elif current_ind > 6 and current_ind < 13: # flip lr
+		$Foam.flip_h = true
+		$Foam.flip_v = false
+	elif current_ind > 12 and current_ind < 19: # flip both
+		foam_animation = foam_animation.replace("down", "up")
+		$Foam.flip_h = true
+		$Foam.flip_v = true
+	elif current_ind > 18 and current_ind < 24: # flip ud
+		foam_animation = foam_animation.replace("left", "right")
+		foam_animation = foam_animation.replace("down", "up")
+		$Foam.flip_h = false
+		$Foam.flip_v = true
+	if current_ind > 2 and current_ind < 10:
+		foam_animation = foam_animation.replace("left", "right")
+	elif current_ind > 9 and current_ind < 18:
+		foam_animation = foam_animation.replace("left", "right")
+		foam_animation = foam_animation.replace("down", "up")
+	elif current_ind > 15 and current_ind < 22:
+		foam_animation = foam_animation.replace("down", "up")
+	if foam_animation == "right":
+		foam_animation = "up"
+		$Foam.rotation = PI/2
+		$Foam.flip_h = false
+		if current_ind == 12:
+			$Foam.flip_v = true
+	else:
+		$Foam.rotation = 0
+	$Foam.play(foam_animation)
+
 
 func play_engine_sound(state):
 	if state == old_engine_state:

@@ -420,7 +420,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"t_right_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -437,7 +437,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"t_right_up2",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -454,7 +454,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"t_up_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -471,7 +471,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"t_up_right2",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -488,7 +488,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"up",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -505,7 +505,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"up_right",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xptij"]
@@ -553,8 +553,10 @@ animation = &"right"
 autoplay = "right"
 
 [node name="Foam" type="AnimatedSprite2D" parent="." unique_id=2045354500]
+rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_8i58c")
-animation = &"t_right_up2"
+animation = &"up"
+flip_v = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1855838448]
 z_index = 1
