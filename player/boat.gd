@@ -104,9 +104,9 @@ func _physics_process(delta):
 			$FastSmoke.emitting = true
 		boost_amount = clampf(boost_amount + delta/2, -1, MAX_BOOST)
 	
-	if boosted_sound:
+	if boosted_sound and dir:
 		play_engine_sound("boost")
-	elif velocity.length() > 0 and $BounceTimer.is_stopped():
+	elif velocity.length() > 0 and $BounceTimer.is_stopped() and dir:
 		play_engine_sound("normal")
 	else:
 		play_engine_sound("none")
