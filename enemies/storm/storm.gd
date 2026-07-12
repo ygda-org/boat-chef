@@ -7,7 +7,7 @@ const TARGET_DISTANCE_MARGIN = 100
 var target
 
 const ACCELERATION = 40
-const MAX_SPEED = 30
+const MAX_SPEED = 50
 var velocity = Vector2(0,0)
 
 var map_size
@@ -25,7 +25,7 @@ func _process(delta):
 	if global_position.distance_to(target) < TARGET_DISTANCE_MARGIN:
 		get_new_target()
 	velocity = velocity.move_toward(target-global_position, delta*ACCELERATION)
-	velocity.limit_length(MAX_SPEED)
+	velocity = velocity.limit_length(MAX_SPEED)
 	position += velocity * delta
 
 func get_new_target():
