@@ -78,7 +78,7 @@ script = ExtResource("4_c3a67")
 
 [node name="ThickRain" type="CPUParticles2D" parent="." unique_id=651911623]
 position = Vector2(0, 7)
-amount = 40
+amount = 30
 texture = ExtResource("4_il5hx")
 lifetime = 0.4
 local_coords = true
