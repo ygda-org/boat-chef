@@ -86,6 +86,8 @@ func _physics_process(delta):
 	else:
 		dir = Vector2.ZERO
 	
+	var boosted_sound = Input.is_action_pressed("boost") and boost_amount >= 0.1 and dir and $BounceTimer.is_stopped()
+	
 	var boosted = Input.is_action_pressed("boost") and boost_amount >= 0 and dir and $BounceTimer.is_stopped()
 	if boosted:
 		if not $Smoke.emitting:
@@ -101,7 +103,7 @@ func _physics_process(delta):
 			$FastSmoke.emitting = true
 		boost_amount = clampf(boost_amount + delta/2, -1, MAX_BOOST)
 	
-	if boosted:
+	if boosted_sound:
 		play_engine_sound("boost")
 	elif velocity.length() > 0 and $BounceTimer.is_stopped():
 		play_engine_sound("normal")
@@ -248,11 +250,10 @@ func play_engine_sound(state):
 		return
 	
 	boat_fast_sfx.stop()
-	boat_normal_sfx.stop()
 	
 	if state == "boost":
 		boat_fast_sfx.playSound()
-	elif state == "normal":
+	if state == "normal" && boat_normal_sfx.playing == false:
 		boat_normal_sfx.playSound()
 		
 	old_engine_state = state
