@@ -11,10 +11,15 @@ func _ready():
 func add_score(amount, step_size):
 	target_score = target_score + amount
 	current_step_size = step_size
+	$AudioStreamPlayer.play()
 
 func _process(_delta):
 	displayed_score += current_step_size
 	if displayed_score > target_score:
 		displayed_score = target_score
 	text = str(displayed_score)
-	
+
+
+func _on_audio_stream_player_finished():
+	if displayed_score != target_score:
+		$AudioStreamPlayer.play()
