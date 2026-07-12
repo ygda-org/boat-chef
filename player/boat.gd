@@ -12,7 +12,12 @@ const CAMERA_PAN_FACTOR = 1
 
 const BUBBLES = preload("uid://di2fr5wd01t5t")
 
-@onready var sprite_2d = $Sprite2D
+@onready var spt = $Anim
+const ANIMATION_NAMES = ["right", "t_right_up", "t_right_up2", "up_right", "t_up_right2", "t_up_right",
+						"up", "t_up_left", "t_up_left2", "up_left", "t_left_up2", "t_left_up",
+						"left", "t_left_down", "t_left_down2", "down_left", "t_down_left2", "t_down_left",
+						"down", "t_down_right", "t_down_right2", "down_right", "t_right_down2", "t_right_down"]
+var goal = ""
 
 var angle
 
@@ -109,21 +114,23 @@ func _physics_process(delta):
 	angle /= 45
 	angle = round(angle)
 	if angle == 0:
-		sprite_2d.rotation = deg_to_rad(90)
+		goal = "right"
 	elif angle == 1:
-		sprite_2d.rotation = deg_to_rad(135)
+		goal = "down_right"
 	elif angle == 2:
-		sprite_2d.rotation = deg_to_rad(180)
+		goal = "down"
 	elif angle == 3:
-		sprite_2d.rotation = deg_to_rad(225)
+		goal = "down_left"
 	elif angle == 4 or angle == -4:
-		sprite_2d.rotation = deg_to_rad(270)
+		goal = "left"
 	elif angle == -1:
-		sprite_2d.rotation = deg_to_rad(45)
+		goal = "up_right"
 	elif angle == -2:
-		sprite_2d.rotation = deg_to_rad(0)
+		goal = "up"
 	elif angle == -3:
-		sprite_2d.rotation = deg_to_rad(315)
+		goal = "up_left"
+	if goal != spt.animation and $TurnTimer.is_stopped():
+		$TurnTimer.start()
 	
 	move_and_slide()
 	GameState.player_position = global_position
@@ -151,6 +158,22 @@ func _on_boat_particle_timer_timeout() -> void:
 	if velocity.length() > 100 and not player_disembarked:
 		var bubbles = BUBBLES.instantiate()
 		get_parent().add_child(bubbles)
-		bubbles.global_position = $Sprite2D/Marker2D.global_position
-		bubbles.rotation = sprite_2d.rotation
+		bubbles.global_position = $Anim/Marker2D.global_position
+		bubbles.rotation = velocity.angle()
 		bubbles.emitting = true
+
+
+func _on_turn_timer_timeout():
+	var goal_ind = ANIMATION_NAMES.find(goal)
+	var current_ind = ANIMATION_NAMES.find(spt.animation)
+	if goal_ind == current_ind:
+		return
+	var dist_up 
+	var dist_down
+	for i in range(25):
+		if (current_ind + i) % 24 == goal_ind:
+			dist_up = i
+		if posmod(current_ind - i, 24) == goal_ind:
+			dist_down = i
+	var direction = int(dist_up < dist_down or dist_up == 12) * 2 - 1
+	spt.play(ANIMATION_NAMES[(current_ind+direction)%24])
