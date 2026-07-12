@@ -532,7 +532,7 @@ script = ExtResource("1_xptij")
 
 [node name="WaterStream" type="CPUParticles2D" parent="WaterStreamArm" unique_id=284552529]
 position = Vector2(0, -15)
-amount = 128
+amount = 80
 texture = ExtResource("4_pnosw")
 lifetime = 1.5
 emission_shape = 5
@@ -603,7 +603,7 @@ stretch_mode = 4
 
 [node name="Smoke" type="CPUParticles2D" parent="." unique_id=1184015269]
 material = SubResource("CanvasItemMaterial_fe51w")
-amount = 50
+amount = 20
 texture = ExtResource("3_vagi7")
 lifetime = 2.0
 gravity = Vector2(0, 0)
@@ -617,7 +617,7 @@ anim_speed_max = 4.0
 [node name="FastSmoke" type="CPUParticles2D" parent="." unique_id=1503742460]
 material = SubResource("CanvasItemMaterial_fe51w")
 emitting = false
-amount = 70
+amount = 30
 texture = ExtResource("3_vagi7")
 lifetime = 2.0
 gravity = Vector2(0, 0)

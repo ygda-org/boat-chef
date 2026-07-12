@@ -10,7 +10,7 @@ colors = PackedColorArray(1, 1, 1, 0.5372549, 1, 1, 1, 0)
 [node name="Bubbles" type="CPUParticles2D" unique_id=1307049630]
 z_index = 10
 emitting = false
-amount = 6
+amount = 3
 texture = ExtResource("1_kh4ov")
 one_shot = true
 explosiveness = 0.5
