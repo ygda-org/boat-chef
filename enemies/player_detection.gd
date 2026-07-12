@@ -1,6 +1,6 @@
 extends Area2D
 @export var size: int
-
+# this scene doesnt work anymore dont use it probably
 var player_position
 
 # Called when the node enters the scene tree for the first time.

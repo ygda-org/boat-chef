@@ -24,3 +24,4 @@ func _physics_process(_delta):
 		call_deferred("queue_free")
 	velocity = dir * SPEED
 	move_and_slide()
+	GameState.player_position = global_position

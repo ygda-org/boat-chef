@@ -96,6 +96,7 @@ func _physics_process(delta):
 		sprite_2d.rotation = deg_to_rad(315)
 	
 	move_and_slide()
+	GameState.player_position = global_position
 
 func player_disembark():
 	var raycast: RayCast2D = $PlayerSpawnFinder

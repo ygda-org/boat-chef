@@ -7,6 +7,7 @@ const ORDER_TICKET = preload("uid://5jxaioed8i86")
 var hud
 var boat
 var terrain
+var player_position
 var restaurant_ui : Node2D
 var in_restaurant = false
 var size = Vector2i(300,300)
