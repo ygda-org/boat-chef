@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b5flpe5g0s4jf"]
+
+[ext_resource type="Script" uid="uid://dbdxdrjyw274a" path="res://UI/ticking_score_display.gd" id="1_1770l"]
+
+[node name="TickingScoreDisplay" type="Label" unique_id=1792886533]
+script = ExtResource("1_1770l")
