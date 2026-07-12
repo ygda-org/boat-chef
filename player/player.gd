@@ -1,12 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 80
+const SPEED = 100
 var boat
 
-const EMBARK_THRESHOLD = 50
-
-func _ready():
-	$SpawnParticles.emitting = true
+const EMBARK_THRESHOLD = 70
 
 func _physics_process(_delta):
 	var dir = Input.get_vector("left", "right", "up", "down")
@@ -20,6 +17,9 @@ func _physics_process(_delta):
 	else:
 		$Anim.play("idle")
 	if Input.is_action_just_pressed("exit_boat") and global_position.distance_to(boat.global_position) < EMBARK_THRESHOLD:
+		var particles = load("uid://bag5jc6gjggld").instantiate()
+		particles.global_position = global_position
+		get_parent().add_child(particles)
 		boat.embark()
 		call_deferred("queue_free")
 	velocity = dir * SPEED

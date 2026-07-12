@@ -12,6 +12,7 @@
 [sub_resource type="Gradient" id="Gradient_1phc0"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p5txo"]
+resource_local_to_scene = true
 gradient = SubResource("Gradient_1phc0")
 width = 120
 height = 120
