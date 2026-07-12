@@ -31,9 +31,9 @@ func clear_decor():
 
 func check_center(n):
 	if n >= 0:
-		return n < 6
+		return n < 8
 	else:
-		return n > -7
+		return n > -9
 
 func set_terrain_id():
 	for y : int in range(-size.y/2, size.y/2):
