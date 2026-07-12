@@ -22,7 +22,7 @@ z_index = 1
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_tqxsf")
-fruit_colors = Array[Color]([Color(6.7383053e-06, 0.779898, 0.85731417, 1), Color(0.9799171, 0.95542794, 0.869592, 1), Color(0.76139385, 0, 0.018277653, 1), Color(0.541067, 0.28038332, 0.72531223, 1), Color(0.9048776, 0.7421944, 3.85046e-07, 1)])
+fruit_colors = Array[Color]([Color(6.7383053e-06, 0.779898, 0.85731417, 1), Color(0.9799171, 0.95542794, 0.869592, 1), Color(0.76139385, 0, 0.018277653, 1), Color(0.7920479, 0.37164417, 1, 1), Color(0.9048776, 0.7421944, 3.85046e-07, 1)])
 
 [node name="Area2D" type="Area2D" parent="." unique_id=105313267]
 collision_layer = 0
