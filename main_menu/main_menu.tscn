@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://by58fm25u4wrr"]
 
+[ext_resource type="Texture2D" uid="uid://demg3nd0qnohx" path="res://assets/title/Title screen .PNG" id="1_6tl50"]
 [ext_resource type="Script" uid="uid://dm6l24kvmu5vi" path="res://main_menu/button.gd" id="1_oa53l"]
 [ext_resource type="Texture2D" uid="uid://h0xyy4m70sl0" path="res://assets/ygda_logo/YGDA Logo.png" id="2_3shxk"]
+[ext_resource type="Texture2D" uid="uid://ctdwlua482y1l" path="res://assets/title/Play unhilighted.PNG" id="2_ia84y"]
 [ext_resource type="AudioStream" uid="uid://chfuwigwdu8gp" path="res://assets/sfx/Button1.mp3" id="3_3f7m4"]
+[ext_resource type="Texture2D" uid="uid://c1kieq1pl66p" path="res://assets/title/Play highlighted .PNG" id="3_6at21"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="3_bws42"]
 [ext_resource type="AudioStream" uid="uid://cnex2gruhto54" path="res://assets/ygda_logo/ygda sting.wav" id="4_bws42"]
+[ext_resource type="Texture2D" uid="uid://d0gkq1oskrx60" path="res://assets/title/Settings unhighlighted.PNG" id="9_og6xe"]
+[ext_resource type="Texture2D" uid="uid://ulwijjf7go51" path="res://assets/title/Settings highlighted.PNG" id="10_mvfl2"]
+[ext_resource type="Texture2D" uid="uid://cxqevjkfswg4c" path="res://assets/title/Credits unhighlighted.PNG" id="11_qvn4f"]
+[ext_resource type="Texture2D" uid="uid://ckjfxmbd5bfcp" path="res://assets/title/Credits highlighted.PNG" id="12_g1omr"]
+[ext_resource type="Texture2D" uid="uid://buotcr62jwm71" path="res://assets/title/IMG_1587.PNG" id="13_kwfav"]
+[ext_resource type="Texture2D" uid="uid://d21r3d4hblk66" path="res://assets/title/Back unhighlighted .PNG" id="14_n70vs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3f7m4"]
 atlas = ExtResource("2_3shxk")
@@ -70,14 +79,158 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_g1omr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayGame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1273, 430)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Settings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1273, 630)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1271, 811)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1290, 1132)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BackCredits:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1338, 1684)]
+}
+
+[sub_resource type="Animation" id="Animation_qvn4f"]
+resource_name = "buttons_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayGame:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1273, 430), Vector2(2000, 430)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Settings:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1273, 630), Vector2(2000, 630)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1271, 811), Vector2(2000, 811)]
+}
+
+[sub_resource type="Animation" id="Animation_kwfav"]
+resource_name = "credits_in"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1500, 1132), Vector2(1500, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackCredits:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1291, 1684), Vector2(1291, 900)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g1omr"]
+_data = {
+&"RESET": SubResource("Animation_g1omr"),
+&"buttons_out": SubResource("Animation_qvn4f"),
+&"credits_in": SubResource("Animation_kwfav")
+}
+
 [node name="MainMenu" type="Node2D" unique_id=1398627637]
 
-[node name="PlayGame" type="Button" parent="." unique_id=1905126042]
-offset_left = 737.0
-offset_top = 519.0
-offset_right = 824.0
-offset_bottom = 550.0
-text = "Play game"
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1022216389]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_6tl50")
+
+[node name="PlayGame" type="TextureButton" parent="." unique_id=231632452]
+offset_left = 1273.0
+offset_top = 430.0
+offset_right = 1782.0
+offset_bottom = 606.0
+texture_normal = ExtResource("2_ia84y")
+texture_pressed = ExtResource("3_6at21")
+texture_hover = ExtResource("3_6at21")
 script = ExtResource("1_oa53l")
 
 [node name="PlayGameButtonSound" parent="PlayGame" unique_id=1644282153 instance=ExtResource("3_bws42")]
@@ -85,7 +238,26 @@ stream = ExtResource("3_3f7m4")
 variate = false
 type = "sfx"
 
+[node name="Settings" type="TextureButton" parent="." unique_id=638517502]
+offset_left = 1273.0
+offset_top = 630.0
+offset_right = 1766.0
+offset_bottom = 795.0
+texture_normal = ExtResource("9_og6xe")
+texture_pressed = ExtResource("10_mvfl2")
+texture_hover = ExtResource("10_mvfl2")
+
+[node name="Credits" type="TextureButton" parent="." unique_id=229091731]
+offset_left = 1271.0
+offset_top = 811.0
+offset_right = 1764.0005
+offset_bottom = 979.0
+texture_normal = ExtResource("11_qvn4f")
+texture_pressed = ExtResource("12_g1omr")
+texture_hover = ExtResource("12_g1omr")
+
 [node name="YGDALogo" type="Node2D" parent="." unique_id=1805527149]
+visible = false
 
 [node name="YGDALogoSprite" type="AnimatedSprite2D" parent="YGDALogo" unique_id=1823975323]
 self_modulate = Color(1, 1, 1, 0)
@@ -104,5 +276,48 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
-[connection signal="button_down" from="PlayGame" to="PlayGame" method="_on_button_down"]
-[connection signal="button_up" from="PlayGame" to="PlayGame" method="_on_button_up"]
+[node name="Control" type="Control" parent="." unique_id=1585786513]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credits2" type="Label" parent="." unique_id=2020291084]
+offset_left = 1290.0
+offset_top = 1132.0
+offset_right = 1625.0
+offset_bottom = 1727.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "A game made by YGDA
+Programmers:
+Penguinja MrPuffyWuff
+stonkola Theophyklatos
+controlMage23 Vinter_Bie
+Artists:
+froqqo sssoiree
+youzicha08 rota-fortunae
+llama_brown Yao
+stonkola
+Sound designers:
+.cavedin llama_brown
+yoyoyonono scienceisprettycool
+stonkola
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=326905629]
+libraries/ = SubResource("AnimationLibrary_g1omr")
+
+[node name="BackCredits" type="TextureButton" parent="." unique_id=539934511]
+offset_left = 1338.0
+offset_top = 1684.0
+offset_right = 1831.0
+offset_bottom = 1863.0
+texture_normal = ExtResource("13_kwfav")
+texture_pressed = ExtResource("14_n70vs")
+texture_hover = ExtResource("14_n70vs")
+
+[connection signal="pressed" from="PlayGame" to="PlayGame" method="_on_pressed"]
+[connection signal="pressed" from="Settings" to="PlayGame" method="_on_settings_pressed"]
+[connection signal="pressed" from="Credits" to="PlayGame" method="_on_credits_pressed"]
+[connection signal="pressed" from="BackCredits" to="PlayGame" method="_on_back_pressed"]
