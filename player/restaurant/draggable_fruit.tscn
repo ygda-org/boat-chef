@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c6ufp4braxmir" path="res://player/restaurant/draggable_fruit.gd" id="1_ox65a"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_ox65a"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="3_tefst"]
+[ext_resource type="AudioStream" uid="uid://ct1paptnf2eg2" path="res://assets/sfx/fruit_squish_pickup.wav" id="4_t4gmx"]
+[ext_resource type="AudioStream" uid="uid://crkg1qkw5dcgf" path="res://assets/sfx/fruit_release.wav" id="5_t4gmx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5kg8m"]
 friction = 0.4
@@ -30,6 +33,14 @@ stretch_mode = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1330815323]
 shape = SubResource("CircleShape2D_5kg8m")
+
+[node name="FruitGrabSound" parent="." unique_id=1644282153 instance=ExtResource("3_tefst")]
+stream = ExtResource("4_t4gmx")
+type = "sfx"
+
+[node name="FruitReleaseSound" parent="." unique_id=885778053 instance=ExtResource("3_tefst")]
+stream = ExtResource("5_t4gmx")
+type = "sfx"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

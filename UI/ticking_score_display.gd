@@ -14,6 +14,9 @@ func add_score(amount, step_size):
 	$AudioStreamPlayer.play()
 
 func _process(_delta):
+	
+	$AudioStreamPlayer.volume_db = linear_to_db(GameState.sfx_volume * GameState.master_volume)
+	
 	displayed_score += current_step_size
 	if displayed_score > target_score:
 		displayed_score = target_score

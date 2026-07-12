@@ -1,7 +1,10 @@
 extends Node2D
 
+@onready var juice_sound = $Control/BlendButton/JuiceSound
 @onready var blend_sound = $Control/BlendButton/BlendSound
 @onready var exit_sound = $Control/ExitDoor/ExitSound
+@onready var blender_top_on_sound = $BlenderTopOnSound
+@onready var blender_top_off_sound = $BlenderTopOffSound
 
 func _ready():
 	GameState.restaurant_ui = self
@@ -11,8 +14,11 @@ func _on_button_pressed():
 	blend()
 
 func blend():
+	blender_top_on_sound.playSound()
 	enable_lid()
+	await blender_top_on_sound.finished
 	blend_sound.playSound()
+	juice_sound.playSound()
 	var blended = [0,0,0,0,0]
 	var rigid_body_list : Array[RigidBody2D]
 	for body in $Area2D.get_overlapping_bodies():
@@ -40,6 +46,7 @@ func blend():
 		body.queue_free()
 	await get_tree().create_timer(0.3).timeout
 	disable_lid()
+	blender_top_off_sound.playSound()
 	
 	$Lid/Fill_Max.self_modulate = Color(1.0,1.0,1.0,0.0)
 
