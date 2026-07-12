@@ -74,6 +74,9 @@ func _physics_process(delta):
 		$Camera2D.zoom = $Camera2D.zoom.lerp(Vector2(2,2), delta)
 	$BoostBar.value = boost_amount
 	var dir = Input.get_vector("left", "right", "up", "down")
+	if not dir:
+		$Smoke.emitting = false
+		$FastSmoke.emitting = false
 	if dir.x:
 		velocity.x = clampf(velocity.x + dir.x * calc_acceleration * delta, -calc_max_speed, calc_max_speed)
 		if dir.x * velocity.x < 0:

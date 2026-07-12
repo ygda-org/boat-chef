@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://3hrfkbuekby8" path="res://player/juice/bubbles.gd" id="2_6nxi5"]
 
 [sub_resource type="Gradient" id="Gradient_xptij"]
-colors = PackedColorArray(1, 1, 1, 0.3254902, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.0073891627, 1)
+colors = PackedColorArray(1, 1, 1, 0.5372549, 1, 1, 1, 0)
 
 [node name="Bubbles" type="CPUParticles2D" unique_id=1307049630]
 z_index = 10
 emitting = false
+amount = 6
 texture = ExtResource("1_kh4ov")
 one_shot = true
 explosiveness = 0.5
@@ -21,7 +23,4 @@ initial_velocity_max = 19.61
 color_ramp = SubResource("Gradient_xptij")
 script = ExtResource("2_6nxi5")
 
-[node name="Timer" type="Timer" parent="." unique_id=1270090010]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="." to="." method="_on_finished"]
