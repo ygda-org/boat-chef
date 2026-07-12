@@ -16,6 +16,7 @@ var bar_gradeint : Gradient = Gradient.new()
 @onready var receipt_paper_appear = $ReceiptPaperAppear
 @onready var ding_complete_sound = $"../../../../DingCompleteSound"
 @onready var failed_sound = $FailedSound
+@onready var receipt_paper_dissapear = $ReceiptPaperDissapear
 
 var fruits = [
 	AQUA_FRUIT,
@@ -135,7 +136,8 @@ func _process(delta : float) -> void:
 func order_complete():
 	$CompleteTimer.start()
 	await $CompleteTimer.timeout
-	ding_complete_sound.playSound()
+	receipt_paper_dissapear.playSound()
+	await receipt_paper_dissapear.finished
 	queue_free()
 
 func order_failed_sound():
