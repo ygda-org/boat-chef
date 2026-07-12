@@ -2,14 +2,14 @@ extends Control
 
 var order_resource : Order
 
-const AQUABERRY = preload("uid://c4fgvek4ht1hi")
-const WHITE_FRUIT = preload("uid://bpsq8em4s4yj4")
-const RED_FRUIT = preload("uid://itr02jcbacy8")
-const PURPLE_FRUIT = preload("uid://c3fnfd7gp1s1w")
-const YELLOW_FRUIT = preload("uid://bdxfbunt02bfn")
+const AQUA_FRUIT = preload("uid://bm6ftgeqahmmo")
+const WHITE_FRUIT = preload("uid://cue6c3y5nxydj")
+const RED_FRUIT = preload("uid://cg44l1p318nlq")
+const PURPLE_FRUIT = preload("uid://dkptjjkagw65d")
+const YELLOW_FRUIT = preload("uid://cd8y0nps6bv2j")
 
 var fruits = [
-	AQUABERRY,
+	AQUA_FRUIT,
 	WHITE_FRUIT,
 	RED_FRUIT,
 	PURPLE_FRUIT,
@@ -25,8 +25,6 @@ var colors = [
 ]
 
 func get_gradient_colors() -> Array[Color]:
-	var child_idx = 0
-	var fruit_idx = 0
 	var lower_color := Vector3.ZERO
 	var upper_color := Vector3.ZERO
 	
@@ -48,12 +46,12 @@ func get_gradient_colors() -> Array[Color]:
 	for i in range(order_resource.fruit_requirements[2]):
 		color_list.append(2)
 	
-	for i in range(floor(len(color_list)/2)):
+	for i in range(len(color_list)/2):
 		lower_color += colors[color_list[i]]
 		upper_color += colors[color_list[-(i + 1)]]
 	if len(color_list) % 2 == 1:
-		lower_color += colors[color_list[floor(len(color_list)/2)]]
-		upper_color += colors[color_list[floor(len(color_list)/2)]]
+		lower_color += colors[color_list[len(color_list)/2]]
+		upper_color += colors[color_list[len(color_list)/2]]
 	lower_color = lower_color/ ( ceil(len(color_list)/2.0) )
 	upper_color = upper_color/ ( ceil(len(color_list)/2.0) )
 	

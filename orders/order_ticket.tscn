@@ -5,17 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_2n20v"]
 [ext_resource type="Texture2D" uid="uid://itr02jcbacy8" path="res://assets/fruits/Red fruit.PNG" id="4_2n20v"]
 [ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="5_2n20v"]
+[ext_resource type="Texture2D" uid="uid://gtmn0p0skdw8" path="res://assets/fruits/fruits_small/IMG_1544.png" id="6_1phc0"]
 [ext_resource type="Texture2D" uid="uid://ctdsowk16vqrc" path="res://assets/ui/scribble_outline.png" id="7_1phc0"]
-[ext_resource type="Texture2D" uid="uid://w78wds8vglcx" path="res://assets/decor/glass_1.png" id="7_musx2"]
 [ext_resource type="Texture2D" uid="uid://dhvqn1hwpu7e2" path="res://assets/ui/scribble.png" id="8_8upnb"]
 
-[sub_resource type="Gradient" id="Gradient_1phc0"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p5txo"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c3odn"]
 resource_local_to_scene = true
-gradient = SubResource("Gradient_1phc0")
-width = 120
-height = 120
+height = 90
 fill_from = Vector2(1, 1)
 
 [node name="OrderTicket" type="Control" unique_id=441869335]
@@ -27,7 +23,6 @@ offset_right = -182.08002
 offset_bottom = -176.92001
 grow_horizontal = 2
 grow_vertical = 2
-offset_transform_enabled = true
 offset_transform_position = Vector2(0, -325)
 mouse_filter = 2
 script = ExtResource("1_g63pn")
@@ -138,19 +133,18 @@ stretch_mode = 4
 
 [node name="Fill" type="Polygon2D" parent="." unique_id=433512423]
 texture_repeat = 2
-position = Vector2(202, 201)
-texture = SubResource("GradientTexture2D_p5txo")
-polygon = PackedVector2Array(-29, -105, -32, -82, -42, -39, -36, -11, 0, 5, 34, -10, 41, -37, 28, -83, 28, -103, 29, -114, 8, -119, -21, -117, -32, -111)
-uv = PackedVector2Array(-29, -105, -32, -82, -42, -39, -36, -11, 0, 5, 34, -10, 41, -37, 28, -83, 28, -103, 29, -114, 8, -119, -21, -117, -32, -111)
+position = Vector2(203, 191)
+texture = SubResource("GradientTexture2D_c3odn")
+polygon = PackedVector2Array(-23, -87, -19, -81, -26, -24, -11, -4, 12, -4, 26, -25, 19, -82, 24, -86, 2, -92)
 
 [node name="Glass" type="TextureRect" parent="Fill" unique_id=763982105]
 custom_maximum_size = Vector2(100, 200)
 offset_left = -51.0
-offset_top = -130.0
+offset_top = -117.0
 offset_right = 49.0
-offset_bottom = 70.0
+offset_bottom = 83.0
 mouse_filter = 2
-texture = ExtResource("7_musx2")
+texture = ExtResource("6_1phc0")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
