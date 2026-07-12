@@ -40,6 +40,7 @@ func _on_pressed():
 
 
 func _on_back_pressed():
+	play_game_button_sound.playSound()
 	animation.play_backwards("credits_in")
 	await animation.animation_finished
 	animation.play_backwards("buttons_out")
