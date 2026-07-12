@@ -17,29 +17,46 @@ var fruits = [
 ]
 
 var colors = [
-	Vector3(141,236,243),
-	Vector3(239,230,225),
-	Vector3(193,105,93),
-	Vector3(160,131,191),
-	Vector3(238,214,132),
+	Vector3(141/255.0,236/255.0,243/255.0),
+	Vector3(245/255.0,245/255.0,245/255.0),
+	Vector3(193/255.0,105/255.0,93/255.0),
+	Vector3(160/255.0,131/255.0,191/255.0),
+	Vector3(238/255.0,214/255.0,132/255.0),
 ]
 
 func get_gradient_colors() -> Array[Color]:
 	var child_idx = 0
 	var fruit_idx = 0
-	var base_color := Vector3.ZERO
+	var lower_color := Vector3.ZERO
+	var upper_color := Vector3.ZERO
 	
-	var counts : Array[int] = [0,0,0,0,0]
+	var color_list : Array[int] = []
 	
-	for req in order_resource.fruit_requirements:
-		for i in range(req):
-			base_color += colors[fruit_idx]
-			child_idx += 1
-			#counts[fruit_idx]
-		fruit_idx += 1
-	base_color = base_color/child_idx
-	var color : Color = Color(base_color.x/255.0, base_color.y/255.0, base_color.z/255.0)
-	return [color, Color(1.0,1.0,1.0)]
+	#Aqua
+	for i in range(order_resource.fruit_requirements[0]):
+		color_list.append(0)
+	#Yellow
+	for i in range(order_resource.fruit_requirements[4]):
+		color_list.append(4)
+	#White
+	for i in range(order_resource.fruit_requirements[1]):
+		color_list.append(1)
+	#Purple
+	for i in range(order_resource.fruit_requirements[3]):
+		color_list.append(3)
+	#Red
+	for i in range(order_resource.fruit_requirements[2]):
+		color_list.append(2)
+	
+	for i in range(floor(len(color_list)/2)):
+		lower_color += colors[color_list[i]]
+		upper_color += colors[color_list[-(i + 1)]]
+	if len(color_list) % 2 == 1:
+		lower_color += colors[color_list[floor(len(color_list)/2)]]
+		upper_color += colors[color_list[floor(len(color_list)/2)]]
+	lower_color = lower_color/ ( ceil(len(color_list)/2.0) )
+	upper_color = upper_color/ ( ceil(len(color_list)/2.0) )
+	return [Color(lower_color.x, lower_color.y, lower_color.z), Color(upper_color.x, upper_color.y, upper_color.z)]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
