@@ -8,8 +8,8 @@ colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5kg8m"]
 gradient = SubResource("Gradient_yw30f")
-width = 2
-height = 2
+width = 3
+height = 3
 
 [sub_resource type="Gradient" id="Gradient_qjkh3"]
 offsets = PackedFloat32Array(0, 0.5640394, 1)
