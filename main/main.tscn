@@ -33,4 +33,3 @@ stream = ExtResource("8_67ri8")
 autoplay = true
 
 [node name="EnemySpawner" parent="." unique_id=115923181 instance=ExtResource("1_67ri8")]
-position = Vector2(30000, 0)
