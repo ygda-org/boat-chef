@@ -30,7 +30,14 @@ signal difficulty_updated
 
 var player_disembarked
 
+var in_game = false
+
+
 func _process(delta):
+	if not in_game:
+		return
+	if elapsed_time > 2.0 and elapsed_time < 3.0 and not hud.get_node("OrdersList").get_children():
+		create_order()
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
 		if hud.orders_list.get_child_count() < max_orders:
 			

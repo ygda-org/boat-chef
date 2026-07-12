@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://gcyfi1th04di" path="res://player/boat.tscn" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://3riixia4o7ih" path="res://enemies/enemy_spawner.tscn" id="1_67ri8"]
+[ext_resource type="Script" uid="uid://bka7l8ufo0x27" path="res://main/main.gd" id="1_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://b5d8815yxgqtd" path="res://terrain/terrain.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://dvk8alcqvh2tp" path="res://UI/HUD.tscn" id="4_c651c"]
 [ext_resource type="PackedScene" uid="uid://j1am0k3yknp2" path="res://player/restaurant/restaurant_UI.tscn" id="6_4dugh"]
@@ -17,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://bu17ng77lbtjw" path="res://assets/sfx/bird.wav" id="15_5xyti"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
+script = ExtResource("1_n3o0a")
 
 [node name="RestaurantUi" parent="." unique_id=1804860226 instance=ExtResource("6_4dugh")]
 position = Vector2(30000, 0)
