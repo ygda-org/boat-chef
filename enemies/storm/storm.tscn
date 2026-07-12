@@ -16,10 +16,59 @@ height = 254.0
 [node name="Storm" type="Node2D" unique_id=1018423783]
 script = ExtResource("1_2jc1j")
 
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1376940647]
+z_index = 15
+position = Vector2(-70, -29)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=547841819]
+z_index = 15
+position = Vector2(0, -38)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=420135940]
+z_index = 15
+position = Vector2(-31, -29)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3" unique_id=827560713]
+z_index = 15
+position = Vector2(63, 0)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=190254248]
+z_index = 15
+position = Vector2(-66, -13)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2" unique_id=1489037301]
+z_index = 15
+position = Vector2(63, 0)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D2/Sprite2D2" unique_id=1023471123]
+z_index = 15
+position = Vector2(63, 0)
+texture = ExtResource("2_3e5a4")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1657965330]
 z_index = 15
-position = Vector2(0, -52)
-scale = Vector2(4, 4)
+position = Vector2(-97, -11)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=825094423]
+z_index = 15
+position = Vector2(63, 0)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D" unique_id=599724820]
+z_index = 15
+position = Vector2(63, 0)
+texture = ExtResource("2_3e5a4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D" unique_id=1202131203]
+z_index = 15
+position = Vector2(63, 0)
 texture = ExtResource("2_3e5a4")
 
 [node name="RainSound" type="AudioStreamPlayer2D" parent="." unique_id=855894645]
@@ -62,6 +111,5 @@ texture = ExtResource("7_h0edi")
 
 [node name="TargetTimer" type="Timer" parent="." unique_id=1599205001]
 wait_time = 20.0
-one_shot = true
 
 [connection signal="timeout" from="TargetTimer" to="." method="_on_target_timer_timeout"]

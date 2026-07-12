@@ -32,4 +32,4 @@ func get_new_target():
 	$TargetTimer.start()
 
 func _on_target_timer_timeout() -> void:
-	target = Vector2(randf_range(-map_size.x, map_size.x),randf_range(-map_size.y, map_size.y))
+	target = GameState.tree_pos.pick_random().global_position

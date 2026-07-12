@@ -15,6 +15,7 @@ var player_position
 var restaurant_ui : Node2D
 var in_restaurant = false
 var size = Vector2i(300,300)
+var tree_pos: Array[Node2D] = []
 # Blue Brown Red White Yellow
 var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 12
