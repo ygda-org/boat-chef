@@ -54,7 +54,6 @@ func _physics_process(delta):
 		play_engine_sound("none")
 		
 	if Input.is_action_just_pressed("pause"):
-		print("paused")
 		var pause_menu = PAUSE_MENU.instantiate()
 		canvas_layer.add_child(pause_menu)
 		get_tree().paused = true
@@ -196,8 +195,6 @@ func _on_turn_timer_timeout():
 func play_engine_sound(state):
 	if state == old_engine_state:
 		return
-	
-	print(state,old_engine_state)
 	
 	boat_fast_sfx.stop()
 	boat_normal_sfx.stop()

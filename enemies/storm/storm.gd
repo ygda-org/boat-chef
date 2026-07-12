@@ -7,7 +7,7 @@ const TARGET_DISTANCE_MARGIN = 100
 var target
 
 const ACCELERATION = 40
-const MAX_SPEED = 150
+const MAX_SPEED = 60
 var velocity = Vector2(0,0)
 
 var map_size

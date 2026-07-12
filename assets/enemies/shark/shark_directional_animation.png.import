@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpwxgqbvwssws"
-path="res://.godot/imported/shark_directional_animation.png-fca1d7c4aa7ee82d872e7670c006c7c1.ctex"
+path="res://.godot/imported/shark_directional_animation.png-f71449938bd057196845160fc30dd225.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/shark_directional_animation.png"
-dest_files=["res://.godot/imported/shark_directional_animation.png-fca1d7c4aa7ee82d872e7670c006c7c1.ctex"]
+source_file="res://assets/enemies/shark/shark_directional_animation.png"
+dest_files=["res://.godot/imported/shark_directional_animation.png-f71449938bd057196845160fc30dd225.ctex"]
 
 [params]
 

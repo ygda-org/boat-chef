@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bhvmry4mcsou2" path="res://assets/music/island theme.ogg" id="8_67ri8"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="8_grrlh"]
 [ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/wave.mp3" id="10_0i4oc"]
+[ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="11_bsumw"]
 
 [node name="Main" type="Node2D" unique_id=1176585748]
 
@@ -41,4 +42,8 @@ type = "music"
 [node name="WaveSounds" parent="." unique_id=1229135443 instance=ExtResource("8_grrlh")]
 stream = ExtResource("10_0i4oc")
 autoplay = true
+type = "sfx"
+
+[node name="DingCompleteSound" parent="." unique_id=1511952968 instance=ExtResource("8_grrlh")]
+stream = ExtResource("11_bsumw")
 type = "sfx"

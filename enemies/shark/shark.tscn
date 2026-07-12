@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bb58feyabqp8m"]
 
 [ext_resource type="Script" uid="uid://diih7lcmoy417" path="res://enemies/shark/shark.gd" id="1_127p0"]
-[ext_resource type="Texture2D" uid="uid://dpwxgqbvwssws" path="res://assets/enemies/shark_directional_animation.png" id="3_bdosu"]
+[ext_resource type="Texture2D" uid="uid://dpwxgqbvwssws" path="res://assets/enemies/shark/shark_directional_animation.png" id="3_bdosu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjbfh"]
 radius = 6.519202

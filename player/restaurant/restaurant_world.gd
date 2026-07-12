@@ -9,7 +9,7 @@ func _process(_delta):
 		$Label.visible = true
 	else:
 		$Label.visible = false
-	if boat_in_area and Input.is_action_just_pressed("interact"):
+	if boat_in_area and Input.is_action_just_pressed("interact") and GameState.in_restaurant == false:
 		GameState.enter_restaurant()
 		enter_restaurant_sound.playSound()
 

@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bh0f4w20m2cd2"]
+
+[ext_resource type="Script" uid="uid://cto2vwcfb64qk" path="res://settings/settings.gd" id="1_iirne"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i854f"]
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_prb04"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_qsoik"]
+
+[node name="Settings" type="Control" unique_id=976684686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iirne")
+
+[node name="Label" type="Label" parent="." unique_id=1685353218]
+z_index = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 831.0
+offset_bottom = 385.0
+text = "PAUSE MENU"
+label_settings = SubResource("LabelSettings_i854f")
+
+[node name="MasterVolumeLabel" type="Label" parent="." unique_id=366116760]
+z_index = 1
+layout_mode = 0
+offset_left = 15.0
+offset_top = 201.0
+offset_right = 833.0
+offset_bottom = 321.0
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_prb04")
+
+[node name="MusicVolumeLabel" type="Label" parent="." unique_id=1491948230]
+z_index = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 380.0
+offset_right = 831.0
+offset_bottom = 500.0
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_prb04")
+
+[node name="SFXVolumeLabel" type="Label" parent="." unique_id=919398580]
+z_index = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 556.0
+offset_right = 830.0
+offset_bottom = 676.0
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_prb04")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=997264062]
+layout_mode = 0
+offset_left = -2557.0
+offset_top = -461.0
+offset_right = -638.0
+offset_bottom = 624.0
+
+[node name="MasterVolumeSlider" type="HSlider" parent="." unique_id=1470541747]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 331.0
+offset_right = 261.0
+offset_bottom = 347.0
+max_value = 1.0
+step = 0.05
+
+[node name="MusicVolumeSlider" type="HSlider" parent="." unique_id=588555908]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 494.0
+offset_right = 261.0
+offset_bottom = 510.0
+theme = SubResource("Theme_qsoik")
+max_value = 1.0
+step = 0.05
+
+[node name="SFXVolumeSlider" type="HSlider" parent="." unique_id=1416379353]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 698.0
+offset_right = 261.0
+offset_bottom = 714.0
+theme = SubResource("Theme_qsoik")
+max_value = 1.0
+step = 0.05
+
+[connection signal="value_changed" from="MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
