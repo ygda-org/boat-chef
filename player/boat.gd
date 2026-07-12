@@ -42,6 +42,9 @@ func _physics_process(delta):
 	if GameState.in_restaurant:
 		return
 	if player_disembarked: # camera follow player
+		$Smoke.emitting = false
+		$FastSmoke.emitting = false
+		$WaterStreamArm/WaterStream.emitting = false
 		if player:
 			if player.global_position.distance_to(global_position) < 70:
 				$Label.visible = true
