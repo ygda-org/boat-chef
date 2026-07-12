@@ -29,22 +29,22 @@ max_distance = 200.0
 script = ExtResource("4_c3a67")
 
 [node name="ThinRain" type="CPUParticles2D" parent="." unique_id=922048894]
-position = Vector2(0, 15)
+position = Vector2(0, 6)
 amount = 300
 texture = ExtResource("5_hn3mb")
 lifetime = 0.4
 local_coords = true
 emission_shape = 3
-emission_rect_extents = Vector2(128, 0)
+emission_rect_extents = Vector2(128, 4)
 
 [node name="ThickRain" type="CPUParticles2D" parent="." unique_id=651911623]
-position = Vector2(0, 15)
-amount = 12
+position = Vector2(0, 7)
+amount = 50
 texture = ExtResource("4_il5hx")
 lifetime = 0.4
 local_coords = true
 emission_shape = 3
-emission_rect_extents = Vector2(128, 0)
+emission_rect_extents = Vector2(128, 4)
 
 [node name="TakeItem" parent="." unique_id=392922631 instance=ExtResource("6_yb5q3")]
 position = Vector2(0, 90)
