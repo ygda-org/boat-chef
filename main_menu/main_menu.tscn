@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dm6l24kvmu5vi" path="res://main_menu/button.gd" id="1_oa53l"]
 [ext_resource type="Texture2D" uid="uid://h0xyy4m70sl0" path="res://assets/ygda_logo/YGDA Logo.png" id="2_3shxk"]
+[ext_resource type="AudioStream" uid="uid://chfuwigwdu8gp" path="res://assets/sfx/Button1.mp3" id="3_3f7m4"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="3_bws42"]
 [ext_resource type="AudioStream" uid="uid://cnex2gruhto54" path="res://assets/ygda_logo/ygda sting.wav" id="4_bws42"]
 
@@ -79,6 +80,11 @@ offset_bottom = 550.0
 text = "Play game"
 script = ExtResource("1_oa53l")
 
+[node name="PlayGameButtonSound" parent="PlayGame" unique_id=1644282153 instance=ExtResource("3_bws42")]
+stream = ExtResource("3_3f7m4")
+variate = false
+type = "sfx"
+
 [node name="YGDALogo" type="Node2D" parent="." unique_id=1805527149]
 
 [node name="YGDALogoSprite" type="AnimatedSprite2D" parent="YGDALogo" unique_id=1823975323]
@@ -87,13 +93,15 @@ position = Vector2(960, 540)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_jwd6l")
 
-[node name="YGDASting" parent="YGDALogo" unique_id=1644282153 instance=ExtResource("3_bws42")]
+[node name="YGDASting" parent="YGDALogo" unique_id=2018216042 instance=ExtResource("3_bws42")]
 stream = ExtResource("4_bws42")
-variate = true
+variate = false
+type = "sfx"
 
 [node name="ColorRect" type="ColorRect" parent="YGDALogo" unique_id=1787181921]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
+[connection signal="button_down" from="PlayGame" to="PlayGame" method="_on_button_down"]
 [connection signal="button_up" from="PlayGame" to="PlayGame" method="_on_button_up"]

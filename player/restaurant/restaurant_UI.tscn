@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b60fgip3iiqyv" path="res://assets/ui/restaurant_bg.png" id="2_6oknh"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="2_g50oe"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="3_1vpky"]
-[ext_resource type="AudioStream" uid="uid://ccqxhh44mwssp" path="res://assets/sfx/blendervrmmmmm.mp3" id="3_ggrnm"]
 [ext_resource type="PackedScene" uid="uid://15vtysw33mom" path="res://player/restaurant/fruit_spawner.tscn" id="3_okdgx"]
 [ext_resource type="Texture2D" uid="uid://bpxxcxod833fx" path="res://assets/ui/button.png" id="3_uoxct"]
 [ext_resource type="Texture2D" uid="uid://bpsq8em4s4yj4" path="res://assets/fruits/White fruit.png" id="4_1vpky"]
@@ -13,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://374uquhrccgu" path="res://assets/ui/wood_box_front.png" id="5_cygxp"]
 [ext_resource type="Texture2D" uid="uid://djfq27fb2m8v6" path="res://assets/ui/door.png" id="6_eevce"]
 [ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="6_g50oe"]
+[ext_resource type="AudioStream" uid="uid://cbanryu7w76ky" path="res://assets/sfx/blenda.wav" id="6_h2m70"]
 [ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="7_ggrnm"]
 [ext_resource type="Texture2D" uid="uid://dhxsd4yahgcah" path="res://assets/ui/door_hover.png" id="8_rcdv8"]
+[ext_resource type="AudioStream" uid="uid://c7jfdii135b2a" path="res://assets/sfx/resturant_enter.mp3" id="9_rcdv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oknh"]
 size = Vector2(1989, 181)
@@ -77,8 +78,9 @@ texture_hover = ExtResource("4_h2m70")
 texture_disabled = ExtResource("3_uoxct")
 texture_focused = ExtResource("3_uoxct")
 
-[node name="SfxPlayer" parent="Control/BlendButton" unique_id=1644282153 instance=ExtResource("2_g50oe")]
-stream = ExtResource("3_ggrnm")
+[node name="BlendSound" parent="Control/BlendButton" unique_id=1644282153 instance=ExtResource("2_g50oe")]
+stream = ExtResource("6_h2m70")
+type = "sfx"
 
 [node name="ExitDoor" type="TextureButton" parent="Control" unique_id=827990239]
 z_index = -4096
@@ -91,6 +93,10 @@ texture_normal = ExtResource("6_eevce")
 texture_pressed = ExtResource("6_eevce")
 texture_hover = ExtResource("8_rcdv8")
 texture_disabled = ExtResource("6_eevce")
+
+[node name="ExitSound" parent="Control/ExitDoor" unique_id=1525394302 instance=ExtResource("2_g50oe")]
+stream = ExtResource("9_rcdv8")
+type = "sfx"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=93602012]
 collision_layer = 8

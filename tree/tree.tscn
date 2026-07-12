@@ -36,8 +36,9 @@ text = "Press E to Collect Fruit"
 position = Vector2(0, -8)
 texture = ExtResource("2_rec30")
 
-[node name="SfxPlayer" parent="." unique_id=1644282153 instance=ExtResource("3_303ym")]
+[node name="FruitCollectSound" parent="." unique_id=1644282153 instance=ExtResource("3_303ym")]
 stream = ExtResource("4_rec30")
+type = "sfx"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -3,6 +3,8 @@ extends Button
 @onready var ygda_logo_sprite = $"../YGDALogo/YGDALogoSprite"
 @onready var ygda_sting = $"../YGDALogo/YGDASting"
 
+@onready var play_game_button_sound = $PlayGameButtonSound
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ygda_logo.visible = true
@@ -18,3 +20,6 @@ func _process(delta):
 
 func _on_button_up():
 	get_tree().change_scene_to_file("res://main/main.tscn")
+
+func _on_button_down():
+	play_game_button_sound.playSound()

@@ -1,5 +1,9 @@
 extends Node
 
+var master_volume = 0.5
+var music_volume = 0.5
+var sfx_volume = 0.5
+
 var elapsed_time = 0.0
 var order_frequency: int = 10
 const ORDER_TICKET = preload("uid://5jxaioed8i86")

@@ -14,6 +14,8 @@ var hid : bool = false
 
 var bar_gradeint : Gradient = Gradient.new()
 
+@onready var receipt_paper_appear = $ReceiptPaperAppear
+
 var fruits = [
 	AQUA_FRUIT,
 	WHITE_FRUIT,
@@ -71,6 +73,7 @@ func get_gradient_colors() -> Array[Color]:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	receipt_paper_appear.playSound()
 	#Set fruits and juice color
 	var child_idx = 0
 	var fruit_idx = 0

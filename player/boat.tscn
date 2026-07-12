@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bvbjtahbfu7ex" path="res://assets/player/boatsprite.png" id="2_pnosw"]
 [ext_resource type="Texture2D" uid="uid://yb7hetahp804" path="res://assets/player/smoke_sheet.png" id="3_vagi7"]
 [ext_resource type="Texture2D" uid="uid://dehw8tsnnxt5a" path="res://assets/particles/water.png" id="4_pnosw"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="5_x6or4"]
+[ext_resource type="AudioStream" uid="uid://kbs3qfmd14k" path="res://assets/sfx/boat_going_fast.wav" id="6_l63hx"]
+[ext_resource type="AudioStream" uid="uid://0le1wmehgkv5" path="res://assets/sfx/boat_going_normal.wav" id="7_8i58c"]
+[ext_resource type="AudioStream" uid="uid://dgovcjnhod0ha" path="res://assets/sfx/therealfinalgetoffboatpoof.mp3" id="8_l63hx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylvqr"]
 atlas = ExtResource("2_pnosw")
@@ -403,6 +407,19 @@ color = Color(1, 1, 1, 0.42745098)
 [node name="TurnTimer" type="Timer" parent="." unique_id=533274340]
 wait_time = 0.05
 one_shot = true
+
+[node name="BoatFastSFX" parent="." unique_id=1644282153 instance=ExtResource("5_x6or4")]
+stream = ExtResource("6_l63hx")
+type = "sfx"
+
+[node name="BoatNormalSFX" parent="." unique_id=261514388 instance=ExtResource("5_x6or4")]
+stream = ExtResource("7_8i58c")
+volume_db = 5.93
+type = "sfx"
+
+[node name="DisembarkBoatSound" parent="." unique_id=1894839494 instance=ExtResource("5_x6or4")]
+stream = ExtResource("8_l63hx")
+type = "sfx"
 
 [connection signal="timeout" from="BoatParticleTimer" to="." method="_on_boat_particle_timer_timeout"]
 [connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]

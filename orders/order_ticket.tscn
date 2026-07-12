@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://gtmn0p0skdw8" path="res://assets/fruits/fruits_small/IMG_1544.png" id="6_1phc0"]
 [ext_resource type="Texture2D" uid="uid://ctdsowk16vqrc" path="res://assets/ui/scribble_outline.png" id="7_1phc0"]
 [ext_resource type="Texture2D" uid="uid://cwnbm50ptxfgo" path="res://assets/ui/scribble_white.png" id="7_8upnb"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="9_8upnb"]
+[ext_resource type="AudioStream" uid="uid://b7vpshulwnorf" path="res://assets/sfx/receipt_paper_appear.wav" id="10_wfgsf"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_c3odn"]
 resource_local_to_scene = true
@@ -155,6 +157,10 @@ texture = SubResource("GradientTexture2D_377x3")
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="ReceiptPaperAppear" parent="." unique_id=1644282153 instance=ExtResource("9_8upnb")]
+stream = ExtResource("10_wfgsf")
+type = "sfx"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

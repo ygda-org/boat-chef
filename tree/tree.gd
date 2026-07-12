@@ -8,7 +8,7 @@ var fruit = (randi_range(0,4))
 
 const TREE_PARTICLES = preload("uid://blfwcc7chqy1h")
 
-@onready var sfx_player = $SfxPlayer
+@onready var fruit_collect_sound = $FruitCollectSound
 
 var collected = false
 
@@ -33,9 +33,9 @@ func _process(_delta):
 			particles.global_position = global_position
 			particles.emitting = true
 			visible = false
-			sfx_player.playSound()
+			fruit_collect_sound.playSound()
 			collected = true
-			await sfx_player.finished
+			await fruit_collect_sound.finished
 			queue_free()
 
 func _on_area_2d_body_entered(_body):

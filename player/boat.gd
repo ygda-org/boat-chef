@@ -28,6 +28,13 @@ const PAUSE_MENU = preload("uid://dconohkodldha")
 
 @onready var canvas_layer = $"../CanvasLayer"
 
+@onready var boat_fast_sfx = $BoatFastSFX
+@onready var boat_normal_sfx = $BoatNormalSFX
+
+@onready var disembark_boat_sound = $DisembarkBoatSound
+
+var old_engine_state = "none"
+
 func _ready():
 	GameState.boat = self
 	$BoostBar.max_value = MAX_BOOST
@@ -38,6 +45,14 @@ func _ready():
 	$Camera2D.limit_bottom = GameState.size.y / 2 * 16 - 8
 
 func _physics_process(delta):
+	
+	if Input.is_action_pressed("boost") and boost_amount > 0.1:
+		play_engine_sound("boost")
+	elif velocity.length() > 0:
+		play_engine_sound("normal")
+	else:
+		play_engine_sound("none")
+		
 	if Input.is_action_just_pressed("pause"):
 		print("paused")
 		var pause_menu = PAUSE_MENU.instantiate()
@@ -136,6 +151,7 @@ func _physics_process(delta):
 	GameState.player_position = global_position
 
 func player_disembark():
+	disembark_boat_sound.playSound()
 	var raycast: RayCast2D = $PlayerSpawnFinder
 	for i in range(8):
 		if raycast.is_colliding():
@@ -162,7 +178,6 @@ func _on_boat_particle_timer_timeout() -> void:
 		bubbles.rotation = velocity.angle()
 		bubbles.emitting = true
 
-
 func _on_turn_timer_timeout():
 	var goal_ind = ANIMATION_NAMES.find(goal)
 	var current_ind = ANIMATION_NAMES.find(spt.animation)
@@ -177,3 +192,19 @@ func _on_turn_timer_timeout():
 			dist_down = i
 	var direction = int(dist_up < dist_down or dist_up == 12) * 2 - 1
 	spt.play(ANIMATION_NAMES[(current_ind+direction)%24])
+
+func play_engine_sound(state):
+	if state == old_engine_state:
+		return
+	
+	print(state,old_engine_state)
+	
+	boat_fast_sfx.stop()
+	boat_normal_sfx.stop()
+	
+	if state == "boost":
+		boat_fast_sfx.playSound()
+	elif state == "normal":
+		boat_normal_sfx.playSound()
+		
+	old_engine_state = state
