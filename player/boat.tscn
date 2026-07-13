@@ -11,14 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://du7234d4a3ktp" path="res://assets/player/foam_5.png" id="4_y83ph"]
 [ext_resource type="Texture2D" uid="uid://c8t1hxnhmg0m8" path="res://assets/player/foam_2.png" id="5_nks3j"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="5_x6or4"]
-[ext_resource type="AudioStream" uid="uid://kbs3qfmd14k" path="res://assets/sfx/boat_going_fast.wav" id="6_l63hx"]
+[ext_resource type="AudioStream" uid="uid://kbs3qfmd14k" path="res://assets/sfx/boat/boat_going_fast.wav" id="6_l63hx"]
 [ext_resource type="Texture2D" uid="uid://bgfob0rql3d54" path="res://assets/player/foam_3.png" id="6_rsfm2"]
-[ext_resource type="AudioStream" uid="uid://0le1wmehgkv5" path="res://assets/sfx/boat_going_normal.wav" id="7_8i58c"]
+[ext_resource type="AudioStream" uid="uid://0le1wmehgkv5" path="res://assets/sfx/boat/boat_going_normal.wav" id="7_8i58c"]
 [ext_resource type="Texture2D" uid="uid://cad7iswlx7elq" path="res://assets/player/foam_4.png" id="8_itcif"]
-[ext_resource type="AudioStream" uid="uid://dgovcjnhod0ha" path="res://assets/sfx/therealfinalgetoffboatpoof.mp3" id="8_l63hx"]
+[ext_resource type="AudioStream" uid="uid://dgovcjnhod0ha" path="res://assets/sfx/boat/therealfinalgetoffboatpoof.mp3" id="8_l63hx"]
 [ext_resource type="Texture2D" uid="uid://cm5st8bg8egq3" path="res://assets/ui/bar.png" id="11_rsfm2"]
 [ext_resource type="Texture2D" uid="uid://ddh6pkmqkm5q5" path="res://assets/ui/barfill.png" id="12_itcif"]
-[ext_resource type="AudioStream" uid="uid://cn4o15ux2eids" path="res://assets/sfx/get_on_boat.wav" id="16_y83ph"]
+[ext_resource type="AudioStream" uid="uid://cn4o15ux2eids" path="res://assets/sfx/boat/get_on_boat.wav" id="16_y83ph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y83ph"]
 

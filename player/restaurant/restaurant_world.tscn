@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="3_r2cku"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="4_8eea0"]
 [ext_resource type="Texture2D" uid="uid://dawe7m127fstl" path="res://assets/ui/e key.PNG" id="4_hf6nj"]
-[ext_resource type="AudioStream" uid="uid://c7jfdii135b2a" path="res://assets/sfx/resturant_enter.mp3" id="5_hf6nj"]
+[ext_resource type="AudioStream" uid="uid://c7jfdii135b2a" path="res://assets/sfx/restaurant/resturant_enter.mp3" id="5_hf6nj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_70mun"]
 radius = 117.0

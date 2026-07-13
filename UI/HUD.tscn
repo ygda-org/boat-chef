@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_gppie"]
 [ext_resource type="Texture2D" uid="uid://bdcob4xm06c8e" path="res://assets/ui/rope.png" id="4_uk570"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="6_2ptjp"]
-[ext_resource type="Texture2D" uid="uid://dbl3sf2bvkdem" path="res://assets/IMG_3358.png" id="6_gppie"]
-[ext_resource type="AudioStream" uid="uid://css186bvng0jb" path="res://assets/sfx/rope_pull_down_orders.wav" id="7_md4fy"]
+[ext_resource type="Texture2D" uid="uid://dbl3sf2bvkdem" path="res://assets/boost_lines/IMG_3358.png" id="6_gppie"]
+[ext_resource type="AudioStream" uid="uid://css186bvng0jb" path="res://assets/sfx/HUD/rope_pull_down_orders.wav" id="7_md4fy"]
 
 [node name="Hud" type="Control" unique_id=2112623844]
 layout_mode = 3

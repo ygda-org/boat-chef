@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dconohkodldha" path="res://pause_menu/pause_menu.tscn" id="6_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="7_4dugh"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="8_grrlh"]
-[ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/wave.mp3" id="10_0i4oc"]
+[ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/ambience/wave.mp3" id="10_0i4oc"]
 [ext_resource type="AudioStream" uid="uid://djfvu73vfmpg" path="res://assets/music/malik_theme.ogg" id="10_5xyti"]
 [ext_resource type="Script" uid="uid://doshhqeop66ek" path="res://main/music.gd" id="10_s758e"]
-[ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="11_bsumw"]
+[ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/restaurant/bell_ding.wav" id="11_bsumw"]
 [ext_resource type="PackedScene" uid="uid://dupfut6blne7t" path="res://sound/sfx_player_with_timer.tscn" id="12_na0o7"]
 [ext_resource type="AudioStream" uid="uid://csujsabms4uht" path="res://assets/music/erina_theme.ogg" id="13_4hmqs"]
 [ext_resource type="PackedScene" uid="uid://rw44bs7ullm0" path="res://player/player.tscn" id="14_73k8k"]
-[ext_resource type="AudioStream" uid="uid://c0vfkm8efusqh" path="res://assets/sfx/seagull (1).wav" id="15_5xyti"]
+[ext_resource type="AudioStream" uid="uid://c0vfkm8efusqh" path="res://assets/sfx/ambience/seagull (1).wav" id="15_5xyti"]
 
 [sub_resource type="Animation" id="Animation_s758e"]
 length = 0.001

@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://ctdsowk16vqrc" path="res://assets/ui/scribble_outline.png" id="7_1phc0"]
 [ext_resource type="Texture2D" uid="uid://cwnbm50ptxfgo" path="res://assets/ui/scribble_white.png" id="7_8upnb"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="9_8upnb"]
-[ext_resource type="AudioStream" uid="uid://b7vpshulwnorf" path="res://assets/sfx/receipt_paper_appear.wav" id="10_wfgsf"]
-[ext_resource type="AudioStream" uid="uid://decjw5f42layi" path="res://assets/sfx/incorrect_order.wav" id="11_o5yfj"]
-[ext_resource type="AudioStream" uid="uid://b0qen2t3jp7mj" path="res://assets/sfx/depaper.wav" id="12_o5yfj"]
+[ext_resource type="AudioStream" uid="uid://b7vpshulwnorf" path="res://assets/sfx/HUD/receipt_paper_appear.wav" id="10_wfgsf"]
+[ext_resource type="AudioStream" uid="uid://decjw5f42layi" path="res://assets/sfx/restaurant/incorrect_order.wav" id="11_o5yfj"]
+[ext_resource type="AudioStream" uid="uid://b0qen2t3jp7mj" path="res://assets/sfx/HUD/depaper.wav" id="12_o5yfj"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_c3odn"]
 resource_local_to_scene = true

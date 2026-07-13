@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh5icx0v1amar"]
 
-[ext_resource type="Texture2D" uid="uid://4j0odkgafw4c" path="res://assets/IMG_3365.png" id="1_hd263"]
+[ext_resource type="Texture2D" uid="uid://4j0odkgafw4c" path="res://assets/ending/IMG_3365.png" id="1_hd263"]
 [ext_resource type="Script" uid="uid://dt4j02jj1ix41" path="res://main/game_over.gd" id="2_3tev8"]
 [ext_resource type="FontFile" uid="uid://cmuvasafc622f" path="res://assets/ui/bubble_font.ttf" id="2_mqrur"]
 [ext_resource type="Texture2D" uid="uid://ctdwlua482y1l" path="res://assets/title/Play unhilighted.PNG" id="3_3tev8"]
