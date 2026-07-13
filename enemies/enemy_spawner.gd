@@ -15,7 +15,7 @@ func set_difficulty():
 
 func _on_storm_timer_timeout() -> void:
 	var storm = STORMSPAWN.instantiate()
-	storm.global_position = find_legal_spawn(1100,2000)
+	storm.global_position = find_legal_spawn(500,1000)
 	add_child(storm)
 
 func _on_shark_timer_timeout() -> void:

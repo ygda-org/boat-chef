@@ -2,6 +2,8 @@ extends Control
 
 @onready var orders_list = $OrdersList
 
+@onready var rope_sound = $RopeSound
+
 const AQUABERRY = preload("uid://c4fgvek4ht1hi")
 const WHITE_FRUIT = preload("uid://bpsq8em4s4yj4")
 const RED_FRUIT = preload("uid://itr02jcbacy8")
@@ -39,6 +41,7 @@ func _process(_delta):
 	pass
 
 func _on_order_lock_pressed() -> void:
+	rope_sound.playSound()
 	var button : TextureButton = $OrderLock
 	if button.button_pressed:
 		GameState.lock_orders = true
