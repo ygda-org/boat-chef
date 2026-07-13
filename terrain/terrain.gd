@@ -127,39 +127,39 @@ func set_corner_terrain():
 			match corners:
 				[base, base, base, base]:
 					if corners[0] == DEEP_WATER:
-						corner_tile.set_cell(cur_cord, 1, Vector2i(8,3))
+						corner_tile.set_cell(cur_cord, 3, Vector2i(8,3))
 					else:
-						corner_tile.set_cell(cur_cord, 1, Vector2i(5 + offset,1))
+						corner_tile.set_cell(cur_cord, 3, Vector2i(5 + offset,1))
 				[base, base, base, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(0 + offset,0))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(0 + offset,0))
 				[base, base, head, base]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,0))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(2 + offset,0))
 				[base, base, head, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,0))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(1 + offset,0))
 				[base, head, base, base]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(0 + offset,2))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(0 + offset,2))
 				[base, head, base, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(0 + offset,1))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(0 + offset,1))
 				[base, head, head, base]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,0))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(3 + offset,0))
 				[base, head, head, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,3))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(3 + offset,3))
 				[head, base, base, base]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,2))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(2 + offset,2))
 				[head, base, base, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,1))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(3 + offset,1))
 				[head, base, head, base]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,1))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(2 + offset,1))
 				[head, base, head, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(2 + offset,3))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(2 + offset,3))
 				[head, head, base, base]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,2))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(1 + offset,2))
 				[head, head, base, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(3 + offset,2))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(3 + offset,2))
 				[head, head, head, base]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,3))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(1 + offset,3))
 				[head, head, head, head]:
-					corner_tile.set_cell(cur_cord, 1, Vector2i(1 + offset,1))
+					corner_tile.set_cell(cur_cord, 3, Vector2i(1 + offset,1))
 				
 
 func generate_terrain():

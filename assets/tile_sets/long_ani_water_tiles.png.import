@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt635opbhlafd"
-path="res://.godot/imported/pause.png-1ae561f3bc81500c9be2d9dbcefe44ff.ctex"
+uid="uid://b46bw6e2v6o1n"
+path="res://.godot/imported/long_ani_water_tiles.png-b25ffb62f8c2f0eb41005d3466462845.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/pause.png"
-dest_files=["res://.godot/imported/pause.png-1ae561f3bc81500c9be2d9dbcefe44ff.ctex"]
+source_file="res://assets/tile_sets/long_ani_water_tiles.png"
+dest_files=["res://.godot/imported/long_ani_water_tiles.png-b25ffb62f8c2f0eb41005d3466462845.ctex"]
 
 [params]
 
