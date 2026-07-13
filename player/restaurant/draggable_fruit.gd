@@ -14,6 +14,8 @@ const FORCE_STRENGTH = 10000
 var spring_constant: float = 250
 var damping_constant: float = 50
 
+var old_velocity : Vector2 = Vector2.ZERO
+
 func _ready():
 	$Sprite2D.texture = texture_to_set
 	if fruit_type == 4: #Yellow
@@ -27,9 +29,11 @@ func _ready():
 	elif fruit_type == 0: # Eliot Color
 		$Sprite2D.position = Vector2(-105.0, -115.0)
 	$Sprite2D.position += Vector2(8,9)
+	GameState.restaurant_ui_visible_updated.connect(_on_restaurant_ui_visible_updated)
 
 func _process(delta):
-	
+	if not GameState.in_restaurant:
+		return
 	if mouse and Input.is_action_just_pressed("left_click"):
 		fruit_grab_sound.playSound()
 	if mouse and Input.is_action_just_released("left_click"):
@@ -58,3 +62,13 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	mouse = false
+
+func _on_restaurant_ui_visible_updated():
+	if GameState.in_restaurant:
+		freeze = false
+		grabbed = false
+		linear_velocity = old_velocity
+	else:
+		old_velocity = linear_velocity
+		freeze = true
+		grabbed = false

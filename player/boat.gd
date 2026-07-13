@@ -208,6 +208,7 @@ func _on_turn_timer_timeout():
 		return
 	var goal_ind = ANIMATION_NAMES.find(goal)
 	var current_ind = ANIMATION_NAMES.find(spt.animation)
+	print(current_ind)
 	if goal_ind == current_ind:
 		return
 	var dist_up 
@@ -231,11 +232,14 @@ func _on_turn_timer_timeout():
 		foam_animation = foam_animation.replace("down", "up")
 		$Foam.flip_h = true
 		$Foam.flip_v = true
-	elif current_ind > 18 and current_ind < 24: # flip ud
+	elif current_ind > 18 and current_ind < 23: # flip ud
 		foam_animation = foam_animation.replace("left", "right")
 		foam_animation = foam_animation.replace("down", "up")
 		$Foam.flip_h = false
 		$Foam.flip_v = true
+	elif current_ind == 0 or current_ind == 23:
+		$Foam.flip_h = false
+		$Foam.flip_v = false
 	if current_ind > 2 and current_ind < 10:
 		foam_animation = foam_animation.replace("left", "right")
 	elif current_ind > 9 and current_ind < 18:

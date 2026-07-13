@@ -28,6 +28,7 @@ var max_orders : int = 7
 
 signal inventory_modified
 signal difficulty_updated
+signal restaurant_ui_visible_updated
 
 var player_disembarked
 
@@ -48,6 +49,7 @@ func _process(delta):
 
 func enter_restaurant():
 	in_restaurant = true
+	restaurant_ui_visible_updated.emit()
 	boat.get_node("Camera2D").enabled = false
 	restaurant_ui.get_node("Camera2D").enabled = true
 	hud.order_lock.button_pressed = true
@@ -55,6 +57,7 @@ func enter_restaurant():
 
 func exit_restaurant():
 	in_restaurant = false
+	restaurant_ui_visible_updated.emit()
 	boat.get_node("Camera2D").enabled = true
 	restaurant_ui.get_node("Camera2D").enabled = false
 	hud.order_lock.button_pressed = false
