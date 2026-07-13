@@ -5,7 +5,7 @@ const DECELERATION = 200
 const MAX_SPEED = 200
 
 const BOOST_MULTIPLIER = 1.8
-const MAX_BOOST = 1.5
+const MAX_BOOST = 2
 @onready var boost_amount = MAX_BOOST
 
 const CAMERA_PAN_FACTOR = 1
