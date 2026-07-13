@@ -208,7 +208,6 @@ func _on_turn_timer_timeout():
 		return
 	var goal_ind = ANIMATION_NAMES.find(goal)
 	var current_ind = ANIMATION_NAMES.find(spt.animation)
-	print(current_ind)
 	if goal_ind == current_ind:
 		return
 	var dist_up 
