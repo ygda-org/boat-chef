@@ -67,5 +67,8 @@ type = "sfx"
 position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_5kg8m")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=430419789]
+rect = Rect2(-1, -1, 2, 2)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
