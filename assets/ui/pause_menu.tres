@@ -3,10 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://d0wv7h4kuv7rr" path="res://assets/programmer_art/fruits/brown.png" id="1_nhq7j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhq7j"]
-bg_color = Color(0.1212585, 0.062294785, 0.016765844, 1)
+bg_color = Color(0.23529412, 0.08627451, 0.05882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gppie"]
+bg_color = Color(0.3253401, 0.13718632, 0.10252638, 1)
 
 [resource]
 HSlider/icons/grabber = ExtResource("1_nhq7j")
 HSlider/icons/grabber_disabled = ExtResource("1_nhq7j")
 HSlider/icons/grabber_highlight = ExtResource("1_nhq7j")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_nhq7j")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gppie")
