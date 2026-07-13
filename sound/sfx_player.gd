@@ -6,8 +6,6 @@ extends AudioStreamPlayer
 
 func _ready():
 	volume_db = linear_to_db(0.25)
-	if type == "music":
-		playSound()
 
 func playSound():
 	if variate == true:

@@ -11,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="7_4dugh"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="8_grrlh"]
 [ext_resource type="AudioStream" uid="uid://b6q2tu11c8mrc" path="res://assets/sfx/wave.mp3" id="10_0i4oc"]
-[ext_resource type="AudioStream" uid="uid://djfvu73vfmpg" path="res://assets/music/the_real_theme.ogg" id="10_5xyti"]
+[ext_resource type="AudioStream" uid="uid://djfvu73vfmpg" path="res://assets/music/malik_theme.ogg" id="10_5xyti"]
+[ext_resource type="Script" uid="uid://doshhqeop66ek" path="res://main/music.gd" id="10_s758e"]
 [ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="11_bsumw"]
 [ext_resource type="PackedScene" uid="uid://dupfut6blne7t" path="res://sound/sfx_player_with_timer.tscn" id="12_na0o7"]
+[ext_resource type="AudioStream" uid="uid://dw1b1angrnu74" path="res://assets/music/erina_theme.ogg" id="13_4hmqs"]
 [ext_resource type="PackedScene" uid="uid://rw44bs7ullm0" path="res://player/player.tscn" id="14_73k8k"]
 [ext_resource type="AudioStream" uid="uid://c0vfkm8efusqh" path="res://assets/sfx/seagull (1).wav" id="15_5xyti"]
 
@@ -43,8 +45,16 @@ visible = false
 [node name="EnemySpawner" parent="." unique_id=115923181 instance=ExtResource("1_67ri8")]
 visible = true
 
-[node name="IslandTheme" parent="." unique_id=1644282153 instance=ExtResource("8_grrlh")]
+[node name="Music" type="Node" parent="." unique_id=1871492756]
+script = ExtResource("10_s758e")
+
+[node name="MalikTheme" parent="Music" unique_id=1644282153 instance=ExtResource("8_grrlh")]
 stream = ExtResource("10_5xyti")
+variate = false
+type = "music"
+
+[node name="ErinaTheme" parent="Music" unique_id=1521577046 instance=ExtResource("8_grrlh")]
+stream = ExtResource("13_4hmqs")
 variate = false
 type = "music"
 
@@ -63,3 +73,6 @@ position = Vector2(0, 69)
 
 [node name="BirdSound" parent="." unique_id=1386631493 instance=ExtResource("12_na0o7")]
 stream = ExtResource("15_5xyti")
+
+[connection signal="finished" from="Music/MalikTheme" to="Music" method="_on_malik_theme_finished"]
+[connection signal="finished" from="Music/ErinaTheme" to="Music" method="_on_erina_theme_finished"]

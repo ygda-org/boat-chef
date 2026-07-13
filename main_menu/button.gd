@@ -3,6 +3,7 @@ extends TextureButton
 @onready var ygda_logo_sprite : AnimatedSprite2D = $"../YGDALogo/YGDALogoSprite"
 @onready var ygda_sting = $"../YGDALogo/YGDASting"
 @onready var color_rect = $"../YGDALogo/ColorRect"
+@onready var music = $"../Music"
 
 @onready var play_game_button_sound = $PlayGameButtonSound
 @onready var animation: AnimationPlayer = get_parent().get_node("AnimationPlayer")
@@ -25,6 +26,7 @@ func _ready():
 	ygda_sting.playing = false
 	ygda_logo.visible = false
 
+	music.playSound()
 
 func _on_settings_pressed():
 	animation.play("buttons_out")
