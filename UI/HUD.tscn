@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://b7p5ik15uw5vx" path="res://UI/HUD.gd" id="1_62wf1"]
 [ext_resource type="Texture2D" uid="uid://cb8hvlhobao6p" path="res://assets/ui/inventory.png" id="2_2ptjp"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_gppie"]
-[ext_resource type="Texture2D" uid="uid://w01x1sigktlk" path="res://assets/ui/vup.PNG" id="4_f2wx0"]
-[ext_resource type="Texture2D" uid="uid://b0sm51ea8apmt" path="res://assets/ui/v.png" id="4_uk570"]
+[ext_resource type="Texture2D" uid="uid://bdcob4xm06c8e" path="res://assets/ui/rope.png" id="4_uk570"]
 [ext_resource type="Texture2D" uid="uid://dbl3sf2bvkdem" path="res://assets/IMG_3358.png" id="6_gppie"]
 
 [node name="Hud" type="Control" unique_id=2112623844]
@@ -172,16 +171,17 @@ texture = ExtResource("2_gppie")
 stretch_mode = 4
 
 [node name="OrderLock" type="TextureButton" parent="." unique_id=1854297763]
+self_modulate = Color(1.353256, 1.353256, 1.353256, 1)
 layout_mode = 0
-offset_left = 1754.0
-offset_top = -10.0
-offset_right = 2338.0
-offset_bottom = 667.0
-scale = Vector2(0.3, 0.3)
+offset_left = 1809.0
+offset_top = -87.0
+offset_right = 1854.0
+offset_bottom = 213.0
 offset_transform_enabled = true
 toggle_mode = true
-texture_normal = ExtResource("4_f2wx0")
+texture_normal = ExtResource("4_uk570")
 texture_pressed = ExtResource("4_uk570")
+stretch_mode = 3
 
 [node name="Speed" type="Sprite2D" parent="." unique_id=1327282185]
 position = Vector2(960, 540)

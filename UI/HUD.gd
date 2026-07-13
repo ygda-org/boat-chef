@@ -20,6 +20,7 @@ var fruits = [
 func _ready():
 	GameState.hud = self
 	GameState.inventory_modified.connect(update_fruit)
+	_on_order_lock_pressed()
 
 func update_fruit():
 	var child_idx = 0
@@ -38,7 +39,12 @@ func _process(_delta):
 	pass
 
 func _on_order_lock_pressed() -> void:
-	if $OrderLock.button_pressed:
+	var button : TextureButton = $OrderLock
+	if button.button_pressed:
 		GameState.lock_orders = true
+		var tween = get_tree().create_tween()
+		tween.tween_property(button, "offset_transform_position", Vector2(0,70), 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	else:
 		GameState.lock_orders = false
+		var tween = get_tree().create_tween()
+		tween.tween_property(button, "offset_transform_position", Vector2(0,0), 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
