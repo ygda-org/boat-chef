@@ -104,10 +104,10 @@ func _physics_process(delta):
 		boost_amount -= delta
 		calc_max_speed *= BOOST_MULTIPLIER
 		calc_acceleration *= BOOST_MULTIPLIER
-		if velocity.length() > MAX_SPEED:
+		if velocity.length() > MAX_SPEED/2:
 			speed.scale = speed.scale.lerp(Vector2(1,1), delta)
 		else:
-			speed.scale = speed.scale.lerp(Vector2(2,2), delta)
+			speed.scale = speed.scale.lerp(Vector2(2,2), delta*4)
 	else:
 		speed.scale = speed.scale.lerp(Vector2(2,2), delta)
 		if not $FastSmoke.emitting:

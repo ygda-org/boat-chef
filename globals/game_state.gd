@@ -87,7 +87,7 @@ func get_new_order_resource():
 	return resource
 
 func order_failed():
-	get_tree().change_scene_to_file("uid://bh5icx0v1amar")
+	get_tree().call_deferred("change_scene_to_file", "uid://bh5icx0v1amar")
 
 func check_order(blend):
 	if order_frequency > 15:
