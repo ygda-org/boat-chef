@@ -121,7 +121,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
-size = Vector2(8, 17)
+size = Vector2(8, 5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1348453819]
 collision_layer = 4
@@ -136,7 +136,7 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1711433830]
 z_index = 1000
-position = Vector2(0, 7.5)
+position = Vector2(0, 13.5)
 shape = SubResource("RectangleShape2D_5kg8m")
 
 [node name="PoofParticles" parent="." unique_id=149224647 instance=ExtResource("5_qjkh3")]
