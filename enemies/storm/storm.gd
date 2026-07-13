@@ -7,7 +7,7 @@ const TARGET_DISTANCE_MARGIN = 100
 var target
 
 const ACCELERATION = 40
-const MAX_SPEED = 50
+const MAX_SPEED = 100
 var velocity = Vector2(0,0)
 
 var map_size
@@ -27,6 +27,7 @@ func _process(delta):
 	velocity = velocity.move_toward(target-global_position, delta*ACCELERATION)
 	velocity = velocity.limit_length(MAX_SPEED)
 	position += velocity * delta
+	print(global_position)
 
 func get_new_target():
 	$TargetTimer.start()
