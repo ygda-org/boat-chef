@@ -249,7 +249,9 @@ func _on_turn_timer_timeout():
 			$Foam.flip_v = true
 	else:
 		$Foam.rotation = 0
+	var old_frame = $Foam.frame
 	$Foam.play(foam_animation)
+	$Foam.frame = old_frame+1
 
 
 func play_engine_sound(state):

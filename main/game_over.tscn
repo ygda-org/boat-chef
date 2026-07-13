@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://bh5icx0v1amar"]
 
 [node name="GameOver" type="TextureRect" unique_id=1509021265]
+
+[node name="Label" type="Label" parent="." unique_id=556795189]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "game over"
