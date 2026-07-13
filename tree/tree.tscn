@@ -8,8 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://dp1fb2mp64i7x" path="res://assets/sfx/pick_up_fruit.mp3" id="6_bi80s"]
 [ext_resource type="AudioStream" uid="uid://ceqwh0tcs7ulh" path="res://assets/sfx/tree_harvest.wav" id="6_erh2v"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jwd6l"]
-radius = 45.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhq7j"]
+radius = 24.0
+height = 78.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rec30"]
 resource_local_to_scene = true
@@ -17,7 +18,7 @@ shader = ExtResource("2_haf48")
 shader_parameter/fruit_color = Color(0.57569677, 0.13931704, 4.813075e-08, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kg8m"]
-size = Vector2(40, 57)
+size = Vector2(32, 57)
 
 [node name="Tree" type="StaticBody2D" unique_id=1493668305]
 z_index = 1
@@ -31,7 +32,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=600341663]
-shape = SubResource("CircleShape2D_jwd6l")
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_nhq7j")
 
 [node name="Control" type="Control" parent="." unique_id=682394517]
 layout_mode = 3
