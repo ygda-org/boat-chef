@@ -152,7 +152,7 @@ func order_complete():
 func order_failed_sound():
 	$CompleteTimer.start()
 	await $CompleteTimer.timeout
-	#failed_sound.playSound()
+	failed_sound.playSound()
 
 func _on_mouse_entered() -> void:
 	mouse = true
