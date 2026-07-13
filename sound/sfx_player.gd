@@ -4,6 +4,11 @@ extends AudioStreamPlayer
 
 @export var type = ""
 
+func _ready():
+	volume_db = linear_to_db(0.25)
+	if type == "music":
+		playSound()
+
 func playSound():
 	if variate == true:
 		pitch_scale = 1.0 + randf_range(-0.1,0.1)

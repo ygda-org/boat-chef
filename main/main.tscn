@@ -45,7 +45,7 @@ visible = true
 
 [node name="IslandTheme" parent="." unique_id=1644282153 instance=ExtResource("8_grrlh")]
 stream = ExtResource("10_5xyti")
-autoplay = true
+variate = false
 type = "music"
 
 [node name="WaveSounds" parent="." unique_id=1229135443 instance=ExtResource("8_grrlh")]

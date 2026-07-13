@@ -1,5 +1,8 @@
 extends RigidBody2D
 
+@onready var fruit_grab_sound = $FruitGrabSound
+@onready var fruit_release_sound = $FruitReleaseSound
+
 var fruit_type: int
 var texture_to_set
 
@@ -26,6 +29,12 @@ func _ready():
 	$Sprite2D.position += Vector2(8,9)
 
 func _process(delta):
+	
+	if mouse and Input.is_action_just_pressed("left_click"):
+		fruit_grab_sound.playSound()
+	if mouse and Input.is_action_just_released("left_click"):
+		fruit_release_sound.playSound()
+
 	if mouse and Input.is_action_just_pressed("left_click"):
 		grabbed = true
 	elif Input.is_action_just_released("left_click"):

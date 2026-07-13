@@ -14,12 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://8wadg5f5bqtg" path="res://assets/fruits/Purple fruit.PNG" id="6_g50oe"]
 [ext_resource type="AudioStream" uid="uid://cbanryu7w76ky" path="res://assets/sfx/blenda.wav" id="6_h2m70"]
 [ext_resource type="Texture2D" uid="uid://bdxfbunt02bfn" path="res://assets/fruits/Yellow fruit.PNG" id="7_ggrnm"]
+[ext_resource type="AudioStream" uid="uid://oeiqpfi7pnsx" path="res://assets/sfx/slush_slush_during_blending.wav" id="7_lsioe"]
 [ext_resource type="Texture2D" uid="uid://dhxsd4yahgcah" path="res://assets/ui/door_hover.png" id="8_rcdv8"]
 [ext_resource type="AudioStream" uid="uid://c7jfdii135b2a" path="res://assets/sfx/resturant_enter.mp3" id="9_rcdv8"]
 [ext_resource type="PackedScene" uid="uid://b5flpe5g0s4jf" path="res://UI/ticking_score_display.tscn" id="10_xnohp"]
 [ext_resource type="Texture2D" uid="uid://b54pmsmbspyf" path="res://assets/ui/rim.png" id="11_ybvgn"]
 [ext_resource type="Texture2D" uid="uid://dui1det3hxpfo" path="res://assets/ui/glass.png" id="19_bmgun"]
 [ext_resource type="Texture2D" uid="uid://cd8h3qy5xx35b" path="res://assets/ui/lid.png" id="20_wiyd1"]
+[ext_resource type="AudioStream" uid="uid://dgcpdmkoy1npq" path="res://assets/sfx/blender_open.wav" id="21_sqn5y"]
+[ext_resource type="AudioStream" uid="uid://b6wtq331fto34" path="res://assets/sfx/blender_close.wav" id="22_jfdkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oknh"]
 size = Vector2(1989, 181)
@@ -94,6 +97,10 @@ texture_focused = ExtResource("3_uoxct")
 
 [node name="BlendSound" parent="Control/BlendButton" unique_id=1307709056 instance=ExtResource("2_g50oe")]
 stream = ExtResource("6_h2m70")
+type = "sfx"
+
+[node name="JuiceSound" parent="Control/BlendButton" unique_id=1644282153 instance=ExtResource("2_g50oe")]
+stream = ExtResource("7_lsioe")
 type = "sfx"
 
 [node name="ExitDoor" type="TextureButton" parent="Control" unique_id=827990239]
@@ -295,6 +302,14 @@ offset_top = 927.0
 offset_right = 1719.0
 offset_bottom = 971.0
 theme_override_font_sizes/font_size = 44
+
+[node name="BlenderTopOnSound" parent="." unique_id=1093801088 instance=ExtResource("2_g50oe")]
+stream = ExtResource("21_sqn5y")
+type = "sfx"
+
+[node name="BlenderTopOffSound" parent="." unique_id=2009270771 instance=ExtResource("2_g50oe")]
+stream = ExtResource("22_jfdkn")
+type = "sfx"
 
 [connection signal="mouse_entered" from="Control/BlendButton" to="." method="_on_blend_button_mouse_entered"]
 [connection signal="pressed" from="Control/BlendButton" to="." method="blend"]

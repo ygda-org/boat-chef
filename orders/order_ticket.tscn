@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cwnbm50ptxfgo" path="res://assets/ui/scribble_white.png" id="7_8upnb"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="9_8upnb"]
 [ext_resource type="AudioStream" uid="uid://b7vpshulwnorf" path="res://assets/sfx/receipt_paper_appear.wav" id="10_wfgsf"]
-[ext_resource type="AudioStream" uid="uid://dhtawfbhel3oi" path="res://assets/sfx/order_fail.mp3" id="11_5eieq"]
+[ext_resource type="AudioStream" uid="uid://decjw5f42layi" path="res://assets/sfx/incorrect_order.wav" id="11_o5yfj"]
 [ext_resource type="AudioStream" uid="uid://b0qen2t3jp7mj" path="res://assets/sfx/depaper.wav" id="12_o5yfj"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_c3odn"]
@@ -153,7 +153,7 @@ wait_time = 1.9
 one_shot = true
 
 [node name="FailedSound" parent="." unique_id=1087385764 instance=ExtResource("9_8upnb")]
-stream = ExtResource("11_5eieq")
+stream = ExtResource("11_o5yfj")
 type = "sfx"
 
 [node name="ReceiptPaperDissapear" parent="." unique_id=1354311565 instance=ExtResource("9_8upnb")]

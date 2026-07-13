@@ -7,6 +7,8 @@ extends TextureButton
 @onready var play_game_button_sound = $PlayGameButtonSound
 @onready var animation: AnimationPlayer = get_parent().get_node("AnimationPlayer")
 
+@onready var hover_sound = $HoverSound
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ygda_logo.visible = true
@@ -44,3 +46,13 @@ func _on_back_pressed():
 	animation.play_backwards("credits_in")
 	await animation.animation_finished
 	animation.play_backwards("buttons_out")
+
+
+func _on_mouse_entered():
+	hover_sound.playSound()
+
+func _on_settings_mouse_entered():
+	hover_sound.playSound()
+
+func _on_credits_mouse_entered():
+	hover_sound.playSound()
