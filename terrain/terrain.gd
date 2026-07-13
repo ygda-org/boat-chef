@@ -167,6 +167,7 @@ func generate_terrain():
 	fix_terrain_id()
 	set_corner_terrain()
 	$Boundaries.set_boundaries(size.x * 16)
+	apply_shader()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
