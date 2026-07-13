@@ -93,7 +93,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1273, 430)]
+"values": [Vector2(1273, 620)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -156,7 +156,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1273, 430), Vector2(2000, 430)]
+"values": [Vector2(1273, 620), Vector2(2000, 620)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -227,9 +227,9 @@ texture = ExtResource("1_6tl50")
 
 [node name="PlayGame" type="TextureButton" parent="." unique_id=231632452]
 offset_left = 1273.0
-offset_top = 430.0
+offset_top = 620.0
 offset_right = 1782.0
-offset_bottom = 606.0
+offset_bottom = 796.0
 texture_normal = ExtResource("2_ia84y")
 texture_pressed = ExtResource("3_6at21")
 texture_hover = ExtResource("3_6at21")
@@ -245,6 +245,7 @@ stream = ExtResource("7_n70vs")
 type = "sfx"
 
 [node name="Settings" type="TextureButton" parent="." unique_id=638517502]
+visible = false
 offset_left = 1273.0
 offset_top = 630.0
 offset_right = 1766.0
