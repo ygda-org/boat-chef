@@ -19,3 +19,6 @@ func _on_music_volume_slider_value_changed(value):
 
 func _on_sfx_volume_slider_value_changed(value):
 	GameState.sfx_volume = value
+
+func _on_graphics_button_pressed() -> void:
+	GameState.graphics_qual_low = $GraphicsButton.button_pressed

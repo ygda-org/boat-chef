@@ -175,7 +175,12 @@ func _process(_delta: float) -> void:
 		#randomize_noise(randi())
 		#clear_decor()
 		#generate_terrain()
-	pass
+	if GameState.graphics_qual_low:
+		$Water.visible = false
+		$CornerTileLayer.material.shader = null
+	else:
+		$Water.visible = true
+		$CornerTileLayer.material.shader = preload("uid://6vxjtndhamh")
 
 func try_fish_spawn(x,y):
 	if randi_range(0, 500):

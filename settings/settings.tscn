@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bh0f4w20m2cd2"]
 
 [ext_resource type="Script" uid="uid://cto2vwcfb64qk" path="res://settings/settings.gd" id="1_iirne"]
-[ext_resource type="Texture2D" uid="uid://15hxwm1gemnp" path="res://assets/ui/pause.PNG" id="2_prb04"]
+[ext_resource type="Texture2D" uid="uid://bt635opbhlafd" path="res://assets/ui/pause.png" id="2_jo7dw"]
 [ext_resource type="Theme" uid="uid://1mji8drae8q5" path="res://assets/ui/pause_menu.tres" id="3_qsoik"]
+[ext_resource type="Texture2D" uid="uid://c28fdolejcki0" path="res://assets/ui/checkbox.png" id="4_qsoik"]
+[ext_resource type="Texture2D" uid="uid://dx3vmgashqnqh" path="res://assets/ui/check.png" id="5_ivjpp"]
 
 [node name="Settings" type="Control" unique_id=976684686]
 layout_mode = 3
@@ -17,7 +19,7 @@ script = ExtResource("1_iirne")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_prb04")
+texture = ExtResource("2_jo7dw")
 
 [node name="MasterVolumeSlider" type="HSlider" parent="." unique_id=1470541747]
 layout_mode = 0
@@ -49,6 +51,21 @@ theme = ExtResource("3_qsoik")
 max_value = 1.0
 step = 0.05
 
+[node name="Box" type="TextureRect" parent="." unique_id=616774197]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_qsoik")
+
+[node name="GraphicsButton" type="TextureButton" parent="." unique_id=1264954647]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+toggle_mode = true
+texture_pressed = ExtResource("5_ivjpp")
+stretch_mode = 3
+
 [connection signal="value_changed" from="MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="value_changed" from="MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="GraphicsButton" to="." method="_on_graphics_button_pressed"]

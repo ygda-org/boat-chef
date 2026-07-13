@@ -32,6 +32,8 @@ var player_disembarked
 
 var in_game = false
 
+var graphics_qual_low := false
+
 
 func _process(delta):
 	if not in_game:
@@ -40,7 +42,6 @@ func _process(delta):
 		create_order()
 	if int(elapsed_time / order_frequency) != int((elapsed_time + delta) / order_frequency):
 		if hud.orders_list.get_child_count() < max_orders:
-			
 			create_order()
 	elapsed_time += delta
 

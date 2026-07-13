@@ -34,12 +34,6 @@ vec2 blendSubtract_vec2(vec2 base, vec2 blend, float opacity)
 
 // Blends two floats by subtracting them. Compare this to Photoshop blend mode "Subtract".
 // Source:
-// https://docs.unity3d.com/Packages/com.unity.shadergraph@6.9/manual/Blend-Node.html
-float blendSubtract_float(float base, float blend, float opacity)
-{
-	float result = base - blend;
-	return mix(base, result, opacity);
-}
 
 // Pixelizes the given coordinate.
 vec2 pixelizeCoordinates(vec2 coordinates)
