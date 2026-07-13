@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://0le1wmehgkv5" path="res://assets/sfx/boat_going_normal.wav" id="7_8i58c"]
 [ext_resource type="Texture2D" uid="uid://cad7iswlx7elq" path="res://assets/player/foam_4.png" id="8_itcif"]
 [ext_resource type="AudioStream" uid="uid://dgovcjnhod0ha" path="res://assets/sfx/therealfinalgetoffboatpoof.mp3" id="8_l63hx"]
+[ext_resource type="Texture2D" uid="uid://cm5st8bg8egq3" path="res://assets/ui/bar.png" id="11_rsfm2"]
 [ext_resource type="AudioStream" uid="uid://cn4o15ux2eids" path="res://assets/sfx/get_on_boat.wav" id="16_y83ph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y83ph"]
@@ -575,12 +576,15 @@ position_smoothing_speed = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846610951]
 shape = SubResource("CircleShape2D_xptij")
 
-[node name="BoostBar" type="ProgressBar" parent="." unique_id=1681471480]
-offset_left = -12.0
-offset_top = 15.0
-offset_right = 12.0
-offset_bottom = 23.0
-show_percentage = false
+[node name="BoostBar" type="TextureProgressBar" parent="." unique_id=753984946]
+custom_maximum_size = Vector2(40, 40)
+offset_left = -20.0
+offset_top = 7.0
+offset_right = 20.0
+offset_bottom = 43.0
+value = 100.0
+nine_patch_stretch = true
+texture_over = ExtResource("11_rsfm2")
 
 [node name="PlayerSpawnFinder" type="RayCast2D" parent="." unique_id=1225334925]
 target_position = Vector2(0, -50)
