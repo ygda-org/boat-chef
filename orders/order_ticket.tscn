@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bm6ftgeqahmmo" path="res://assets/fruits/fruits_small/blue_emoji.PNG" id="3_1phc0"]
 [ext_resource type="Texture2D" uid="uid://dkptjjkagw65d" path="res://assets/fruits/fruits_small/purple_emoji.PNG" id="4_8upnb"]
 [ext_resource type="Texture2D" uid="uid://cd8y0nps6bv2j" path="res://assets/fruits/fruits_small/yellow_emoji.PNG" id="5_wfgsf"]
-[ext_resource type="Texture2D" uid="uid://gtmn0p0skdw8" path="res://assets/fruits/fruits_small/IMG_1544.png" id="6_1phc0"]
+[ext_resource type="Texture2D" uid="uid://gtmn0p0skdw8" path="res://assets/fruits/fruits_small/small_glass.png" id="6_1phc0"]
 [ext_resource type="Texture2D" uid="uid://ctdsowk16vqrc" path="res://assets/ui/scribble_outline.png" id="7_1phc0"]
 [ext_resource type="Texture2D" uid="uid://cwnbm50ptxfgo" path="res://assets/ui/scribble_white.png" id="7_8upnb"]
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="9_8upnb"]

@@ -57,6 +57,7 @@ visible = false
 tile_set = ExtResource("2_l7s0s")
 
 [node name="Water" type="Sprite2D" parent="." unique_id=645879764]
+visible = false
 material = SubResource("ShaderMaterial_7nt5j")
 texture = SubResource("ViewportTexture_5kg8m")
 

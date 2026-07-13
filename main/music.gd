@@ -14,12 +14,6 @@ func _ready():
 	else:
 		erina_theme.playSound()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_malik_theme_finished():
 	malik_theme.play()
 	malik_theme.seek(0.0)

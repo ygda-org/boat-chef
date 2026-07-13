@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gtmn0p0skdw8"
-path="res://.godot/imported/IMG_1544.png-056de9094505ce65c56d73a3ada07593.ctex"
+path="res://.godot/imported/small_glass.png-c74697f7b61a87828796b07aeb520e80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fruits/fruits_small/IMG_1544.png"
-dest_files=["res://.godot/imported/IMG_1544.png-056de9094505ce65c56d73a3ada07593.ctex"]
+source_file="res://assets/fruits/fruits_small/small_glass.png"
+dest_files=["res://.godot/imported/small_glass.png-c74697f7b61a87828796b07aeb520e80.ctex"]
 
 [params]
 
