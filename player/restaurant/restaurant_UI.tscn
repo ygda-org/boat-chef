@@ -311,6 +311,9 @@ type = "sfx"
 stream = ExtResource("22_jfdkn")
 type = "sfx"
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1597139399]
+position = Vector2(932, 270)
+
 [connection signal="mouse_entered" from="Control/BlendButton" to="." method="_on_blend_button_mouse_entered"]
 [connection signal="pressed" from="Control/BlendButton" to="." method="blend"]
 [connection signal="pressed" from="Control/ExitDoor" to="." method="_on_exit_door_pressed"]
