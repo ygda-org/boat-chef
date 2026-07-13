@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://1mji8drae8q5"]
+
+[ext_resource type="Texture2D" uid="uid://d0wv7h4kuv7rr" path="res://assets/programmer_art/fruits/brown.png" id="1_nhq7j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhq7j"]
+bg_color = Color(0.1212585, 0.062294785, 0.016765844, 1)
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_nhq7j")
+HSlider/icons/grabber_disabled = ExtResource("1_nhq7j")
+HSlider/icons/grabber_highlight = ExtResource("1_nhq7j")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_nhq7j")

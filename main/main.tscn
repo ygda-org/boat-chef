@@ -46,6 +46,7 @@ visible = false
 visible = true
 
 [node name="Music" type="Node" parent="." unique_id=1871492756]
+process_mode = 3
 script = ExtResource("10_s758e")
 
 [node name="MalikTheme" parent="Music" unique_id=1644282153 instance=ExtResource("8_grrlh")]

@@ -3,25 +3,11 @@
 [ext_resource type="Script" uid="uid://du8oilhn8rx6p" path="res://pause_menu/pause_menu.gd" id="1_5hbt6"]
 [ext_resource type="PackedScene" uid="uid://bh0f4w20m2cd2" path="res://settings/settings.tscn" id="2_rd7dy"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_jwd6l"]
-font_size = 128
-font_color = Color(0, 0, 0, 1)
-
 [node name="PauseMenu" type="Control" unique_id=1249245165]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_5hbt6")
-
-[node name="Label" type="Label" parent="." unique_id=228264265]
-z_index = 1
-layout_mode = 0
-offset_left = 13.0
-offset_top = 7.0
-offset_right = 831.0
-offset_bottom = 385.0
-text = "PAUSE MENU"
-label_settings = SubResource("LabelSettings_jwd6l")
 
 [node name="Settings" parent="." unique_id=976684686 instance=ExtResource("2_rd7dy")]
 layout_mode = 1
