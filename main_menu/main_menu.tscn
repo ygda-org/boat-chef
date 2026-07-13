@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://ckjfxmbd5bfcp" path="res://assets/title/Credits highlighted.PNG" id="12_g1omr"]
 [ext_resource type="Texture2D" uid="uid://buotcr62jwm71" path="res://assets/title/IMG_1587.PNG" id="13_kwfav"]
 [ext_resource type="Texture2D" uid="uid://d21r3d4hblk66" path="res://assets/title/Back unhighlighted .PNG" id="14_n70vs"]
+[ext_resource type="FontFile" uid="uid://cmuvasafc622f" path="res://assets/ui/bubble_font.ttf" id="14_vj6np"]
 [ext_resource type="AudioStream" uid="uid://dexxq3c6ist7m" path="res://assets/music/malik_theme_loop.ogg" id="16_tr6y3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3f7m4"]
@@ -292,10 +293,12 @@ offset_bottom = 40.0
 [node name="Credits2" type="Label" parent="." unique_id=2020291084]
 offset_left = 1290.0
 offset_top = 1132.0
-offset_right = 1625.0
-offset_bottom = 1727.0
+offset_right = 1823.0
+offset_bottom = 1579.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("14_vj6np")
+theme_override_font_sizes/font_size = 24
 text = "A game made by YGDA
 Programmers:
 Penguinja MrPuffyWuff
@@ -319,7 +322,7 @@ libraries/ = SubResource("AnimationLibrary_g1omr")
 offset_left = 1338.0
 offset_top = 1684.0
 offset_right = 1831.0
-offset_bottom = 1863.0
+offset_bottom = 1863.0001
 texture_normal = ExtResource("13_kwfav")
 texture_pressed = ExtResource("14_n70vs")
 texture_hover = ExtResource("14_n70vs")
