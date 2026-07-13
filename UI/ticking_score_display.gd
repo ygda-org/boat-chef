@@ -14,7 +14,6 @@ func _ready():
 
 func add_score(amount, step_size):
 	clink_and_slurp.playSound()
-	print("cliink n slurtpogf")
 	target_score = target_score + amount
 	current_step_size = step_size
 	tick.play()

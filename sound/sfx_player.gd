@@ -13,7 +13,10 @@ func playSound():
 		volume_db = 0.0 + randf_range(-1.5,0)
 	else:
 		pitch_scale = 1.0
-		volume_db = 0.0
+		if type == "music":
+			volume_db = linear_to_db(0.25)
+		else:
+			volume_db = linear_to_db(1)
 		
 	if GameState.master_volume == 0:
 		return

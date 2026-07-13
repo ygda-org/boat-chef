@@ -48,11 +48,13 @@ script = ExtResource("10_s758e")
 
 [node name="MalikTheme" parent="Music" unique_id=1644282153 instance=ExtResource("8_grrlh")]
 stream = ExtResource("10_5xyti")
+volume_db = -12.0
 variate = false
 type = "music"
 
 [node name="ErinaTheme" parent="Music" unique_id=1521577046 instance=ExtResource("8_grrlh")]
 stream = ExtResource("13_4hmqs")
+volume_db = -12.0
 variate = false
 type = "music"
 
