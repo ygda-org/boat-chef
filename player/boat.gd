@@ -96,6 +96,7 @@ func _physics_process(delta):
 	var boosted_sound = Input.is_action_pressed("boost") and boost_amount >= 0.1 and dir and $BounceTimer.is_stopped()
 	
 	var boosted = Input.is_action_pressed("boost") and boost_amount >= 0 and dir and $BounceTimer.is_stopped()
+	var speed = GameState.hud.get_node("Speed")
 	if boosted:
 		if not $Smoke.emitting:
 			$Smoke.emitting = true
@@ -103,8 +104,12 @@ func _physics_process(delta):
 		boost_amount -= delta
 		calc_max_speed *= BOOST_MULTIPLIER
 		calc_acceleration *= BOOST_MULTIPLIER
-		
+		if velocity.length() > MAX_SPEED:
+			speed.scale = speed.scale.lerp(Vector2(1,1), delta)
+		else:
+			speed.scale = speed.scale.lerp(Vector2(2,2), delta)
 	else:
+		speed.scale = speed.scale.lerp(Vector2(2,2), delta)
 		if not $FastSmoke.emitting:
 			$Smoke.emitting = false
 			$FastSmoke.emitting = true

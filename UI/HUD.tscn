@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_gppie"]
 [ext_resource type="Texture2D" uid="uid://w01x1sigktlk" path="res://assets/ui/vup.PNG" id="4_f2wx0"]
 [ext_resource type="Texture2D" uid="uid://b0sm51ea8apmt" path="res://assets/ui/v.png" id="4_uk570"]
+[ext_resource type="Texture2D" uid="uid://dbl3sf2bvkdem" path="res://assets/IMG_3358.png" id="6_gppie"]
 
 [node name="Hud" type="Control" unique_id=2112623844]
 layout_mode = 3
@@ -181,5 +182,10 @@ offset_transform_enabled = true
 toggle_mode = true
 texture_normal = ExtResource("4_f2wx0")
 texture_pressed = ExtResource("4_uk570")
+
+[node name="Speed" type="Sprite2D" parent="." unique_id=1327282185]
+position = Vector2(960, 540)
+scale = Vector2(2, 2)
+texture = ExtResource("6_gppie")
 
 [connection signal="pressed" from="OrderLock" to="." method="_on_order_lock_pressed"]
