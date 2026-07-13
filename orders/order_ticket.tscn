@@ -139,11 +139,6 @@ offset_right = 180.0
 offset_bottom = 64.0
 texture = ExtResource("7_1phc0")
 
-[node name="HideTimer" type="Timer" parent="." unique_id=1597671338]
-wait_time = 3.0
-one_shot = true
-autostart = true
-
 [node name="ReceiptPaperAppear" parent="." unique_id=1644282153 instance=ExtResource("9_8upnb")]
 stream = ExtResource("10_wfgsf")
 type = "sfx"
@@ -164,4 +159,3 @@ type = "sfx"
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Background" to="." method="_on_background_mouse_entered"]
 [connection signal="mouse_exited" from="Background" to="." method="_on_background_mouse_exited"]
-[connection signal="timeout" from="HideTimer" to="." method="_on_hide_timer_timeout"]

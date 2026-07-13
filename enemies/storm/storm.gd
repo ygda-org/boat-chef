@@ -27,7 +27,7 @@ func _process(delta):
 	velocity = velocity.move_toward(target-global_position, delta*ACCELERATION)
 	velocity = velocity.limit_length(MAX_SPEED)
 	position += velocity * delta
-	print(global_position)
+	#print(global_position)
 
 func get_new_target():
 	$TargetTimer.start()

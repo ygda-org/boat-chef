@@ -99,11 +99,18 @@ func _ready():
 	bar_gradeint.add_point(1, Color.from_rgba8(150, 184, 115))
 	bar_gradeint.add_point(0.2, Color.from_rgba8(184, 115, 115))
 	
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	pause = true
-	await tween.finished
-	pause = false
+	if GameState.lock_orders:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "offset_transform_position", Vector2(0,0), 0.6).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+		pause = true
+		await tween.finished
+		pause = false
+	else:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
+		pause = true
+		await tween.finished
+		pause = false
 
 func _process(delta : float) -> void:
 	$TimeBar.value -= delta
@@ -117,7 +124,7 @@ func _process(delta : float) -> void:
 		await tween.finished
 		pause = false
 		queue_free()
-	if pause or not $HideTimer.is_stopped(): return
+	if pause: return
 	if mouse or GameState.lock_orders:
 		if offset_transform_position.y == 0:
 			return
@@ -146,15 +153,6 @@ func order_failed_sound():
 	$CompleteTimer.start()
 	await $CompleteTimer.timeout
 	#failed_sound.playSound()
-
-func _on_hide_timer_timeout() -> void:
-	if pause or GameState.lock_orders:
-		return
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "offset_transform_position", Vector2(0,-240.0), 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
-	pause = true
-	await tween.finished
-	pause = false
 
 func _on_mouse_entered() -> void:
 	mouse = true

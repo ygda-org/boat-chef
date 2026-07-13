@@ -48,13 +48,15 @@ func enter_restaurant():
 	in_restaurant = true
 	boat.get_node("Camera2D").enabled = false
 	restaurant_ui.get_node("Camera2D").enabled = true
-	lock_orders = true
+	hud.order_lock.button_pressed = true
+	hud._on_order_lock_pressed()
 
 func exit_restaurant():
 	in_restaurant = false
 	boat.get_node("Camera2D").enabled = true
 	restaurant_ui.get_node("Camera2D").enabled = false
-	lock_orders = false
+	hud.order_lock.button_pressed = false
+	hud._on_order_lock_pressed()
 
 func add_fruit(fruit):
 	var inventory_size = 0

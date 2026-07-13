@@ -1,7 +1,7 @@
 extends Control
 
 @onready var orders_list = $OrdersList
-
+@onready var order_lock : TextureButton = $OrderLock
 @onready var rope_sound = $RopeSound
 
 const AQUABERRY = preload("uid://c4fgvek4ht1hi")
@@ -38,16 +38,17 @@ func update_fruit():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed("rope"):
+		$OrderLock.button_pressed = not $OrderLock.button_pressed
+		_on_order_lock_pressed()
 
 func _on_order_lock_pressed() -> void:
 	rope_sound.playSound()
-	var button : TextureButton = $OrderLock
-	if button.button_pressed:
+	if order_lock.button_pressed:
 		GameState.lock_orders = true
 		var tween = get_tree().create_tween()
-		tween.tween_property(button, "offset_transform_position", Vector2(0,70), 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		tween.tween_property(order_lock, "offset_transform_position", Vector2(0,70), 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	else:
 		GameState.lock_orders = false
 		var tween = get_tree().create_tween()
-		tween.tween_property(button, "offset_transform_position", Vector2(0,0), 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(order_lock, "offset_transform_position", Vector2(0,0), 1.0).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)

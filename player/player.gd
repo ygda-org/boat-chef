@@ -8,6 +8,9 @@ const EMBARK_THRESHOLD = 70
 func _ready():
 	if not boat:
 		boat = get_parent().get_node("Boat")
+	var speed = GameState.hud.get_node("Speed")
+	var tween = get_tree().create_tween()
+	tween.tween_property(speed, "scale", Vector2(2,2), 0.5)
 
 func _physics_process(_delta):
 	var dir = Input.get_vector("left", "right", "up", "down")
