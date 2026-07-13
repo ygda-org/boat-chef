@@ -145,7 +145,7 @@ func order_complete():
 func order_failed_sound():
 	$CompleteTimer.start()
 	await $CompleteTimer.timeout
-	failed_sound.playSound()
+	#failed_sound.playSound()
 
 func _on_hide_timer_timeout() -> void:
 	if pause or GameState.lock_orders:

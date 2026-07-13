@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dbdxdrjyw274a" path="res://UI/ticking_score_display.gd" id="1_1770l"]
 [ext_resource type="FontFile" uid="uid://bfmtak4gas4fa" path="res://assets/ui/Numbe font .png" id="1_stkxf"]
 [ext_resource type="AudioStream" uid="uid://bgq4plj5ncfyu" path="res://assets/sfx/score_tick.wav" id="2_7wgfc"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="4_xqv57"]
+[ext_resource type="AudioStream" uid="uid://cyawnair1fles" path="res://assets/sfx/bell_ding.wav" id="5_mi1vd"]
+[ext_resource type="AudioStream" uid="uid://dlv5tesewchoa" path="res://assets/sfx/finished_smoothie_clink_and_fill.wav" id="6_mi1vd"]
 
 [node name="TickingScoreDisplay" type="Label" unique_id=1792886533]
 theme_type_variation = &"HeaderLarge"
@@ -10,7 +13,15 @@ theme_override_fonts/font = ExtResource("1_stkxf")
 text = "0123456789"
 script = ExtResource("1_1770l")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1785655783]
+[node name="Tick" type="AudioStreamPlayer" parent="." unique_id=1785655783]
 stream = ExtResource("2_7wgfc")
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[node name="Ding" parent="." unique_id=1644282153 instance=ExtResource("4_xqv57")]
+stream = ExtResource("5_mi1vd")
+type = "sfx"
+
+[node name="ClinkAndSlurp" parent="." unique_id=947461696 instance=ExtResource("4_xqv57")]
+stream = ExtResource("6_mi1vd")
+type = "sfx"
+
+[connection signal="finished" from="Tick" to="." method="_on_audio_stream_player_finished"]
