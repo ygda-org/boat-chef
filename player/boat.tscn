@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cad7iswlx7elq" path="res://assets/player/foam_4.png" id="8_itcif"]
 [ext_resource type="AudioStream" uid="uid://dgovcjnhod0ha" path="res://assets/sfx/therealfinalgetoffboatpoof.mp3" id="8_l63hx"]
 [ext_resource type="Texture2D" uid="uid://cm5st8bg8egq3" path="res://assets/ui/bar.png" id="11_rsfm2"]
+[ext_resource type="Texture2D" uid="uid://ddh6pkmqkm5q5" path="res://assets/ui/barfill.png" id="12_itcif"]
 [ext_resource type="AudioStream" uid="uid://cn4o15ux2eids" path="res://assets/sfx/get_on_boat.wav" id="16_y83ph"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y83ph"]
@@ -585,6 +586,7 @@ offset_bottom = 43.0
 value = 100.0
 nine_patch_stretch = true
 texture_over = ExtResource("11_rsfm2")
+texture_progress = ExtResource("12_itcif")
 
 [node name="PlayerSpawnFinder" type="RayCast2D" parent="." unique_id=1225334925]
 target_position = Vector2(0, -50)
