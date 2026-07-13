@@ -1,6 +1,99 @@
 [gd_scene format=3 uid="uid://bh5icx0v1amar"]
 
 [ext_resource type="Texture2D" uid="uid://4j0odkgafw4c" path="res://assets/IMG_3365.png" id="1_hd263"]
+[ext_resource type="Script" uid="uid://dt4j02jj1ix41" path="res://main/game_over.gd" id="2_3tev8"]
+[ext_resource type="FontFile" uid="uid://cmuvasafc622f" path="res://assets/ui/bubble_font.ttf" id="2_mqrur"]
+[ext_resource type="Texture2D" uid="uid://ctdwlua482y1l" path="res://assets/title/Play unhilighted.PNG" id="3_3tev8"]
+[ext_resource type="Texture2D" uid="uid://c1kieq1pl66p" path="res://assets/title/Play highlighted .PNG" id="4_q8ori"]
+
+[sub_resource type="Animation" id="Animation_3tev8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Restart:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q8ori"]
+resource_name = "display"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Restart:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hd6po"]
+_data = {
+&"RESET": SubResource("Animation_3tev8"),
+&"display": SubResource("Animation_q8ori")
+}
 
 [node name="GameOver" type="TextureRect" unique_id=1509021265]
 texture = ExtResource("1_hd263")
+script = ExtResource("2_3tev8")
+
+[node name="Score" type="Label" parent="." unique_id=1549633563]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 65.0
+offset_top = 75.0
+offset_right = 457.0
+offset_bottom = 129.0
+theme_override_fonts/font = ExtResource("2_mqrur")
+theme_override_font_sizes/font_size = 48
+text = "Score: 102123231"
+
+[node name="Restart" type="TextureButton" parent="." unique_id=683787710]
+visible = false
+layout_mode = 0
+offset_left = 44.0
+offset_top = 174.0
+offset_right = 553.0
+offset_bottom = 350.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_3tev8")
+texture_hover = ExtResource("4_q8ori")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1848102315]
+libraries/ = SubResource("AnimationLibrary_hd6po")
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

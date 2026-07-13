@@ -186,7 +186,7 @@ func player_disembark():
 			player.boat = self
 			player.global_position = raycast.get_collision_point()# + global_position.direction_to(raycast.get_collision_point()) * 20
 			#Offset to align hitbox
-			#player.global_position += Vector2(0,-16)
+			player.global_position += Vector2(0,-8)
 			get_parent().add_child(player)
 			player_disembarked = true
 			break

@@ -9,6 +9,7 @@ var order_frequency: int = 40
 var difficulty: int = 1
 const ORDER_TICKET = preload("uid://5jxaioed8i86")
 
+var final_score = 0
 var score_ticker
 var hud
 var boat
@@ -90,6 +91,8 @@ func get_new_order_resource():
 	return resource
 
 func order_failed():
+	final_score = score_ticker.displayed_score
+	in_game = false
 	get_tree().call_deferred("change_scene_to_file", "uid://bh5icx0v1amar")
 
 func check_order(blend):
