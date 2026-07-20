@@ -1,5 +1,7 @@
 extends Node2D
 
+# trees
+
 @onready var control = $Control
 
 var boat_in_area = false
