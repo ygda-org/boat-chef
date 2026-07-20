@@ -12,6 +12,7 @@ const ORDER_TICKET = preload("uid://5jxaioed8i86")
 var final_score = 0
 var score_ticker
 var hud
+## Pointer that refers to boat.tscn
 var boat
 var terrain
 var player_position
@@ -19,7 +20,7 @@ var restaurant_ui : Node2D
 var in_restaurant = false
 var size = Vector2i(300,300)
 var tree_pos: Array[Node2D] = []
-# Blue Brown Red White Yellow
+## Blue Brown Red White Yellow. Max is determined by MAX_INVENTORY
 var inventory = [0,0,0,0,0]
 const MAX_INVENTORY = 12
 
