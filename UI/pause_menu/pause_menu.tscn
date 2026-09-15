@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dconohkodldha"]
+
+[ext_resource type="Script" uid="uid://du8oilhn8rx6p" path="res://UI/pause_menu/pause_menu.gd" id="1_2n0y6"]
+[ext_resource type="PackedScene" uid="uid://bh0f4w20m2cd2" path="res://globals/sound/settings/settings.tscn" id="2_mc6od"]
+
+[node name="PauseMenu" type="Control" unique_id=1249245165]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2n0y6")
+
+[node name="Settings" parent="." unique_id=976684686 instance=ExtResource("2_mc6od")]
+layout_mode = 1

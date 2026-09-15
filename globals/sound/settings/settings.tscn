@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bh0f4w20m2cd2"]
 
-[ext_resource type="Script" uid="uid://cto2vwcfb64qk" path="res://settings/settings.gd" id="1_iirne"]
-[ext_resource type="Texture2D" uid="uid://bt635opbhlafd" path="res://assets/ui/pause.png" id="2_jo7dw"]
-[ext_resource type="Theme" uid="uid://1mji8drae8q5" path="res://assets/ui/pause_menu.tres" id="3_qsoik"]
-[ext_resource type="Texture2D" uid="uid://c28fdolejcki0" path="res://assets/ui/checkbox.png" id="4_qsoik"]
-[ext_resource type="Texture2D" uid="uid://dx3vmgashqnqh" path="res://assets/ui/check.png" id="5_ivjpp"]
+[ext_resource type="Script" uid="uid://cto2vwcfb64qk" path="res://globals/sound/settings/settings.gd" id="1_7qg8t"]
+[ext_resource type="Texture2D" uid="uid://bt635opbhlafd" path="res://assets/ui/pause.PNG" id="2_xsacd"]
+[ext_resource type="Theme" uid="uid://1mji8drae8q5" path="res://assets/ui/pause_menu.tres" id="3_na3ye"]
+[ext_resource type="Texture2D" uid="uid://c28fdolejcki0" path="res://assets/ui/checkbox.png" id="4_e02rg"]
+[ext_resource type="Texture2D" uid="uid://dx3vmgashqnqh" path="res://assets/ui/check.png" id="5_wstse"]
 
 [node name="Settings" type="Control" unique_id=976684686]
 layout_mode = 3
@@ -13,13 +13,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iirne")
+script = ExtResource("1_7qg8t")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1325781256]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_jo7dw")
+texture = ExtResource("2_xsacd")
 
 [node name="MasterVolumeSlider" type="HSlider" parent="." unique_id=1470541747]
 layout_mode = 0
@@ -27,7 +27,7 @@ offset_left = 440.0
 offset_top = 468.0
 offset_right = 672.0
 offset_bottom = 500.0
-theme = ExtResource("3_qsoik")
+theme = ExtResource("3_na3ye")
 max_value = 1.0
 step = 0.05
 
@@ -37,7 +37,7 @@ offset_left = 440.0
 offset_top = 636.0
 offset_right = 672.0
 offset_bottom = 668.0
-theme = ExtResource("3_qsoik")
+theme = ExtResource("3_na3ye")
 max_value = 1.0
 step = 0.05
 
@@ -47,7 +47,7 @@ offset_left = 440.0
 offset_top = 802.0
 offset_right = 672.0
 offset_bottom = 834.0
-theme = ExtResource("3_qsoik")
+theme = ExtResource("3_na3ye")
 max_value = 1.0
 step = 0.05
 
@@ -57,7 +57,7 @@ offset_left = 1040.0
 offset_top = 439.0
 offset_right = 1104.0
 offset_bottom = 502.0
-texture = ExtResource("4_qsoik")
+texture = ExtResource("4_e02rg")
 
 [node name="GraphicsButton" type="TextureButton" parent="." unique_id=1264954647]
 layout_mode = 0
@@ -66,7 +66,7 @@ offset_top = 432.0
 offset_right = 1120.0
 offset_bottom = 497.0
 toggle_mode = true
-texture_pressed = ExtResource("5_ivjpp")
+texture_pressed = ExtResource("5_wstse")
 stretch_mode = 3
 
 [connection signal="value_changed" from="MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]

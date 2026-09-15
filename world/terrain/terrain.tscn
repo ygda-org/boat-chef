@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b5d8815yxgqtd"]
 
-[ext_resource type="Script" uid="uid://dqtrj2bojjmjt" path="res://terrain/terrain.gd" id="1_0rasl"]
-[ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://terrain/beach_tileset.tres" id="2_l7s0s"]
-[ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://terrain/boundaries.tscn" id="3_2ilfp"]
+[ext_resource type="Script" uid="uid://dqtrj2bojjmjt" path="res://world/terrain/terrain.gd" id="1_0rasl"]
+[ext_resource type="TileSet" uid="uid://xt7xgfc8u1eg" path="res://world/terrain/beach_tileset.tres" id="2_l7s0s"]
+[ext_resource type="PackedScene" uid="uid://cmkkubb7gowuv" path="res://world/terrain/boundaries.tscn" id="3_2ilfp"]
 [ext_resource type="Texture2D" uid="uid://dbuohuaiygm6t" path="res://assets/water/CausticTexture-300x300.png" id="4_mk5yb"]
 [ext_resource type="Texture2D" uid="uid://casqiclkefw7i" path="res://assets/water/CausticTextureHighlights-300x300.png" id="4_nc45s"]
-[ext_resource type="Shader" uid="uid://7lraru8lblap" path="res://terrain/water.gdshader" id="5_mk5yb"]
-[ext_resource type="Shader" uid="uid://6vxjtndhamh" path="res://terrain/no_water.gdshader" id="6_fpiom"]
+[ext_resource type="Shader" uid="uid://7lraru8lblap" path="res://world/terrain/water.gdshader" id="5_mk5yb"]
+[ext_resource type="Shader" uid="uid://6vxjtndhamh" path="res://world/terrain/no_water.gdshader" id="6_fpiom"]
 [ext_resource type="PackedScene" uid="uid://0p7aa2wfkyk5" path="res://player/restaurant/restaurant_world.tscn" id="8_fpiom"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xwkvk"]

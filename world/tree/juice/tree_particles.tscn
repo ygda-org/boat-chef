@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blfwcc7chqy1h"]
 
 [ext_resource type="Texture2D" uid="uid://sax500mfu7ol" path="res://assets/particles/small leaf.png" id="1_b0hu2"]
-[ext_resource type="Script" uid="uid://btl2yvpni7kbv" path="res://tree/juice/tree_particles.gd" id="2_cmt4n"]
+[ext_resource type="Script" uid="uid://btl2yvpni7kbv" path="res://world/tree/juice/tree_particles.gd" id="2_cmt4n"]
 
 [sub_resource type="Gradient" id="Gradient_b0hu2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)

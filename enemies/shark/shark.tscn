@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dpwxgqbvwssws" path="res://assets/enemies/shark/shark_directional_animation.png" id="3_bdosu"]
 [ext_resource type="AudioStream" uid="uid://7rgo4wlgv3tx" path="res://assets/sfx/enemies/shark_swimming.wav" id="3_tftwl"]
 [ext_resource type="Script" uid="uid://bwg61vkpm5iro" path="res://enemies/shark/shark_swimming_sound.gd" id="4_tftwl"]
-[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="5_4gyon"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="5_4gyon"]
 [ext_resource type="AudioStream" uid="uid://bfrt3whvbgsc" path="res://assets/sfx/enemies/shark_hit.wav" id="6_12eeh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjbfh"]

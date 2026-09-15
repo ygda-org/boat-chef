@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://de8qg8j7lpgiu"]
 
-[ext_resource type="Script" uid="uid://8bkh62a4oysy" path="res://tree/tree.gd" id="1_tqxsf"]
+[ext_resource type="Script" uid="uid://8bkh62a4oysy" path="res://world/tree/tree.gd" id="1_tqxsf"]
 [ext_resource type="Texture2D" uid="uid://dawe7m127fstl" path="res://assets/ui/e key.PNG" id="2_erh2v"]
-[ext_resource type="Shader" uid="uid://kjud6xoxltmd" path="res://tree/tree.gdshader" id="2_haf48"]
+[ext_resource type="Shader" uid="uid://kjud6xoxltmd" path="res://world/tree/tree.gdshader" id="2_haf48"]
 [ext_resource type="Texture2D" uid="uid://dkxro708slsi" path="res://assets/tile_sets/treewfruit.png" id="2_rec30"]
-[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="3_303ym"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="3_303ym"]
 [ext_resource type="AudioStream" uid="uid://dp1fb2mp64i7x" path="res://assets/sfx/tree/pick_up_fruit.mp3" id="6_bi80s"]
 [ext_resource type="AudioStream" uid="uid://ceqwh0tcs7ulh" path="res://assets/sfx/tree/tree_harvest.wav" id="6_erh2v"]
 

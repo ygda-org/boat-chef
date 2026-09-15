@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6ufp4braxmir" path="res://player/restaurant/draggable_fruit.gd" id="1_ox65a"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="2_ox65a"]
-[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="3_tefst"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="3_tefst"]
 [ext_resource type="AudioStream" uid="uid://ct1paptnf2eg2" path="res://assets/sfx/restaurant/fruit_squish_pickup.wav" id="4_t4gmx"]
 [ext_resource type="AudioStream" uid="uid://crkg1qkw5dcgf" path="res://assets/sfx/restaurant/fruit_release.wav" id="5_t4gmx"]
 

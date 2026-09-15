@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dehw8tsnnxt5a" path="res://assets/particles/water.png" id="4_pnosw"]
 [ext_resource type="Texture2D" uid="uid://du7234d4a3ktp" path="res://assets/player/foam_5.png" id="4_y83ph"]
 [ext_resource type="Texture2D" uid="uid://c8t1hxnhmg0m8" path="res://assets/player/foam_2.png" id="5_nks3j"]
-[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="5_x6or4"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="5_x6or4"]
 [ext_resource type="AudioStream" uid="uid://kbs3qfmd14k" path="res://assets/sfx/boat/boat_going_fast.wav" id="6_l63hx"]
 [ext_resource type="Texture2D" uid="uid://bgfob0rql3d54" path="res://assets/player/foam_3.png" id="6_rsfm2"]
 [ext_resource type="AudioStream" uid="uid://0le1wmehgkv5" path="res://assets/sfx/boat/boat_going_normal.wav" id="7_8i58c"]

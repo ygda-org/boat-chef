@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5jxaioed8i86"]
 
-[ext_resource type="Script" uid="uid://bsw0qhrmybx1m" path="res://orders/order_ticket.gd" id="1_g63pn"]
+[ext_resource type="Script" uid="uid://bsw0qhrmybx1m" path="res://player/orders/order_ticket.gd" id="1_g63pn"]
 [ext_resource type="Texture2D" uid="uid://bv6l7e7bb6j6e" path="res://assets/ui/order.png" id="2_1phc0"]
 [ext_resource type="Texture2D" uid="uid://bm6ftgeqahmmo" path="res://assets/fruits/fruits_small/blue_emoji.PNG" id="3_1phc0"]
 [ext_resource type="Texture2D" uid="uid://dkptjjkagw65d" path="res://assets/fruits/fruits_small/purple_emoji.PNG" id="4_8upnb"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://gtmn0p0skdw8" path="res://assets/fruits/fruits_small/small_glass.png" id="6_1phc0"]
 [ext_resource type="Texture2D" uid="uid://ctdsowk16vqrc" path="res://assets/ui/scribble_outline.png" id="7_1phc0"]
 [ext_resource type="Texture2D" uid="uid://cwnbm50ptxfgo" path="res://assets/ui/scribble_white.png" id="7_8upnb"]
-[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="9_8upnb"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="9_8upnb"]
 [ext_resource type="AudioStream" uid="uid://b7vpshulwnorf" path="res://assets/sfx/HUD/receipt_paper_appear.wav" id="10_wfgsf"]
 [ext_resource type="AudioStream" uid="uid://decjw5f42layi" path="res://assets/sfx/restaurant/incorrect_order.wav" id="11_o5yfj"]
 [ext_resource type="AudioStream" uid="uid://b0qen2t3jp7mj" path="res://assets/sfx/HUD/depaper.wav" id="12_o5yfj"]

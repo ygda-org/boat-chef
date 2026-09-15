@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cf0pvxvalhl5h" path="res://player/restaurant/restaurant_ui.gd" id="1_pksog"]
 [ext_resource type="Texture2D" uid="uid://b60fgip3iiqyv" path="res://assets/ui/restaurant_bg.png" id="2_6oknh"]
-[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://sound/sfx_player.tscn" id="2_g50oe"]
+[ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="2_g50oe"]
 [ext_resource type="Texture2D" uid="uid://c4fgvek4ht1hi" path="res://assets/fruits/aquaberry.png" id="3_1vpky"]
 [ext_resource type="PackedScene" uid="uid://15vtysw33mom" path="res://player/restaurant/fruit_spawner.tscn" id="3_okdgx"]
 [ext_resource type="Texture2D" uid="uid://bpxxcxod833fx" path="res://assets/ui/button.png" id="3_uoxct"]
