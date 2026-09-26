@@ -89,11 +89,15 @@ offset_left = 845.0
 offset_top = 884.0
 offset_right = 987.0
 offset_bottom = 1029.0
+focus_neighbor_left = NodePath("../../FruitSpawner5")
+focus_neighbor_top = NodePath("../ExitDoor")
+focus_neighbor_right = NodePath("../../FruitSpawner")
+focus_neighbor_bottom = NodePath("../ExitDoor")
 texture_normal = ExtResource("3_uoxct")
 texture_pressed = ExtResource("3_uoxct")
 texture_hover = ExtResource("4_h2m70")
 texture_disabled = ExtResource("3_uoxct")
-texture_focused = ExtResource("3_uoxct")
+texture_focused = ExtResource("4_h2m70")
 
 [node name="BlendSound" parent="Control/BlendButton" unique_id=1307709056 instance=ExtResource("2_g50oe")]
 stream = ExtResource("6_h2m70")
@@ -110,10 +114,15 @@ offset_left = 1427.0
 offset_top = 258.0
 offset_right = 1716.0
 offset_bottom = 695.0
+focus_neighbor_left = NodePath("../BlendButton")
+focus_neighbor_top = NodePath("../BlendButton")
+focus_neighbor_right = NodePath("../../FruitSpawner5")
+focus_neighbor_bottom = NodePath("../../FruitSpawner3")
 texture_normal = ExtResource("6_eevce")
 texture_pressed = ExtResource("6_eevce")
 texture_hover = ExtResource("8_rcdv8")
 texture_disabled = ExtResource("6_eevce")
+texture_focused = ExtResource("8_rcdv8")
 
 [node name="ExitSound" parent="Control/ExitDoor" unique_id=1525394302 instance=ExtResource("2_g50oe")]
 stream = ExtResource("9_rcdv8")
@@ -190,52 +199,68 @@ position = Vector2(960, 540)
 enabled = false
 
 [node name="FruitSpawner" parent="." unique_id=1517058751 instance=ExtResource("3_okdgx")]
-visible = false
 offset_left = 1199.0
 offset_top = 737.0
 offset_right = 1391.0
 offset_bottom = 929.0
+focus_neighbor_left = NodePath("../Control/BlendButton")
+focus_neighbor_top = NodePath("../Control/ExitDoor")
+focus_neighbor_right = NodePath("../FruitSpawner2")
+focus_neighbor_bottom = NodePath("../Control/BlendButton")
 texture_normal = ExtResource("3_1vpky")
 pickup_texture = ExtResource("3_1vpky")
 fruit_texture = ExtResource("3_1vpky")
 
 [node name="FruitSpawner2" parent="." unique_id=1127072335 instance=ExtResource("3_okdgx")]
-visible = false
 offset_left = 1351.0
 offset_top = 733.0
 offset_right = 1543.0
 offset_bottom = 925.0
+focus_neighbor_left = NodePath("../FruitSpawner")
+focus_neighbor_top = NodePath("../Control/ExitDoor")
+focus_neighbor_right = NodePath("../FruitSpawner3")
+focus_neighbor_bottom = NodePath("../Control/BlendButton")
 texture_normal = SubResource("CompressedTexture2D_6oknh")
 pickup_texture = ExtResource("4_1vpky")
 fruit_texture = ExtResource("4_1vpky")
 fruit_num = 1
 
 [node name="FruitSpawner3" parent="." unique_id=1425030695 instance=ExtResource("3_okdgx")]
-visible = false
 offset_left = 1467.0
 offset_top = 734.0
 offset_right = 1659.0
 offset_bottom = 926.0
+focus_neighbor_left = NodePath("../FruitSpawner2")
+focus_neighbor_top = NodePath("../Control/ExitDoor")
+focus_neighbor_right = NodePath("../FruitSpawner4")
+focus_neighbor_bottom = NodePath("../Control/BlendButton")
 pickup_texture = ExtResource("5_1vpky")
 fruit_texture = ExtResource("5_1vpky")
 fruit_num = 2
+center = true
 
 [node name="FruitSpawner4" parent="." unique_id=602598296 instance=ExtResource("3_okdgx")]
-visible = false
 offset_left = 1580.0
 offset_top = 713.0
 offset_right = 1772.0
 offset_bottom = 905.0
+focus_neighbor_left = NodePath("../FruitSpawner3")
+focus_neighbor_top = NodePath("../Control/ExitDoor")
+focus_neighbor_right = NodePath("../FruitSpawner5")
+focus_neighbor_bottom = NodePath("../Control/BlendButton")
 pickup_texture = ExtResource("6_g50oe")
 fruit_texture = ExtResource("6_g50oe")
 fruit_num = 3
 
 [node name="FruitSpawner5" parent="." unique_id=9828094 instance=ExtResource("3_okdgx")]
-visible = false
 offset_left = 1660.0
 offset_top = 768.0
 offset_right = 1852.0
 offset_bottom = 960.0
+focus_neighbor_left = NodePath("../FruitSpawner4")
+focus_neighbor_top = NodePath("../Control/ExitDoor")
+focus_neighbor_right = NodePath("../FruitSpawner")
+focus_neighbor_bottom = NodePath("../Control/BlendButton")
 pickup_texture = ExtResource("7_ggrnm")
 fruit_texture = ExtResource("7_ggrnm")
 fruit_num = 4

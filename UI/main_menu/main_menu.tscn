@@ -231,10 +231,16 @@ offset_left = 1273.0
 offset_top = 620.0
 offset_right = 1782.0
 offset_bottom = 796.0
+focus_neighbor_left = NodePath("../BackCredits")
+focus_neighbor_top = NodePath("../BackCredits")
+focus_neighbor_right = NodePath("../Credits")
+focus_neighbor_bottom = NodePath("../Credits")
 texture_normal = ExtResource("2_ia84y")
 texture_pressed = ExtResource("3_6at21")
 texture_hover = ExtResource("3_6at21")
+texture_focused = ExtResource("3_6at21")
 script = ExtResource("1_oa53l")
+focus_start = true
 
 [node name="PlayGameButtonSound" parent="PlayGame" unique_id=1644282153 instance=ExtResource("3_bws42")]
 stream = ExtResource("3_3f7m4")
@@ -260,9 +266,14 @@ offset_left = 1271.0
 offset_top = 811.0
 offset_right = 1764.0005
 offset_bottom = 979.0
+focus_neighbor_left = NodePath("../PlayGame")
+focus_neighbor_top = NodePath("../PlayGame")
+focus_neighbor_right = NodePath("../BackCredits")
+focus_neighbor_bottom = NodePath("../BackCredits")
 texture_normal = ExtResource("11_qvn4f")
 texture_pressed = ExtResource("12_g1omr")
 texture_hover = ExtResource("12_g1omr")
+texture_focused = ExtResource("12_g1omr")
 
 [node name="YGDALogo" type="Node2D" parent="." unique_id=1805527149]
 visible = false
@@ -323,9 +334,14 @@ offset_left = 1338.0
 offset_top = 1684.0
 offset_right = 1831.0
 offset_bottom = 1863.0001
+focus_neighbor_left = NodePath("../PlayGame")
+focus_neighbor_top = NodePath("../PlayGame")
+focus_neighbor_right = NodePath("../PlayGame")
+focus_neighbor_bottom = NodePath("../PlayGame")
 texture_normal = ExtResource("13_kwfav")
 texture_pressed = ExtResource("14_n70vs")
 texture_hover = ExtResource("14_n70vs")
+texture_focused = ExtResource("14_n70vs")
 
 [node name="Music" parent="." unique_id=2108859900 instance=ExtResource("3_bws42")]
 stream = ExtResource("16_tr6y3")

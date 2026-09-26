@@ -10,6 +10,8 @@ extends TextureButton
 
 @onready var hover_sound = $HoverSound
 
+@export var focus_start: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ygda_logo.visible = true
@@ -27,6 +29,8 @@ func _ready():
 	ygda_logo.visible = false
 
 	music.playSound()
+	if focus_start:
+		grab_focus()
 
 func _on_settings_pressed():
 	animation.play("buttons_out")

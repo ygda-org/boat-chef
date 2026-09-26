@@ -1,5 +1,7 @@
 extends Node
 
+signal restaurant_entered
+
 var master_volume = 0.5
 var music_volume = 0.5
 var sfx_volume = 0.5
@@ -35,10 +37,14 @@ var player_disembarked
 
 var in_game = false
 
-var graphics_qual_low := false
+var graphics_qual_low: bool = false
 
+var arcade_mode: bool = true
 
 func _process(delta):
+	if not arcade_mode:
+		if Input.is_joy_known(0) or Input.is_joy_known(1):
+			arcade_mode = true
 	if not in_game:
 		return
 	if elapsed_time > 2.0 and elapsed_time < 3.0 and not hud.get_node("OrdersList").get_children():
@@ -55,6 +61,7 @@ func enter_restaurant():
 	restaurant_ui.get_node("Camera2D").enabled = true
 	hud.order_lock.button_pressed = true
 	hud._on_order_lock_pressed()
+	restaurant_entered.emit()
 
 func exit_restaurant():
 	in_restaurant = false

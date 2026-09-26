@@ -12,3 +12,5 @@ stretch_mode = 4
 script = ExtResource("1_uhqr8")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
