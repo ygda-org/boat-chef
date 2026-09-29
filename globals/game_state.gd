@@ -39,7 +39,7 @@ var in_game = false
 
 var graphics_qual_low: bool = false
 
-var arcade_mode: bool = true
+var arcade_mode: bool = false
 
 func _process(delta):
 	if not arcade_mode:
