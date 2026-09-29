@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckye8xh6o8po4"]
+
+[ext_resource type="Script" uid="uid://dwpkecmoi4xls" path="res://UI/leaderboard/scores_display.gd" id="1_aqtaj"]
+
+[node name="ScoresDisplay" type="Control" unique_id=548757333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqtaj")
+
+[node name="Panel" type="Panel" parent="." unique_id=487678296]
+layout_mode = 0
+offset_right = 513.0
+offset_bottom = 297.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=844448962]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

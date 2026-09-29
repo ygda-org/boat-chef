@@ -110,6 +110,7 @@ func get_new_order_resource():
 func order_failed():
 	final_score = score_ticker.displayed_score
 	in_game = false
+	Leaderboard.game_finished()
 	get_tree().call_deferred("change_scene_to_file", "uid://bh5icx0v1amar")
 
 func check_order(blend):
