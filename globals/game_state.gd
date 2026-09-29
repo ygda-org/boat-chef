@@ -45,6 +45,12 @@ func _process(delta):
 	if not arcade_mode:
 		if Input.is_joy_known(0) or Input.is_joy_known(1):
 			arcade_mode = true
+			var grad: GradientTexture1D = GradientTexture1D.new()
+			grad.gradient = Gradient.new()
+			grad.gradient.remove_point(0)
+			grad.gradient.set_color(0, Color(1.0, 1.0, 1.0, 0.0))
+			grad.width = 1
+			Input.set_custom_mouse_cursor(grad)
 	if not in_game:
 		return
 	if elapsed_time > 2.0 and elapsed_time < 3.0 and not hud.get_node("OrdersList").get_children():
