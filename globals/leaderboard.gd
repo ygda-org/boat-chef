@@ -18,7 +18,7 @@ func game_finished():
 	var score = GameState.final_score
 	var spot_found: bool = false
 	for i in range(leaderboards.size()):
-		if score < leaderboards[i]:
+		if score > leaderboards[i]:
 			leaderboards.insert(i, score)
 			spot_found = true
 			if i < 3:

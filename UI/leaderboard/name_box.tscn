@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c2vej2ksqb51n" path="res://UI/leaderboard/name_box.gd" id="1_qf3ot"]
 
 [node name="NameBox" type="Panel" unique_id=482594809]
-custom_minimum_size = Vector2(60, 120)
+custom_minimum_size = Vector2(120, 120)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,5 +42,6 @@ layout_mode = 2
 [node name="ConfirmButton" type="Button" parent="VBoxContainer" unique_id=242700803]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+text = "Confirm"
 
 [connection signal="pressed" from="VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
