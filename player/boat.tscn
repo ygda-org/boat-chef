@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cm5st8bg8egq3" path="res://assets/ui/bar.png" id="11_rsfm2"]
 [ext_resource type="Texture2D" uid="uid://ddh6pkmqkm5q5" path="res://assets/ui/barfill.png" id="12_itcif"]
 [ext_resource type="AudioStream" uid="uid://cn4o15ux2eids" path="res://assets/sfx/boat/get_on_boat.wav" id="16_y83ph"]
+[ext_resource type="Texture2D" uid="uid://nvv847st1afj" path="res://assets/arcade_exitboat_button.png" id="20_lji03"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y83ph"]
 
@@ -593,7 +594,6 @@ target_position = Vector2(0, -50)
 collision_mask = 2
 
 [node name="Label" type="TextureRect" parent="." unique_id=1062432585]
-visible = false
 custom_maximum_size = Vector2(180, 180)
 offset_left = -20.0
 offset_top = -27.0
@@ -659,6 +659,11 @@ one_shot = true
 [node name="EmbarkBoatSound" parent="." unique_id=2061686916 instance=ExtResource("5_x6or4")]
 stream = ExtResource("16_y83ph")
 type = "sfx"
+
+[node name="ArcadeExitboatButton" type="Sprite2D" parent="." unique_id=271440163]
+position = Vector2(0.99999976, 1.9999995)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("20_lji03")
 
 [connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]
 [connection signal="timeout" from="WhiteFlashTimer" to="." method="_on_white_flash_timer_timeout"]

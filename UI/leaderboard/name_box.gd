@@ -4,6 +4,7 @@ signal name_entered
 var entered_name = ""
 
 func _ready():
+	$VBoxContainer/TextEdit.grab_focus()
 	$VBoxContainer/Label.text = Leaderboard.get_top_three_string()
 
 func _on_confirm_button_pressed():

@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://ckye8xh6o8po4"]
 
 [ext_resource type="Script" uid="uid://dwpkecmoi4xls" path="res://UI/leaderboard/scores_display.gd" id="1_aqtaj"]
+[ext_resource type="Texture2D" uid="uid://cb8hvlhobao6p" path="res://assets/ui/inventory.png" id="1_xwgm3"]
+[ext_resource type="FontFile" uid="uid://cmuvasafc622f" path="res://assets/ui/bubble_font.ttf" id="2_wiyyp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hymlm"]
+texture = ExtResource("1_xwgm3")
+texture_margin_left = 200.0
+texture_margin_right = 200.0
+region_rect = Rect2(166.22449, 0, 251.07434, 677)
+
+[sub_resource type="Theme" id="Theme_xwgm3"]
+Panel/styles/panel = SubResource("StyleBoxTexture_hymlm")
 
 [node name="ScoresDisplay" type="Control" unique_id=548757333]
 layout_mode = 3
@@ -9,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_xwgm3")
 script = ExtResource("1_aqtaj")
 
 [node name="Panel" type="Panel" parent="." unique_id=487678296]
@@ -18,5 +30,14 @@ offset_bottom = 297.0
 
 [node name="Label" type="Label" parent="Panel" unique_id=844448962]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 28.0
+offset_top = 22.0
+offset_right = 155.0
+offset_bottom = 211.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wiyyp")
+theme_override_font_sizes/font_size = 40
+text = "huuuu
+1
+2
+3"

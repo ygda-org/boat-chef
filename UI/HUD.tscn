@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="6_2ptjp"]
 [ext_resource type="Texture2D" uid="uid://dbl3sf2bvkdem" path="res://assets/boost_lines/IMG_3358.png" id="6_gppie"]
 [ext_resource type="AudioStream" uid="uid://css186bvng0jb" path="res://assets/sfx/HUD/rope_pull_down_orders.wav" id="7_md4fy"]
+[ext_resource type="Texture2D" uid="uid://l75ivwcv8bge" path="res://assets/arcade_rope_button.png" id="8_md4fy"]
+[ext_resource type="Texture2D" uid="uid://c47ystxafrtoi" path="res://assets/arcade_boost_button.png" id="9_7i7fj"]
+[ext_resource type="FontFile" uid="uid://cmuvasafc622f" path="res://assets/ui/bubble_font.ttf" id="10_rbci0"]
 
 [node name="Hud" type="Control" unique_id=2112623844]
 layout_mode = 3
@@ -193,5 +196,25 @@ texture = ExtResource("6_gppie")
 [node name="RopeSound" parent="." unique_id=1644282153 instance=ExtResource("6_2ptjp")]
 stream = ExtResource("7_md4fy")
 type = "sfx"
+
+[node name="ArcadeRopeButton" type="Sprite2D" parent="." unique_id=1993294714]
+z_index = -1
+position = Vector2(1748.0001, 203)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_md4fy")
+
+[node name="ArcadeBoostButton" type="Sprite2D" parent="." unique_id=1768731022]
+position = Vector2(651, 989)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_7i7fj")
+
+[node name="Label" type="Label" parent="." unique_id=211176725]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 926.0
+offset_right = 659.0
+offset_bottom = 953.0
+theme_override_fonts/font = ExtResource("10_rbci0")
+text = "Boost"
 
 [connection signal="pressed" from="OrderLock" to="." method="_on_order_lock_pressed"]

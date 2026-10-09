@@ -4,11 +4,21 @@ extends Node2D
 
 var boat_in_area = false
 
+var button
+
+func _ready():
+	if GameState.arcade_mode:
+		button = $ArcadeInteractButton
+		$Label.queue_free()
+	else:
+		button = $Label
+		$ArcadeInteractButton.queue_free()
+
 func _process(_delta):
 	if boat_in_area == true:
-		$Label.visible = true
+		button.visible = true
 	else:
-		$Label.visible = false
+		button.visible = false
 	if boat_in_area and Input.is_action_just_pressed("interact") and GameState.in_restaurant == false:
 		GameState.enter_restaurant()
 		enter_restaurant_sound.playSound()

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btkgdqa6xldbv" path="res://globals/sound/sfx_player.tscn" id="4_8eea0"]
 [ext_resource type="Texture2D" uid="uid://dawe7m127fstl" path="res://assets/ui/e key.PNG" id="4_hf6nj"]
 [ext_resource type="AudioStream" uid="uid://c7jfdii135b2a" path="res://assets/sfx/restaurant/resturant_enter.mp3" id="5_hf6nj"]
+[ext_resource type="Texture2D" uid="uid://b3fwew506l1qx" path="res://assets/arcade_interact_button.png" id="7_rbsv5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_70mun"]
 radius = 117.0
@@ -50,6 +51,11 @@ type = "sfx"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1327867109]
 position = Vector2(-0.5, -16.5)
 shape = SubResource("RectangleShape2D_jyp3o")
+
+[node name="ArcadeInteractButton" type="Sprite2D" parent="." unique_id=1021951369]
+position = Vector2(15, 27)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_rbsv5")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

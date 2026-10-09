@@ -2,7 +2,7 @@ extends Node2D
 
 # trees
 
-@onready var control = $Control
+var control
 
 var boat_in_area = false
 
@@ -18,8 +18,15 @@ var collected = false
 var last_collection_time
 const REFRESH_TIME = 100
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if GameState.arcade_mode:
+		control = $ArcadeInteractButton
+		$Control.queue_free()
+	else:
+		control = $Control
+		$ArcadeInteractButton.queue_free()
 	randomize()
 	GameState.tree_pos.append(self)
 	fruit = randi_range(0,4)

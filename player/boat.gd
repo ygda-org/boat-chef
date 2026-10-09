@@ -36,7 +36,15 @@ const PAUSE_MENU = preload("uid://dconohkodldha")
 
 var old_engine_state = "none"
 
+var button_indicator
+
 func _ready():
+	if GameState.arcade_mode:
+		button_indicator = $ArcadeExitboatButton
+		$Label.queue_free()
+	else:
+		button_indicator = $Label
+		$ArcadeExitboatButton.queue_free()
 	GameState.boat = self
 	$BoostBar.max_value = MAX_BOOST
 	$BoostBar.value = boost_amount
@@ -56,9 +64,9 @@ func _physics_process(delta):
 		$Foam.visible = false
 		if player:
 			if player.global_position.distance_to(global_position) < 70:
-				$Label.visible = true
+				button_indicator.visible = true
 			else:
-				$Label.visible = false
+				button_indicator.visible = false
 			$Camera2D.global_position = player.global_position
 		return
 	if Input.is_action_just_pressed("exit_boat"):
@@ -199,7 +207,7 @@ func embark():
 	GameState.player_disembarked = false
 	embark_boat_sound.playSound()
 	player_disembarked = false
-	$Label.visible = false
+	button_indicator.visible = false
 	velocity = Vector2(0, 0)
 
 
